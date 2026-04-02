@@ -47,7 +47,9 @@
       color: inherit;
     }
 
-    button{
+    button,
+    input,
+    select{
       font: inherit;
     }
 
@@ -346,7 +348,7 @@
 
     .pricing-list{
       list-style: none;
-      margin: 24px 0 12px;
+      margin: 24px 0 18px;
       display: grid;
       gap: 12px;
       color: var(--text);
@@ -359,7 +361,7 @@
     }
 
     .mini-note{
-      margin-top: 18px;
+      margin-top: 16px;
       color: var(--muted);
       font-size: 0.95rem;
     }
@@ -401,6 +403,49 @@
       text-align: center;
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    /* Form */
+    .interest-copy{
+      max-width: 620px;
+      margin: 18px auto 0;
+      color: var(--muted);
+    }
+
+    .interest-form{
+      margin-top: 28px;
+      display: grid;
+      gap: 14px;
+      text-align: left;
+    }
+
+    .form-row{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .interest-form input,
+    .interest-form select{
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(31,58,95,0.14);
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .interest-form input:focus,
+    .interest-form select:focus{
+      border-color: rgba(31,58,95,0.35);
+      box-shadow: 0 0 0 4px rgba(31,58,95,0.06);
+    }
+
+    .form-submit{
+      margin-top: 6px;
+      text-align: center;
     }
 
     /* Popup */
@@ -470,7 +515,8 @@
 
     @media (max-width: 900px){
       .grid-3,
-      .grid-2{
+      .grid-2,
+      .form-row{
         grid-template-columns: 1fr;
       }
 
@@ -531,7 +577,7 @@
       </p>
       <div class="popup-actions">
         <button class="btn btn-primary" onclick="closePopup()">Enter Site</button>
-        <a href="#pricing" class="btn btn-light" onclick="closePopup()">View Offer</a>
+        <a href="#pricing" class="btn btn-light" onclick="closePopup()">Register Interest</a>
       </div>
     </div>
   </div>
@@ -542,7 +588,7 @@
       <nav class="nav-links">
         <a href="#how-it-works">How It Works</a>
         <a href="#what-you-get">What You Get</a>
-        <a href="#pricing">Launch Offer</a>
+        <a href="#pricing">Register Interest</a>
         <a href="#about">About</a>
       </nav>
     </div>
@@ -559,7 +605,7 @@
         </p>
 
         <div class="btn-wrap">
-          <a href="#pricing" class="btn btn-primary">View Launch Offer</a>
+          <a href="#pricing" class="btn btn-primary">Register Interest</a>
           <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
         </div>
 
@@ -651,9 +697,9 @@
 
     <section id="pricing" class="section">
       <div class="container">
-        <h2 class="section-title">Launch Offer</h2>
+        <h2 class="section-title">Register Interest</h2>
         <p class="section-subtitle">
-          A premium programme with a simple once-off payment and a limited early offer.
+          Join the early access list and be first to hear when places open for the launch group.
         </p>
 
         <div class="pricing-card card">
@@ -668,12 +714,46 @@
             <li>Watch anytime, at your own pace</li>
           </ul>
 
-          <div class="btn-wrap" style="margin-top: 26px;">
-            <a href="#" class="btn btn-primary">Join Early Access</a>
-          </div>
+          <p class="interest-copy">
+            Register your interest below and you’ll be first to hear when early access opens.
+          </p>
+
+          <form
+            class="interest-form"
+            action="https://formsubmit.co/lcfrenchworkshop@gmail.com"
+            method="POST"
+            target="_blank"
+          >
+            <div class="form-row">
+              <input type="text" name="student_name" placeholder="Student Name" required>
+              <input type="email" name="email" placeholder="Parent/Student Email" required>
+            </div>
+
+            <div class="form-row">
+              <select name="level" required>
+                <option value="">Select Level</option>
+                <option value="Higher Level">Higher Level</option>
+                <option value="Ordinary Level">Ordinary Level</option>
+              </select>
+
+              <select name="year_group" required>
+                <option value="">Year Group</option>
+                <option value="5th Year">5th Year</option>
+                <option value="6th Year">6th Year</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <input type="hidden" name="_subject" value="New FrenchExam.ie early access enquiry">
+            <input type="hidden" name="_captcha" value="false">
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">Join Early Access</button>
+            </div>
+          </form>
 
           <p class="mini-note">
-            Sign-up link coming soon.
+            The first time this form is used, you’ll receive a confirmation email from FormSubmit. Click confirm once, and future submissions will then come straight through to your inbox.
           </p>
         </div>
       </div>
@@ -711,7 +791,7 @@
           Start strong, stay organised, and build steadily towards the result you want.
         </p>
         <div class="btn-wrap">
-          <a href="#pricing" class="btn btn-primary">See Launch Offer</a>
+          <a href="#pricing" class="btn btn-primary">Register Interest</a>
         </div>
       </div>
     </section>
