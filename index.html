@@ -505,6 +505,31 @@
       text-align: center;
     }
 
+    .success-message{
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .success-message .card{
+      padding: 30px;
+    }
+
+    .success-message h3{
+      color: var(--navy);
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+    }
+
+    .success-message p{
+      color: var(--muted);
+    }
+
+    .success-message .small{
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
     .popup-overlay{
       position: fixed;
       inset: 0;
@@ -602,6 +627,10 @@
       .info-box,
       .popup-box,
       .testimonial-card{
+        padding: 24px 20px;
+      }
+
+      .success-message .card{
         padding: 24px 20px;
       }
 
@@ -862,10 +891,10 @@
           </p>
 
           <form
+            id="interestForm"
             class="interest-form"
             action="https://formsubmit.co/lcfrenchworkshop@gmail.com"
             method="POST"
-            target="_blank"
           >
             <div class="form-row">
               <input type="text" name="student_name" placeholder="Student Name" required>
@@ -900,6 +929,14 @@
               <button type="submit" class="btn btn-primary">Join Early Access</button>
             </div>
           </form>
+
+          <div id="formSuccess" class="success-message">
+            <div class="card">
+              <h3>You’re on the early access list 👏</h3>
+              <p>We’ll be in touch with launch details soon.</p>
+              <p class="small">First 20 students will get access at the special launch price of €129.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -957,33 +994,39 @@
         popup.style.display = 'none';
       }
     }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      var form = document.getElementById("interestForm");
+      var successBox = document.getElementById("formSuccess");
+
+      if (form) {
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+
+          var data = new FormData(form);
+
+          fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: {
+              "Accept": "application/json"
+            }
+          })
+          .then(function(response) {
+            if (response.ok) {
+              form.style.display = "none";
+              successBox.style.display = "block";
+            } else {
+              alert("Something went wrong. Please try again.");
+            }
+          })
+          .catch(function() {
+            alert("Something went wrong. Please try again.");
+          });
+        });
+      }
+    });
   </script>
-<script>
-document.getElementById("interestForm").addEventListener("submit", function(e) {
-  e.preventDefault();
 
-  var form = this;
-  var data = new FormData(form);
-
-  fetch(form.action, {
-    method: "POST",
-    body: data,
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => {
-    if (response.ok) {
-      form.style.display = "none";
-      document.getElementById("formSuccess").style.display = "block";
-    } else {
-      alert("Something went wrong. Please try again.");
-    }
-  })
-  .catch(() => {
-    alert("Something went wrong. Please try again.");
-  });
-});
-</script>
 </body>
 </html>
