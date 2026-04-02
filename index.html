@@ -405,7 +405,6 @@
       font-size: 0.95rem;
     }
 
-    /* Form */
     .interest-copy{
       max-width: 620px;
       margin: 18px auto 0;
@@ -443,12 +442,31 @@
       box-shadow: 0 0 0 4px rgba(31,58,95,0.06);
     }
 
+    .checkbox-wrap{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--soft-2);
+      border: 1px solid rgba(31,58,95,0.08);
+      border-radius: 14px;
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .checkbox-wrap input[type="checkbox"]{
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
     .form-submit{
       margin-top: 6px;
       text-align: center;
     }
 
-    /* Popup */
     .popup-overlay{
       position: fixed;
       inset: 0;
@@ -566,7 +584,6 @@
 </head>
 <body>
 
-  <!-- Coming Soon Popup -->
   <div class="popup-overlay" id="comingSoonPopup">
     <div class="popup-box">
       <div class="popup-badge">Coming Soon</div>
@@ -729,7 +746,7 @@
           >
             <div class="form-row">
               <input type="text" name="student_name" placeholder="Student Name" required>
-              <input type="email" name="email" placeholder="Parent/Student Email" required>
+              <input type="email" name="parent_guardian_email" placeholder="Parent/Guardian Email" required>
             </div>
 
             <div class="form-row">
@@ -746,6 +763,13 @@
                 <option value="Other">Other</option>
               </select>
             </div>
+
+            <label class="checkbox-wrap">
+              <input type="checkbox" name="parent_permission_confirmed" value="Yes" required>
+              <span>
+                I confirm that I am the parent/guardian, or that parent/guardian permission has been given to register interest in this programme.
+              </span>
+            </label>
 
             <input type="hidden" name="_subject" value="New FrenchExam.ie early access enquiry">
             <input type="hidden" name="_captcha" value="false">
