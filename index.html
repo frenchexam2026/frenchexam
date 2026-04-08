@@ -1125,7 +1125,14 @@
         popup.style.display = 'none';
       }
     }
-
+function toggleFaq(btn) {
+      var panel = btn.nextElementSibling;
+      var icon = btn.querySelector('span');
+      var isOpen = panel.style.maxHeight && panel.style.maxHeight !== '0px';
+      document.querySelectorAll('#faq .card > div').forEach(function(p) { p.style.maxHeight = '0px'; });
+      document.querySelectorAll('#faq .card button span').forEach(function(i) { i.style.transform = ''; });
+      if (!isOpen) { panel.style.maxHeight = panel.scrollHeight + 'px'; icon.style.transform = 'rotate(45deg)'; }
+    }
     document.addEventListener("DOMContentLoaded", function () {
       var form = document.getElementById("interestForm");
       var successBox = document.getElementById("formSuccess");
