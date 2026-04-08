@@ -862,6 +862,138 @@
       </div>
     </section>
 
+    <section id="faq" class="section">
+  <div class="container">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <p class="section-subtitle">Everything you need to know before joining. Can't find an answer? Get in touch.</p>
+
+    <div style="max-width: 780px; margin: 0 auto; display: grid; gap: 10px;">
+
+      <!-- FAQ item template — repeat for each question -->
+      <div class="card" style="overflow: hidden;">
+        <button onclick="toggleFaq(this)"
+          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
+                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
+                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          Is this live classes or recorded lessons?
+          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
+        </button>
+        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
+          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
+            The lessons are pre-recorded, so students can watch at a time that suits them and revisit any lesson as many times as they need. A new lesson is released each week from September through to May, keeping students on track without the pressure of a fixed schedule.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow: hidden;">
+        <button onclick="toggleFaq(this)"
+          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
+                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
+                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          What platform are the lessons on?
+          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
+        </button>
+        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
+          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
+            Once you join, you'll receive full details on how to access your lessons. Everything is straightforward to use — no complicated software or downloads required. If you have any questions about access, feel free to get in touch before signing up.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow: hidden;">
+        <button onclick="toggleFaq(this)"
+          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
+                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
+                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          How long is each lesson?
+          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
+        </button>
+        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
+          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
+            Each lesson is designed to be focused and manageable — roughly 30 to 45 minutes — so students can fit it into a busy school week without feeling overwhelmed.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow: hidden;">
+        <button onclick="toggleFaq(this)"
+          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
+                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
+                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          What if my child joins mid-year?
+          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
+        </button>
+        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
+          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
+            No problem at all. Students who join later in the year receive immediate access to all lessons released up to that point, so they can catch up at their own pace and still benefit from the full programme going forward.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow: hidden;">
+        <button onclick="toggleFaq(this)"
+          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
+                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
+                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          Is this suitable for 5th year and 6th year students?
+          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
+        </button>
+        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
+          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
+            Yes. The programme supports Higher Level students across both years. 5th years benefit from building strong foundations early, while 6th years can use it for focused exam preparation throughout the year.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow: hidden;">
+        <button onclick="toggleFaq(this)"
+          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
+                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
+                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          How is this different from weekly grinds?
+          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
+        </button>
+        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
+          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
+            Weekly grinds can cost €40–€60 per session, adding up to hundreds of euro over the year. This programme gives students expert guidance and structured support for a once-off payment — far more affordable while still covering everything needed for Higher Level French.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow: hidden;">
+        <button onclick="toggleFaq(this)"
+          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
+                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
+                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          How long will I have access to the lessons?
+          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
+        </button>
+        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
+          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
+            Access runs through to the end of the Leaving Cert exams, giving students plenty of time to revisit lessons right up to exam day.
+          </p>
+        </div>
+      </div>
+
+      <div class="card" style="overflow: hidden;">
+        <button onclick="toggleFaq(this)"
+          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
+                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
+                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          Is the early access price still available?
+          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
+        </button>
+        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
+          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
+            The early access price of €129 is available to the first 20 students only. After that, the standard price of €149 applies. Register your interest using the form and you'll be contacted with payment details ahead of the September launch.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
     <section id="pricing" class="section">
       <div class="container">
         <h2 class="section-title">Join the Early Access List</h2>
