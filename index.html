@@ -1,1180 +1,441 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>FrenchExam.ie | Higher Level Leaving Cert French</title>
-  <meta name="description" content="A premium Higher Level Leaving Cert French programme with structured weekly lessons covering oral, aural and written preparation." />
-
-  <style>
-    :root{
-      --bg: #f7f4ee;
-      --white: #ffffff;
-      --text: #1f2937;
-      --muted: #5d6675;
-      --navy: #1f3a5f;
-      --navy-dark: #162b47;
-      --gold: #c5a46d;
-      --gold-soft: rgba(197,164,109,0.14);
-      --soft: #eef3f8;
-      --soft-2: #f8fafc;
-      --border: rgba(31,58,95,0.10);
-      --shadow: 0 12px 32px rgba(17, 24, 39, 0.07);
-      --radius: 20px;
-      --max: 1140px;
-    }
-
-    *{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html{
-      scroll-behavior: smooth;
-    }
-
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a{
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button,
-    input,
-    select{
-      font: inherit;
-    }
-
-    .container{
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
-
-    .section{
-      padding: 84px 0;
-    }
-
-    .section-sm{
-      padding: 56px 0;
-    }
-
-    .card{
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .btn-wrap{
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-    }
-
-    .btn{
-      display: inline-block;
-      padding: 14px 24px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: all 0.25s ease;
-      border: 1px solid transparent;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .btn-primary{
-      background: var(--navy);
-      color: #fff;
-    }
-
-    .btn-primary:hover{
-      background: var(--navy-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary{
-      background: transparent;
-      color: var(--navy);
-      border-color: var(--navy);
-    }
-
-    .btn-secondary:hover{
-      background: rgba(31,58,95,0.06);
-      transform: translateY(-2px);
-    }
-
-    .btn-light{
-      background: #fff;
-      color: var(--navy);
-      border: 1px solid rgba(31,58,95,0.12);
-    }
-
-    .btn-light:hover{
-      transform: translateY(-2px);
-      background: var(--soft-2);
-    }
-
-    .btn-nav{
-      background: var(--navy);
-      color: #fff !important;
-      padding: 10px 18px;
-      border-radius: 999px;
-      border: 1px solid var(--navy);
-    }
-
-    .btn-nav:hover{
-      background: var(--navy-dark);
-      border-color: var(--navy-dark);
-    }
-
-    header{
-      padding: 20px 0;
-      background: rgba(247,244,238,0.92);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      border-bottom: 1px solid rgba(31,58,95,0.06);
-    }
-
-    .nav{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo{
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--navy);
-      letter-spacing: 0.2px;
-    }
-
-    .nav-links{
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a{
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.2s ease, background 0.2s ease;
-    }
-
-    .nav-links a:hover{
-      color: var(--navy);
-    }
-
-    .hero{
-      padding: 96px 0 72px;
-      text-align: center;
-    }
-
-    .hero-badge{
-      display: inline-block;
-      margin-bottom: 22px;
-      background: var(--gold-soft);
-      color: var(--navy-dark);
-      border: 1px solid rgba(197,164,109,0.35);
-      border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    h1{
-      font-size: clamp(2.4rem, 5vw, 4.2rem);
-      line-height: 1.08;
-      color: var(--navy);
-      max-width: 900px;
-      margin: 0 auto 18px;
-    }
-
-    .hero p{
-      max-width: 760px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1.12rem;
-    }
-
-    .hero-card{
-      margin-top: 40px;
-      padding: 30px;
-      max-width: 920px;
-      margin-left: auto;
-      margin-right: auto;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
-    }
-
-    .hero-card strong{
-      color: var(--navy);
-    }
-
-    .value-line{
-      text-align: center;
-      font-size: 1.08rem;
-      max-width: 920px;
-      margin: 0 auto;
-      color: var(--text);
-    }
-
-    .section-title{
-      text-align: center;
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-
-    .section-subtitle{
-      text-align: center;
-      color: var(--muted);
-      max-width: 760px;
-      margin: 0 auto 42px;
-    }
-
-    .grid-3{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .grid-2{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      align-items: stretch;
-    }
-
-    .info-box{
-      padding: 30px 26px;
-      text-align: center;
-      height: 100%;
-    }
-
-    .icon{
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--soft);
-      color: var(--navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      font-weight: 800;
-      margin: 0 auto 16px;
-    }
-
-    .info-box h3{
-      color: var(--navy);
-      margin-bottom: 10px;
-      font-size: 1.14rem;
-    }
-
-    .info-box p{
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .list-card{
-      padding: 36px;
-    }
-
-    .list-card ul{
-      list-style: none;
-      display: grid;
-      gap: 14px;
-    }
-
-    .list-card li{
-      position: relative;
-      padding-left: 28px;
-      color: var(--text);
-    }
-
-    .list-card li::before{
-      content: "•";
-      position: absolute;
-      left: 6px;
-      top: -1px;
-      color: var(--gold);
-      font-size: 1.4rem;
-      line-height: 1;
-    }
-
-    .results-box{
-      text-align: center;
-      padding: 38px 28px;
-      font-size: clamp(1.35rem, 3vw, 1.95rem);
-      font-weight: 800;
-      color: var(--navy);
-    }
-
-    .testimonial-card{
-      padding: 30px 26px;
-      text-align: center;
-      height: 100%;
-    }
-
-    .testimonial-card p{
-      color: var(--text);
-      font-size: 1rem;
-      font-style: italic;
-    }
-
-    .testimonial-note{
-      text-align: center;
-      color: var(--muted);
-      margin-top: 18px;
-      font-size: 0.95rem;
-    }
-
-    .pricing-card{
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 38px 28px;
-      text-align: center;
-    }
-
-    .pricing-badge{
-      display: inline-block;
-      margin-bottom: 14px;
-      background: rgba(31,58,95,0.08);
-      color: var(--navy);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.92rem;
-    }
-
-    .price-launch{
-      font-size: clamp(2.3rem, 5vw, 3.6rem);
-      color: var(--navy);
-      font-weight: 800;
-      line-height: 1.05;
-    }
-
-    .price-note{
-      color: var(--muted);
-      margin-top: 8px;
-      font-size: 1rem;
-    }
-
-    .standard-price{
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 1.04rem;
-    }
-
-    .pricing-list{
-      list-style: none;
-      margin: 24px 0 18px;
-      display: grid;
-      gap: 12px;
-      color: var(--text);
-    }
-
-    .pricing-list li{
-      background: var(--soft);
-      padding: 12px 16px;
-      border-radius: 12px;
-    }
-
-    .mini-note{
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .about-card{
-      padding: 34px;
-      height: 100%;
-    }
-
-    .about-card h3{
-      color: var(--navy);
-      margin-bottom: 14px;
-      font-size: 1.45rem;
-    }
-
-    .about-card p{
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    .cta{
-      text-align: center;
-    }
-
-    .cta h2{
-      color: var(--navy);
-      font-size: clamp(2rem, 4vw, 2.9rem);
-      margin-bottom: 12px;
-    }
-
-    .cta p{
-      color: var(--muted);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    footer{
-      padding: 28px 0 42px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .footer-line{
-      margin-top: 8px;
-    }
-
-    .interest-copy{
-      max-width: 620px;
-      margin: 18px auto 0;
-      color: var(--muted);
-    }
-
-    .interest-form{
-      margin-top: 28px;
-      display: grid;
-      gap: 14px;
-      text-align: left;
-    }
-
-    .form-row{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .interest-form input,
-    .interest-form select{
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(31,58,95,0.14);
-      background: #fff;
-      color: var(--text);
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .interest-form input:focus,
-    .interest-form select:focus{
-      border-color: rgba(31,58,95,0.35);
-      box-shadow: 0 0 0 4px rgba(31,58,95,0.06);
-    }
-
-    .checkbox-wrap{
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: var(--soft-2);
-      border: 1px solid rgba(31,58,95,0.08);
-      border-radius: 14px;
-      padding: 14px 16px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .checkbox-wrap input[type="checkbox"]{
-      width: 18px;
-      height: 18px;
-      margin-top: 2px;
-      flex-shrink: 0;
-    }
-
-    .form-submit{
-      margin-top: 6px;
-      text-align: center;
-    }
-
-    .success-message{
-      display: none;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .success-message .card{
-      padding: 30px;
-    }
-
-    .success-message h3{
-      color: var(--navy);
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-    }
-
-    .success-message p{
-      color: var(--muted);
-    }
-
-    .success-message .small{
-      margin-top: 10px;
-      font-size: 0.95rem;
-    }
-
-    .popup-overlay{
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.58);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      z-index: 9999;
-    }
-
-    .popup-box{
-      width: min(100%, 500px);
-      background: #fff;
-      border-radius: 22px;
-      padding: 36px 28px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.18);
-      text-align: center;
-      border: 1px solid rgba(31,58,95,0.08);
-      animation: popupFade 0.3s ease;
-    }
-
-    .popup-badge{
-      display: inline-block;
-      margin-bottom: 16px;
-      background: var(--gold-soft);
-      color: var(--navy);
-      border: 1px solid rgba(197,164,109,0.30);
-      border-radius: 999px;
-      padding: 8px 14px;
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
-
-    .popup-box h2{
-      color: var(--navy);
-      font-size: clamp(1.8rem, 4vw, 2.3rem);
-      margin-bottom: 10px;
-    }
-
-    .popup-box p{
-      color: var(--muted);
-      margin-bottom: 24px;
-      font-size: 1rem;
-    }
-
-    .popup-actions{
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    @keyframes popupFade{
-      from{
-        opacity: 0;
-        transform: translateY(8px) scale(0.98);
-      }
-      to{
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-
-    @media (max-width: 900px){
-      .grid-3,
-      .grid-2,
-      .form-row{
-        grid-template-columns: 1fr;
-      }
-
-      .nav{
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links{
-        gap: 14px;
-      }
-
-      .hero{
-        padding-top: 76px;
-      }
-    }
-
-    @media (max-width: 640px){
-      .section{
-        padding: 66px 0;
-      }
-
-      .hero-card,
-      .pricing-card,
-      .list-card,
-      .about-card,
-      .info-box,
-      .popup-box,
-      .testimonial-card{
-        padding: 24px 20px;
-      }
-
-      .success-message .card{
-        padding: 24px 20px;
-      }
-
-      .btn{
-        width: 100%;
-      }
-
-      .btn-wrap,
-      .popup-actions{
-        flex-direction: column;
-      }
-
-      .nav{
-        align-items: stretch;
-      }
-
-      .nav-links{
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn-nav{
-        text-align: center;
-      }
-    }
-  </style>
-  
-  <!-- Google tag (gtag.js) -->
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FrenchExam.ie</title>
+<style>
+  :root{
+    --bg:#f7f4ee;--white:#ffffff;--text:#1f2937;--muted:#5d6675;
+    --navy:#1f3a5f;--navy-dark:#162b47;--gold:#c5a46d;--gold-soft:rgba(197,164,109,0.14);
+    --soft:#eef3f8;--soft-2:#f8fafc;--border:rgba(31,58,95,0.10);
+    --shadow:0 12px 32px rgba(17,24,39,0.07);--radius:20px;--max:1140px;
+    --bleu:#002395;--blanc:#ffffff;--rouge:#ED2939;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  a{text-decoration:none;color:inherit;}
+  button,input,select{font:inherit;}
+  .container{width:min(92%,var(--max));margin:0 auto;}
+  .section{padding:84px 0;}
+  .section-sm{padding:56px 0;}
+  .card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);}
+  .btn-wrap{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:30px;}
+  .btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:700;transition:all 0.25s ease;border:1px solid transparent;cursor:pointer;text-align:center;}
+  .btn-primary{background:var(--navy);color:#fff;}
+  .btn-primary:hover{background:var(--navy-dark);transform:translateY(-2px);}
+  .btn-secondary{background:transparent;color:var(--navy);border-color:var(--navy);}
+  .btn-secondary:hover{background:rgba(31,58,95,0.06);transform:translateY(-2px);}
+  .btn-light{background:#fff;color:var(--navy);border:1px solid rgba(31,58,95,0.12);}
+  .btn-light:hover{transform:translateY(-2px);background:var(--soft-2);}
+  .btn-nav{background:var(--navy);color:#fff!important;padding:10px 18px;border-radius:999px;border:1px solid var(--navy);}
+  .btn-nav:hover{background:var(--navy-dark);border-color:var(--navy-dark);}
+  .tricolore-stripe{height:5px;display:flex;}
+  .tricolore-stripe .bleu{flex:1;background:var(--bleu);}
+  .tricolore-stripe .blanc{flex:1;background:var(--blanc);border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);}
+  .tricolore-stripe .rouge{flex:1;background:var(--rouge);}
+  header{padding:20px 0;background:rgba(247,244,238,0.95);backdrop-filter:blur(10px);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(31,58,95,0.06);}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .logo{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:0.2px;display:flex;align-items:center;gap:8px;}
+  .logo-flag{display:flex;height:18px;width:27px;border-radius:3px;overflow:hidden;flex-shrink:0;border:1px solid rgba(0,0,0,0.08);}
+  .logo-flag .f1{flex:1;background:var(--bleu);}
+  .logo-flag .f2{flex:1;background:var(--blanc);}
+  .logo-flag .f3{flex:1;background:var(--rouge);}
+  .nav-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+  .nav-links a{color:var(--muted);font-weight:600;font-size:0.95rem;transition:color 0.2s ease;}
+  .nav-links a:hover{color:var(--navy);}
+  .hero{padding:96px 0 72px;text-align:center;position:relative;overflow:hidden;}
+  .hero-bg-pattern{position:absolute;inset:0;pointer-events:none;opacity:0.045;background-image:repeating-linear-gradient(0deg,#1f3a5f 0,#1f3a5f 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#1f3a5f 0,#1f3a5f 1px,transparent 1px,transparent 40px);}
+  .hero-eiffel{position:absolute;right:-10px;bottom:0;opacity:0.055;font-size:280px;line-height:1;pointer-events:none;user-select:none;filter:grayscale(1);}
+  .hero-badge{display:inline-block;margin-bottom:22px;background:var(--gold-soft);color:var(--navy-dark);border:1px solid rgba(197,164,109,0.35);border-radius:999px;padding:10px 16px;font-size:0.95rem;font-weight:700;}
+  h1{font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.08;color:var(--navy);max-width:900px;margin:0 auto 18px;}
+  .hero p{max-width:760px;margin:0 auto;color:var(--muted);font-size:1.12rem;}
+  .hero-card{margin-top:40px;padding:30px;max-width:920px;margin-left:auto;margin-right:auto;background:linear-gradient(180deg,#ffffff 0%,#f8fbfd 100%);}
+  .hero-card strong{color:var(--navy);}
+  .quote-banner{background:var(--navy);color:#fff;text-align:center;padding:32px 20px;position:relative;overflow:hidden;}
+  .quote-banner::before,.quote-banner::after{content:'';position:absolute;top:0;bottom:0;width:6px;}
+  .quote-banner::before{left:0;background:var(--bleu);}
+  .quote-banner::after{right:0;background:var(--rouge);}
+  .quote-banner blockquote{font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;opacity:0.92;max-width:700px;margin:0 auto;}
+  .quote-banner cite{display:block;margin-top:10px;font-size:0.9rem;opacity:0.6;font-style:normal;letter-spacing:1px;}
+  .value-line{text-align:center;font-size:1.08rem;max-width:920px;margin:0 auto;color:var(--text);}
+  .section-title-wrap{text-align:center;margin-bottom:42px;}
+  .section-title{text-align:center;font-size:clamp(1.9rem,4vw,2.6rem);color:var(--navy);margin-bottom:14px;}
+  .title-underline{display:block;margin:6px auto 0;height:4px;width:60px;border-radius:2px;background:linear-gradient(90deg,var(--bleu),var(--blanc),var(--rouge));}
+  .section-subtitle{text-align:center;color:var(--muted);max-width:760px;margin:10px auto 0;}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;align-items:stretch;}
+  .info-box{padding:30px 26px;text-align:center;height:100%;}
+  .icon{width:56px;height:56px;border-radius:50%;background:var(--soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;margin:0 auto 16px;}
+  .info-box h3{color:var(--navy);margin-bottom:10px;font-size:1.14rem;}
+  .info-box p{color:var(--muted);font-size:0.98rem;}
+  .accent-card-bleu{border-top:4px solid var(--bleu)!important;}
+  .accent-card-blanc{border-top:4px solid #c8c8c8!important;}
+  .accent-card-rouge{border-top:4px solid var(--rouge)!important;}
+  .list-card{padding:36px;}
+  .list-card ul{list-style:none;display:grid;gap:14px;}
+  .list-card li{position:relative;padding-left:28px;color:var(--text);}
+  .list-card li::before{content:"•";position:absolute;left:6px;top:-1px;color:var(--gold);font-size:1.4rem;line-height:1;}
+  .results-box{text-align:center;padding:38px 28px;font-size:clamp(1.35rem,3vw,1.95rem);font-weight:800;color:var(--navy);}
+  .testimonial-card{padding:30px 26px;text-align:center;height:100%;}
+  .testimonial-card p{color:var(--text);font-size:1rem;font-style:italic;}
+  .testimonial-note{text-align:center;color:var(--muted);margin-top:18px;font-size:0.82rem;}
+  .pricing-card{max-width:780px;margin:0 auto;padding:38px 28px;text-align:center;}
+  .pricing-badge{display:inline-block;margin-bottom:14px;background:rgba(31,58,95,0.08);color:var(--navy);padding:8px 14px;border-radius:999px;font-weight:700;font-size:0.92rem;}
+  .price-launch{font-size:clamp(2.3rem,5vw,3.6rem);color:var(--navy);font-weight:800;line-height:1.05;}
+  .price-note{color:var(--muted);margin-top:8px;font-size:1rem;}
+  .standard-price{margin-top:18px;color:var(--muted);font-size:1.04rem;}
+  .pricing-list{list-style:none;margin:24px 0 18px;display:grid;gap:12px;color:var(--text);}
+  .pricing-list li{background:var(--soft);padding:12px 16px;border-radius:12px;}
+  .mini-note{margin-top:16px;color:var(--muted);font-size:0.95rem;}
+  .about-card{padding:34px;height:100%;}
+  .about-card h3{color:var(--navy);margin-bottom:14px;font-size:1.45rem;}
+  .about-card p{color:var(--muted);font-size:1rem;}
+  .cta{text-align:center;}
+  .cta h2{color:var(--navy);font-size:clamp(2rem,4vw,2.9rem);margin-bottom:12px;}
+  .cta p{color:var(--muted);max-width:700px;margin:0 auto;}
+  .skyline-divider{width:100%;overflow:hidden;line-height:0;opacity:0.08;}
+  .skyline-divider svg{width:100%;height:60px;display:block;}
+  footer{padding:28px 0 42px;text-align:center;color:var(--muted);font-size:0.95rem;}
+  .footer-line{margin-top:8px;}
+  .footer-flag{display:inline-flex;height:14px;width:21px;border-radius:2px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);vertical-align:middle;margin:0 4px;}
+  .footer-flag .f1{flex:1;background:var(--bleu);}
+  .footer-flag .f2{flex:1;background:var(--blanc);}
+  .footer-flag .f3{flex:1;background:var(--rouge);}
+  .interest-copy{max-width:620px;margin:18px auto 0;color:var(--muted);}
+  .interest-form{margin-top:28px;display:grid;gap:14px;text-align:left;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .interest-form input,.interest-form select{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(31,58,95,0.14);background:#fff;color:var(--text);outline:none;transition:border-color 0.2s ease,box-shadow 0.2s ease;}
+  .interest-form input:focus,.interest-form select:focus{border-color:rgba(31,58,95,0.35);box-shadow:0 0 0 4px rgba(31,58,95,0.06);}
+  .checkbox-wrap{display:flex;align-items:flex-start;gap:10px;background:var(--soft-2);border:1px solid rgba(31,58,95,0.08);border-radius:14px;padding:14px 16px;color:var(--muted);font-size:0.95rem;line-height:1.5;}
+  .checkbox-wrap input[type="checkbox"]{width:18px;height:18px;margin-top:2px;flex-shrink:0;}
+  .form-submit{margin-top:6px;text-align:center;}
+  .success-message{display:none;text-align:center;margin-top:20px;}
+  .success-message .card{padding:30px;}
+  .success-message h3{color:var(--navy);margin-bottom:10px;font-size:1.4rem;}
+  .success-message p{color:var(--muted);}
+  .success-message .small{margin-top:10px;font-size:0.95rem;}
+  .popup-overlay{position:fixed;inset:0;background:rgba(15,23,42,0.58);display:flex;align-items:center;justify-content:center;padding:20px;z-index:9999;}
+  .popup-box{width:min(100%,500px);background:#fff;border-radius:22px;padding:36px 28px;box-shadow:0 18px 45px rgba(0,0,0,0.18);text-align:center;border:1px solid rgba(31,58,95,0.08);animation:popupFade 0.3s ease;overflow:hidden;position:relative;}
+  .popup-tricolore{position:absolute;top:0;left:0;right:0;height:5px;display:flex;}
+  .popup-tricolore .t1{flex:1;background:var(--bleu);}
+  .popup-tricolore .t2{flex:1;background:var(--blanc);border-left:1px solid rgba(0,0,0,0.05);border-right:1px solid rgba(0,0,0,0.05);}
+  .popup-tricolore .t3{flex:1;background:var(--rouge);}
+  .popup-badge{display:inline-block;margin-bottom:16px;background:var(--gold-soft);color:var(--navy);border:1px solid rgba(197,164,109,0.30);border-radius:999px;padding:8px 14px;font-size:0.88rem;font-weight:700;}
+  .popup-box h2{color:var(--navy);font-size:clamp(1.8rem,4vw,2.3rem);margin-bottom:10px;}
+  .popup-box p{color:var(--muted);margin-bottom:24px;font-size:1rem;}
+  .popup-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  @keyframes popupFade{from{opacity:0;transform:translateY(8px) scale(0.98);}to{opacity:1;transform:translateY(0) scale(1);}}
+  #faq .card{overflow:hidden;}
+  @media(max-width:900px){.grid-3,.grid-2,.form-row{grid-template-columns:1fr;}.nav{flex-direction:column;align-items:flex-start;}.nav-links{gap:14px;}.hero{padding-top:76px;}}
+  @media(max-width:640px){.section{padding:66px 0;}.hero-card,.pricing-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card{padding:24px 20px;}.success-message .card{padding:24px 20px;}.btn{width:100%;}.btn-wrap,.popup-actions{flex-direction:column;}.nav{align-items:stretch;}.nav-links{flex-direction:column;align-items:stretch;}.btn-nav{text-align:center;}.hero-eiffel{font-size:160px;}}
+</style>
+
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CSW23XG5QJ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-CSW23XG5QJ');
 </script>
 </head>
 <body>
 
-  <div class="popup-overlay" id="comingSoonPopup">
-    <div class="popup-box">
-      <div class="popup-badge">Coming Soon</div>
+<div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
+
+<div class="popup-overlay" id="comingSoonPopup">
+  <div class="popup-box">
+    <div class="popup-tricolore"><div class="t1"></div><div class="t2"></div><div class="t3"></div></div>
+    <div style="margin-top:16px;">
+      <div class="popup-badge">Coming Soon · Bientôt disponible</div>
       <h2>FrenchExam.ie is launching soon</h2>
-      <p>
-        A premium Higher Level Leaving Cert French programme is on the way, created
-        by a teacher with nearly 20 years’ experience, including work as an SEC oral examiner and corrector.
-      </p>
+      <p>A premium Higher Level Leaving Cert French programme is on the way, created by a teacher with nearly 20 years' experience, including work as an SEC oral examiner and corrector.</p>
       <div class="popup-actions">
         <button class="btn btn-primary" onclick="closePopup()">Enter Site</button>
         <a href="#pricing" class="btn btn-light" onclick="closePopup()">Join Early Access</a>
       </div>
     </div>
   </div>
+</div>
 
-  <header>
-    <div class="container nav">
-      <div class="logo">FrenchExam.ie</div>
-      <nav class="nav-links">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#what-you-get">What You Get</a>
-        <a href="#about">About</a>
-        <a href="#pricing" class="btn-nav">Join Early Access</a>
-      </nav>
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-flag"><div class="f1"></div><div class="f2"></div><div class="f3"></div></div>
+      FrenchExam.ie
     </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-badge">Special Launch Offer — First 20 Students Only</div>
-        <h1>A Smarter Way to Prepare for Higher Level Leaving Cert French</h1>
-        <p>
-          A premium step-by-step programme for ambitious students who want strong
-          structure, clear guidance, and the confidence to aim high.
-        </p>
-
-        <div class="btn-wrap">
-          <a href="#pricing" class="btn btn-primary">Join Early Access</a>
-          <a href="#how-it-works" class="btn btn-secondary">How It Works</a>
-        </div>
-
-        <div class="hero-card card">
-          <p>
-            <strong>New structured lesson released each week</strong> — watch anytime,
-            revisit as needed, and build skills steadily across the year in oral,
-            aural and written French. A more affordable alternative to weekly grinds,
-            with expert guidance from a teacher with nearly 20 years’ experience,
-            including work as an SEC oral examiner and corrector.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-sm">
-      <div class="container">
-        <p class="value-line">
-          Designed specifically for Higher Level students who want clear structure,
-          stronger exam technique, and a more confident approach to Leaving Cert French.
-        </p>
-      </div>
-    </section>
-
-    <section id="how-it-works" class="section">
-      <div class="container">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">
-          A simple weekly system designed to keep students focused, organised and
-          moving steadily towards stronger results.
-        </p>
-
-        <div class="grid-3">
-          <div class="info-box card">
-            <div class="icon">1</div>
-            <h3>Weekly Structured Lessons</h3>
-            <p>
-              A new lesson is released each week to guide students through the course
-              in a clear, manageable way.
-            </p>
-          </div>
-
-          <div class="info-box card">
-            <div class="icon">2</div>
-            <h3>Higher Level Focus</h3>
-            <p>
-              Every lesson is tailored to the demands of the Higher Level Leaving Cert,
-              with an emphasis on what matters most.
-            </p>
-          </div>
-
-          <div class="info-box card">
-            <div class="icon">3</div>
-            <h3>Build Towards Top Results</h3>
-            <p>
-              Students develop confidence, technique and stronger answers step by step
-              over the course of the year.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="what-you-get" class="section">
-      <div class="container">
-        <h2 class="section-title">What You Get</h2>
-        <p class="section-subtitle">
-          Everything is designed to support Higher Level students across the full course.
-        </p>
-
-        <div class="list-card card">
-          <ul>
-            <li>Full Higher Level Leaving Cert French course support</li>
-            <li>Weekly structured lessons from September to May</li>
-            <li>New lesson released each week — watch anytime and revisit as needed</li>
-            <li>Oral, aural and written exam preparation</li>
-            <li>High-scoring phrases, structures and key vocabulary</li>
-            <li>Proven exam techniques to help students perform at their best</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-sm">
-      <div class="container">
-        <div class="results-box card">
-          Expert guidance from a teacher with nearly 20 years’ experience, including work as an SEC oral examiner and corrector
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Who It’s For</h2>
-        <p class="section-subtitle">
-          Designed for Higher Level students who want more than last-minute cramming.
-        </p>
-
-        <div class="grid-3">
-          <div class="info-box card">
-            <div class="icon">✓</div>
-            <h3>Students Who Want Structure</h3>
-            <p>
-              Ideal for students who want a clear weekly plan rather than trying to piece everything together alone.
-            </p>
-          </div>
-
-          <div class="info-box card">
-            <div class="icon">✓</div>
-            <h3>Students Aiming High</h3>
-            <p>
-              Perfect for students who want to improve their confidence, sharpen technique, and push for a strong result.
-            </p>
-          </div>
-
-          <div class="info-box card">
-            <div class="icon">✓</div>
-            <h3>Students Who Need Clarity</h3>
-            <p>
-              Especially useful for students who feel unsure about oral, aural, or written preparation and want expert guidance.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Real Results from Students</h2>
-        <p class="section-subtitle">
-          Feedback from recent mock oral sessions
-        </p>
-
-        <div class="grid-2">
-          <div class="results-box card">
-            ⭐ 100% felt more confident going into their oral exam (based on 15 students)
-          </div>
-
-          <div class="results-box card">
-            ⭐ 100% of students said the session was helpful (based on 15 students)
-          </div>
-        </div>
-
-        <div class="grid-3" style="margin-top: 30px;">
-          <div class="testimonial-card card">
-            <p>“It challenged me in the right way and showed me exactly what I need to work on.”</p>
-          </div>
-
-          <div class="testimonial-card card">
-            <p>“It gave me great peace of mind going into the oral.”</p>
-          </div>
-
-          <div class="testimonial-card card">
-            <p>“Extremely helpful and really built my confidence.”</p>
-          </div>
-        </div>
-
-        <p class="testimonial-note">
-          Based on feedback from recent mock oral students
-        </p>
-      </div>
-    </section>
-
-    <section id="faq" class="section">
-  <div class="container">
-    <h2 class="section-title">Frequently asked questions</h2>
-    <p class="section-subtitle">Everything you need to know before joining. Can't find an answer? Get in touch.</p>
-
-    <div style="max-width: 780px; margin: 0 auto; display: grid; gap: 10px;">
-
-      <!-- FAQ item template — repeat for each question -->
-      <div class="card" style="overflow: hidden;">
-        <button onclick="toggleFaq(this)"
-          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
-                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
-                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
-          Is this live classes or recorded lessons?
-          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
-        </button>
-        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
-          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
-            The lessons are pre-recorded, so students can watch at a time that suits them and revisit any lesson as many times as they need. A new lesson is released each week from September through to May, keeping students on track without the pressure of a fixed schedule.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" style="overflow: hidden;">
-        <button onclick="toggleFaq(this)"
-          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
-                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
-                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
-          What platform are the lessons on?
-          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
-        </button>
-        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
-          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">Lessons are hosted on a dedicated members area — once you join, you'll receive your login details and can access everything straight away from any device. If you have any questions about access, feel free to get in touch before signing up.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" style="overflow: hidden;">
-        <button onclick="toggleFaq(this)"
-          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
-                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
-                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
-          How long is each lesson?
-          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
-        </button>
-        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
-          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
-            Each lesson is designed to be focused and manageable — roughly 30 to 45 minutes — so students can fit it into a busy school week without feeling overwhelmed.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" style="overflow: hidden;">
-        <button onclick="toggleFaq(this)"
-          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
-                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
-                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
-          What if my child joins mid-year?
-          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
-        </button>
-        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
-          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
-            No problem at all. Students who join later in the year receive immediate access to all lessons released up to that point, so they can catch up at their own pace and still benefit from the full programme going forward.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" style="overflow: hidden;">
-        <button onclick="toggleFaq(this)"
-          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
-                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
-                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
-          Is this suitable for 5th year and 6th year students?
-          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
-        </button>
-        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
-          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
-            Yes. The programme supports Higher Level students across both years. 5th years benefit from building strong foundations early, while 6th years can use it for focused exam preparation throughout the year.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" style="overflow: hidden;">
-        <button onclick="toggleFaq(this)"
-          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
-                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
-                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
-          How is this different from weekly grinds?
-          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
-        </button>
-        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
-          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
-            Weekly grinds can cost €40–€60 per session, adding up to hundreds of euro over the year. This programme gives students expert guidance and structured support for a once-off payment — far more affordable while still covering everything needed for Higher Level French.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" style="overflow: hidden;">
-        <button onclick="toggleFaq(this)"
-          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
-                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
-                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
-          How long will I have access to the lessons?
-          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
-        </button>
-        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
-          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
-            Access runs through to the end of the Leaving Cert exams, giving students plenty of time to revisit lessons right up to exam day.
-          </p>
-        </div>
-      </div>
-
-      <div class="card" style="overflow: hidden;">
-        <button onclick="toggleFaq(this)"
-          style="width:100%; background:none; border:none; text-align:left; padding:18px 20px;
-                 font-size:1rem; font-weight:700; color:var(--navy); cursor:pointer;
-                 display:flex; justify-content:space-between; align-items:center; gap:12px;">
-          Is the early access price still available?
-          <span style="font-size:20px; color:var(--muted); flex-shrink:0; transition:transform 0.2s;">+</span>
-        </button>
-        <div style="max-height:0; overflow:hidden; transition:max-height 0.3s ease; padding:0 20px;">
-          <p style="color:var(--muted); padding-bottom:18px; margin:0; font-size:0.98rem; line-height:1.75;">
-            The early access price of €129 is available to the first 20 students only. After that, the standard price of €149 applies. Register your interest using the form and you'll be contacted with payment details ahead of the September launch.
-          </p>
-        </div>
-      </div>
-
-    </div>
+    <nav class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#what-you-get">What You Get</a>
+      <a href="#about">About</a>
+      <a href="#pricing" class="btn-nav">Join Early Access</a>
+    </nav>
   </div>
-</section>
+</header>
 
-    <section id="pricing" class="section">
-      <div class="container">
-        <h2 class="section-title">Join the Early Access List</h2>
-        <p class="section-subtitle">
-          Join the students already building confidence in Higher Level French. Early access is limited to the first 20 students and places will be offered on a first come, first served basis.
-        </p>
-
-        <div class="pricing-card card">
-          <div class="pricing-badge">Early Access Offer</div>
-          <div class="price-launch">€129 once-off</div>
-          <p class="price-note">Available to the first 20 students only</p>
-          <p class="standard-price">Standard price: €149</p>
-
-          <ul class="pricing-list">
-            <li>Full programme access</li>
-            <li>Structured weekly lessons</li>
-            <li>Watch anytime, at your own pace</li>
-          </ul>
-
-          <p class="interest-copy">
-            Designed to give students expert support across the full year at a far lower
-            cost than paying for weekly grinds.
-          </p>
-
-          <p class="mini-note">
-            Students who join later in the year will receive immediate access to all previous lessons, making it ideal for focused exam preparation too.
-          </p>
-
-          <form
-            id="interestForm"
-            class="interest-form"
-            action="https://formsubmit.co/lcfrenchworkshop@gmail.com"
-            method="POST"
-          >
-            <div class="form-row">
-              <input type="text" name="student_name" placeholder="Student Name" required>
-              <input type="email" name="parent_guardian_email" placeholder="Parent/Guardian Email" required>
-            </div>
-
-            <div class="form-row">
-              <select name="level" required>
-                <option value="">Select Level</option>
-                <option value="Higher Level">Higher Level</option>
-              </select>
-
-              <select name="year_group" required>
-                <option value="">Year Group</option>
-                <option value="5th Year">5th Year</option>
-                <option value="6th Year">6th Year</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <label class="checkbox-wrap">
-              <input type="checkbox" name="parent_permission_confirmed" value="Yes" required>
-              <span>
-                I confirm that I am the parent/guardian, or that parent/guardian permission has been given to register interest in this programme.
-              </span>
-            </label>
-
-            <input type="hidden" name="_subject" value="New FrenchExam.ie early access enquiry">
-            <input type="hidden" name="_captcha" value="false">
-
-            <div class="form-submit">
-              <button type="submit" class="btn btn-primary">Join Early Access</button>
-            </div>
-          </form>
-
-          <div id="formSuccess" class="success-message">
-            <div class="card">
-              <h3>You’re on the early access list 👏</h3>
-              <p>We’ll be in touch with launch details soon.</p>
-              <p class="small">First 20 students will get access at the special launch price of €129.</p>
-            </div>
-          </div>
-        </div>
+<main>
+  <section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-eiffel">🗼</div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="hero-badge">✨ Offre de lancement — First 20 Students Only</div>
+      <h1>A Smarter Way to Prepare for Higher Level Leaving Cert French</h1>
+      <p>A premium step-by-step programme for ambitious students who want strong structure, clear guidance, and the confidence to aim high.</p>
+      <div class="btn-wrap">
+        <a href="#pricing" class="btn btn-primary">Join Early Access</a>
+        <a href="#how-it-works" class="btn btn-secondary">Comment ça marche ?</a>
       </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="grid-2">
-          <div class="about-card card">
-            <h3>About the Programme</h3>
-            <p>
-              This programme is designed to give Higher Level Leaving Cert students
-              a clear, structured path through the course, with lessons that build
-              knowledge, confidence and exam technique over time.
-            </p>
-          </div>
-
-          <div class="about-card card">
-            <h3>About Nicola</h3>
-            <p>
-              Hi, I’m Nicola — a qualified French teacher with nearly 20 years of teaching
-              experience, as well as experience as an SEC oral examiner and corrector.
-              I created this programme to give students clear structure, greater confidence,
-              and expert guidance throughout the year in a way that is more affordable
-              and more accessible than traditional weekly grinds.
-            </p>
-          </div>
-        </div>
+      <div class="hero-card card">
+        <p><strong>New structured lesson released each week</strong> — watch anytime, revisit as needed, and build skills steadily across the year in oral, aural and written French. A more affordable alternative to weekly grinds, with expert guidance from a teacher with nearly 20 years' experience, including work as an SEC oral examiner and corrector.</p>
       </div>
-    </section>
-
-    <section class="section cta">
-      <div class="container">
-        <h2>Give yourself the edge in Higher Level French</h2>
-        <p>
-          Start strong, stay organised, and build steadily towards the result you want.
-        </p>
-        <div class="btn-wrap">
-          <a href="#pricing" class="btn btn-primary">Join Early Access</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div>© 2026 FrenchExam.ie. All rights reserved.</div>
-      <div class="footer-line">Higher Level Leaving Cert French support by Nicola</div>
     </div>
-  </footer>
+  </section>
 
-  <script>
-    function closePopup() {
-      var popup = document.getElementById('comingSoonPopup');
-      if (popup) {
-        popup.style.display = 'none';
-      }
-    }
-function toggleFaq(btn) {
-      var panel = btn.nextElementSibling;
-      var icon = btn.querySelector('span');
-      var isOpen = panel.style.maxHeight && panel.style.maxHeight !== '0px';
-      document.querySelectorAll('#faq .card > div').forEach(function(p) { p.style.maxHeight = '0px'; });
-      document.querySelectorAll('#faq .card button span').forEach(function(i) { i.style.transform = ''; });
-      if (!isOpen) { panel.style.maxHeight = panel.scrollHeight + 'px'; icon.style.transform = 'rotate(45deg)'; }
-    }
-    document.addEventListener("DOMContentLoaded", function () {
-      var form = document.getElementById("interestForm");
-      var successBox = document.getElementById("formSuccess");
+  <div class="quote-banner">
+    <blockquote>"Apprendre une langue, c'est avoir une fenêtre de plus d'où regarder le monde."</blockquote>
+    <cite>— Learning a language is having one more window from which to see the world</cite>
+  </div>
 
-      if (form) {
-        form.addEventListener("submit", function(e) {
-          e.preventDefault();
+  <section class="section-sm">
+    <div class="container">
+      <p class="value-line">Designed specifically for Higher Level students who want clear structure, stronger exam technique, and a more confident approach to Leaving Cert French.</p>
+    </div>
+  </section>
 
-          var data = new FormData(form);
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Comment ça marche ?<span class="title-underline"></span></h2>
+        <p class="section-subtitle">A simple weekly system designed to keep students focused, organised and moving steadily towards stronger results.</p>
+      </div>
+      <div class="grid-3">
+        <div class="info-box card accent-card-bleu">
+          <div class="icon">1</div>
+          <h3>Weekly Structured Lessons</h3>
+          <p>A new lesson is released each week to guide students through the course in a clear, manageable way.</p>
+        </div>
+        <div class="info-box card accent-card-blanc">
+          <div class="icon">2</div>
+          <h3>Higher Level Focus</h3>
+          <p>Every lesson is tailored to the demands of the Higher Level Leaving Cert, with an emphasis on what matters most.</p>
+        </div>
+        <div class="info-box card accent-card-rouge">
+          <div class="icon">3</div>
+          <h3>Build Towards Top Results</h3>
+          <p>Students develop confidence, technique and stronger answers step by step over the course of the year.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: {
-              "Accept": "application/json"
-            }
-          })
-          .then(function(response) {
-            if (response.ok) {
-              form.style.display = "none";
-              successBox.style.display = "block";
-            } else {
-              alert("Something went wrong. Please try again.");
-            }
-          })
-          .catch(function() {
-            alert("Something went wrong. Please try again.");
-          });
-        });
-      }
-    });
-  </script>
+  <div class="skyline-divider">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 60 L0 40 L40 40 L40 30 L50 30 L50 20 L60 20 L60 10 L65 5 L70 10 L70 20 L80 20 L80 30 L90 30 L90 40 L130 40 L130 35 L150 35 L150 40 L200 40 L200 45 L230 45 L230 30 L240 30 L240 25 L245 20 L250 25 L250 30 L260 30 L260 45 L300 45 L300 40 L350 40 L350 50 L370 50 L370 38 L380 38 L385 30 L390 38 L400 38 L400 50 L450 50 L450 40 M560 60 L560 45 L580 45 L580 15 L585 8 L590 3 L595 8 L600 15 L600 45 L620 45 L620 60 L640 60 L640 48 L660 48 L660 38 L665 30 L670 38 L680 38 L680 48 L700 48 L700 60 L720 60 L720 50 L750 50 L750 40 L770 40 L775 30 L780 40 L800 40 L800 50 L830 50 L830 60 L850 60 L850 45 L870 45 L870 35 L880 35 L880 45 L900 45 L900 55 L940 55 L940 40 L960 40 L960 55 L1000 55 L1000 45 L1020 45 L1025 38 L1030 45 L1050 45 L1050 60 L1100 60 L1100 42 L1120 42 L1120 35 L1130 35 L1135 28 L1140 35 L1150 35 L1150 42 L1170 42 L1170 60 L1200 60 Z" fill="#1f3a5f"/>
+    </svg>
+  </div>
 
+  <section id="what-you-get" class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Ce que vous obtenez<span class="title-underline"></span></h2>
+        <p class="section-subtitle">Everything is designed to support Higher Level students across the full course.</p>
+      </div>
+      <div class="list-card card">
+        <ul>
+          <li>Full Higher Level Leaving Cert French course support</li>
+          <li>Weekly structured lessons from September to May</li>
+          <li>New lesson released each week — watch anytime and revisit as needed</li>
+          <li>Oral, aural and written exam preparation</li>
+          <li>High-scoring phrases, structures and key vocabulary</li>
+          <li>Proven exam techniques to help students perform at their best</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="results-box card" style="border-left:5px solid var(--bleu);border-right:5px solid var(--rouge);">
+        Expert guidance from a teacher with nearly 20 years' experience, including work as an SEC oral examiner and corrector
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Pour qui ?<span class="title-underline"></span></h2>
+        <p class="section-subtitle">Designed for Higher Level students who want more than last-minute cramming.</p>
+      </div>
+      <div class="grid-3">
+        <div class="info-box card">
+          <div class="icon">✓</div>
+          <h3>Students Who Want Structure</h3>
+          <p>Ideal for students who want a clear weekly plan rather than trying to piece everything together alone.</p>
+        </div>
+        <div class="info-box card">
+          <div class="icon">✓</div>
+          <h3>Students Aiming High</h3>
+          <p>Perfect for students who want to improve their confidence, sharpen technique, and push for a strong result.</p>
+        </div>
+        <div class="info-box card">
+          <div class="icon">✓</div>
+          <h3>Students Who Need Clarity</h3>
+          <p>Especially useful for students who feel unsure about oral, aural, or written preparation and want expert guidance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Résultats réels<span class="title-underline"></span></h2>
+        <p class="section-subtitle">Feedback from recent mock oral sessions</p>
+      </div>
+      <div class="grid-2">
+        <div class="results-box card" style="border-top:4px solid var(--bleu);">⭐ 100% felt more confident going into their oral exam*</div>
+        <div class="results-box card" style="border-top:4px solid var(--rouge);">⭐ 100% of students said the session was helpful*</div>
+      </div>
+      <div class="grid-3" style="margin-top:30px;">
+        <div class="testimonial-card card">
+          <div style="font-size:1.6rem;margin-bottom:8px;">💬</div>
+          <p>"It challenged me in the right way and showed me exactly what I need to work on."</p>
+        </div>
+        <div class="testimonial-card card">
+          <div style="font-size:1.6rem;margin-bottom:8px;">💬</div>
+          <p>"It gave me great peace of mind going into the oral."</p>
+        </div>
+        <div class="testimonial-card card">
+          <div style="font-size:1.6rem;margin-bottom:8px;">💬</div>
+          <p>"Extremely helpful and really built my confidence."</p>
+        </div>
+      </div>
+      <p class="testimonial-note">*Based on a recent workshop with 15 students</p>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Questions fréquentes<span class="title-underline"></span></h2>
+        <p class="section-subtitle">Everything you need to know before joining. Can't find an answer? Get in touch.</p>
+      </div>
+      <div style="max-width:780px;margin:0 auto;display:grid;gap:10px;">
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Is this live classes or recorded lessons?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">The lessons are pre-recorded, so students can watch at a time that suits them and revisit any lesson as many times as they need. A new lesson is released each week from September through to May, keeping students on track without the pressure of a fixed schedule.</p></div></div>
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">What platform are the lessons on?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Lessons are hosted on a dedicated members area — once you join, you'll receive your login details and can access everything straight away from any device.</p></div></div>
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How long is each lesson?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Each lesson is designed to be focused and manageable — roughly 30 to 45 minutes — so students can fit it into a busy school week without feeling overwhelmed.</p></div></div>
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">What if my child joins mid-year?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">No problem at all. Students who join later in the year receive immediate access to all lessons released up to that point, so they can catch up at their own pace and still benefit from the full programme going forward.</p></div></div>
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Is this suitable for 5th year and 6th year students?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Yes. The programme supports Higher Level students across both years. 5th years benefit from building strong foundations early, while 6th years can use it for focused exam preparation throughout the year.</p></div></div>
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How is this different from weekly grinds?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Weekly grinds can cost €40–€60 per session, adding up to hundreds of euro over the year. This programme gives students expert guidance and structured support for a once-off payment — far more affordable while still covering everything needed for Higher Level French.</p></div></div>
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How long will I have access to the lessons?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Access runs through to the end of the Leaving Cert exams, giving students plenty of time to revisit lessons right up to exam day.</p></div></div>
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Is the early access price still available?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">The early access price of €129 is available to the first 20 students only. After that, the standard price of €149 applies. Register your interest using the form and you'll be contacted with payment details ahead of the September launch.</p></div></div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Rejoignez-nous<span class="title-underline"></span></h2>
+        <p class="section-subtitle">Join the students already building confidence in Higher Level French. Early access is limited to the first 20 students and places will be offered on a first come, first served basis.</p>
+      </div>
+      <div class="pricing-card card" style="border-top:5px solid;border-image:linear-gradient(90deg,var(--bleu),var(--blanc),var(--rouge)) 1;">
+        <div class="pricing-badge">Early Access Offer · Offre de lancement</div>
+        <div class="price-launch">€129 once-off</div>
+        <p class="price-note">Available to the first 20 students only</p>
+        <p class="standard-price">Standard price: €149</p>
+        <ul class="pricing-list">
+          <li>Full programme access</li>
+          <li>Structured weekly lessons</li>
+          <li>Watch anytime, at your own pace</li>
+        </ul>
+        <p class="interest-copy">Designed to give students expert support across the full year at a far lower cost than paying for weekly grinds.</p>
+        <p class="mini-note">Students who join later in the year will receive immediate access to all previous lessons, making it ideal for focused exam preparation too.</p>
+
+        <form id="interestForm" class="interest-form" action="https://formsubmit.co/lcfrenchworkshop@gmail.com" method="POST">
+          <div class="form-row">
+            <input type="text" name="student_name" placeholder="Student Name" required>
+            <input type="email" name="parent_guardian_email" placeholder="Parent/Guardian Email" required>
+          </div>
+          <div class="form-row">
+            <select name="level" required><option value="">Select Level</option><option value="Higher Level">Higher Level</option></select>
+            <select name="year_group" required><option value="">Year Group</option><option value="5th Year">5th Year</option><option value="6th Year">6th Year</option><option value="Other">Other</option></select>
+          </div>
+          <label class="checkbox-wrap">
+            <input type="checkbox" name="parent_permission_confirmed" value="Yes" required>
+            <span>I confirm that I am the parent/guardian, or that parent/guardian permission has been given to register interest in this programme.</span>
+          </label>
+          <input type="hidden" name="_subject" value="New FrenchExam.ie early access enquiry">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-submit">
+            <button type="submit" class="btn btn-primary">Rejoindre · Join Early Access</button>
+          </div>
+        </form>
+
+        <div id="formSuccess" class="success-message">
+          <div class="card">
+            <h3>Félicitations ! You're on the early access list 👏</h3>
+            <p>We'll be in touch with launch details soon.</p>
+            <p class="small">First 20 students will get access at the special launch price of €129.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="grid-2">
+        <div class="about-card card" style="border-left:4px solid var(--bleu);">
+          <h3>À propos du programme</h3>
+          <p>This programme is designed to give Higher Level Leaving Cert students a clear, structured path through the course, with lessons that build knowledge, confidence and exam technique over time.</p>
+        </div>
+        <div class="about-card card" style="border-left:4px solid var(--rouge);">
+          <h3>About Nicola</h3>
+          <p>Hi, I'm Nicola — a qualified French teacher with nearly 20 years of teaching experience, as well as experience as an SEC oral examiner and corrector. I created this programme to give students clear structure, greater confidence, and expert guidance throughout the year in a way that is more affordable and more accessible than traditional weekly grinds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta">
+    <div class="container">
+      <h2>Donnez-vous l'avantage en français</h2>
+      <p>Start strong, stay organised, and build steadily towards the result you want.</p>
+      <div class="btn-wrap">
+        <a href="#pricing" class="btn btn-primary">Join Early Access</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
+
+<footer>
+  <div class="container">
+    <div>© 2026 FrenchExam.ie. All rights reserved.
+      <span class="footer-flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></span>
+    </div>
+    <div class="footer-line">Higher Level Leaving Cert French support by Nicola</div>
+  </div>
+</footer>
+
+<script>
+  function closePopup(){var p=document.getElementById('comingSoonPopup');if(p)p.style.display='none';}
+  function toggleFaq(btn){var panel=btn.nextElementSibling,icon=btn.querySelector('span'),isOpen=panel.style.maxHeight&&panel.style.maxHeight!=='0px';document.querySelectorAll('#faq .card > div').forEach(function(p){p.style.maxHeight='0px';});document.querySelectorAll('#faq .card button span').forEach(function(i){i.style.transform='';});if(!isOpen){panel.style.maxHeight=panel.scrollHeight+'px';icon.style.transform='rotate(45deg)';}}
+  document.addEventListener("DOMContentLoaded",function(){var form=document.getElementById("interestForm"),successBox=document.getElementById("formSuccess");if(form){form.addEventListener("submit",function(e){e.preventDefault();fetch(form.action,{method:"POST",body:new FormData(form),headers:{"Accept":"application/json"}}).then(function(r){if(r.ok){form.style.display="none";successBox.style.display="block";}else{alert("Something went wrong. Please try again.");}}).catch(function(){alert("Something went wrong. Please try again.");});})}});
+</script>
 </body>
 </html>
