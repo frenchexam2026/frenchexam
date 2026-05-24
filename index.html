@@ -466,9 +466,10 @@
         <h3>Register Your Interest</h3>
         <p class="sub">Secure your place ahead of the September launch. We'll be in touch with full payment details shortly.</p>
 
-        <form id="interestForm" class="interest-form" action="https://formsubmit.co/lcfrenchworkshop@gmail.com" method="POST">
-          <input type="hidden" name="_next" value="https://frenchexam.ie/?success=true">
-          <input type="hidden" name="_template" value="table">
+        <form id="interestForm" class="interest-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="343af4fd-b90f-435b-a994-08de4e643a85">
+          <input type="hidden" name="redirect" value="https://frenchexam.ie/?success=true">
+          <input type="hidden" name="subject" value="New FrenchExam.ie interest registration">
           <div class="form-row">
             <input type="text" name="student_name" placeholder="Student Name" required>
             <input type="email" name="parent_guardian_email" placeholder="Parent/Guardian Email" required>
@@ -485,8 +486,7 @@
             <input type="checkbox" name="parent_permission_confirmed" value="Yes" required>
             <span>I confirm that I am the parent/guardian, or that parent/guardian permission has been given to register interest in this programme.</span>
           </label>
-          <input type="hidden" name="_subject" value="New FrenchExam.ie interest registration">
-          <input type="hidden" name="_captcha" value="false">
+          
           <div class="form-submit">
             <button type="submit" class="btn btn-primary" style="font-size:1.05rem;padding:16px 36px;">Rejoindre · Register Interest</button>
           </div>
