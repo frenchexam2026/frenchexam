@@ -467,6 +467,8 @@
         <p class="sub">Secure your place ahead of the September launch. We'll be in touch with full payment details shortly.</p>
 
         <form id="interestForm" class="interest-form" action="https://formsubmit.co/lcfrenchworkshop@gmail.com" method="POST">
+          <input type="hidden" name="_next" value="https://frenchexam.ie/?success=true">
+          <input type="hidden" name="_template" value="table">
           <div class="form-row">
             <input type="text" name="student_name" placeholder="Student Name" required>
             <input type="email" name="parent_guardian_email" placeholder="Parent/Guardian Email" required>
@@ -543,7 +545,14 @@
 <script>
   function closePopup(){var p=document.getElementById('comingSoonPopup');if(p)p.style.display='none';}
   function toggleFaq(btn){var panel=btn.nextElementSibling,icon=btn.querySelector('span'),isOpen=panel.style.maxHeight&&panel.style.maxHeight!=='0px';document.querySelectorAll('#faq .card > div').forEach(function(p){p.style.maxHeight='0px';});document.querySelectorAll('#faq .card button span').forEach(function(i){i.style.transform='';});if(!isOpen){panel.style.maxHeight=panel.scrollHeight+'px';icon.style.transform='rotate(45deg)';}}
-  document.addEventListener("DOMContentLoaded",function(){var form=document.getElementById("interestForm"),successBox=document.getElementById("formSuccess");if(form){form.addEventListener("submit",function(e){e.preventDefault();fetch("https://formsubmit.co/ajax/lcfrenchworkshop@gmail.com",{method:"POST",body:new FormData(form)}).then(function(r){return r.json();}).then(function(j){if(j.success==="true"||j.success===true){form.style.display="none";successBox.style.display="block";}else{alert("Something went wrong. Please try again.");}}).catch(function(){alert("Something went wrong. Please try again.");});})}}); 
+  document.addEventListener("DOMContentLoaded",function(){
+  var form=document.getElementById("interestForm"),successBox=document.getElementById("formSuccess");
+  if(window.location.search.indexOf("success=true")>-1 && form && successBox){
+    form.style.display="none";
+    successBox.style.display="block";
+    document.getElementById("pricing").scrollIntoView();
+  }
+});
 </script>
 </body>
 </html>
