@@ -4,6 +4,9 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>FrenchExam.ie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#f7f4ee;--white:#ffffff;--text:#1f2937;--muted:#5d6675;
@@ -14,7 +17,8 @@
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
-  body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  body{font-family:'DM Sans',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  h1,h2,h3,.price-launch,.results-box{font-family:'Playfair Display',Georgia,serif;}
   a{text-decoration:none;color:inherit;}
   button,input,select{font:inherit;}
   .container{width:min(92%,var(--max));margin:0 auto;}
@@ -24,7 +28,7 @@
   .btn-wrap{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:30px;}
   .btn{display:inline-block;padding:14px 24px;border-radius:999px;font-weight:700;transition:all 0.25s ease;border:1px solid transparent;cursor:pointer;text-align:center;}
   .btn-primary{background:var(--navy);color:#fff;}
-  .btn-primary:hover{background:var(--navy-dark);transform:translateY(-2px);}
+  .btn-primary:hover{background:var(--navy-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(31,58,95,0.3);}
   .btn-secondary{background:transparent;color:var(--navy);border-color:var(--navy);}
   .btn-secondary:hover{background:rgba(31,58,95,0.06);transform:translateY(-2px);}
   .btn-light{background:#fff;color:var(--navy);border:1px solid rgba(31,58,95,0.12);}
@@ -37,7 +41,7 @@
   .tricolore-stripe .rouge{flex:1;background:var(--rouge);}
   header{padding:20px 0;background:rgba(247,244,238,0.95);backdrop-filter:blur(10px);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(31,58,95,0.06);}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;}
-  .logo{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:0.2px;display:flex;align-items:center;gap:8px;}
+  .logo{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:0.2px;display:flex;align-items:center;gap:8px;font-family:'Playfair Display',serif;}
   .logo-flag{display:flex;height:18px;width:27px;border-radius:3px;overflow:hidden;flex-shrink:0;border:1px solid rgba(0,0,0,0.08);}
   .logo-flag .f1{flex:1;background:var(--bleu);}
   .logo-flag .f2{flex:1;background:var(--blanc);}
@@ -57,7 +61,7 @@
   .quote-banner::before,.quote-banner::after{content:'';position:absolute;top:0;bottom:0;width:6px;}
   .quote-banner::before{left:0;background:var(--bleu);}
   .quote-banner::after{right:0;background:var(--rouge);}
-  .quote-banner blockquote{font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;opacity:0.92;max-width:700px;margin:0 auto;}
+  .quote-banner blockquote{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;opacity:0.92;max-width:700px;margin:0 auto;}
   .quote-banner cite{display:block;margin-top:10px;font-size:0.9rem;opacity:0.6;font-style:normal;letter-spacing:1px;}
   .value-line{text-align:center;font-size:1.08rem;max-width:920px;margin:0 auto;color:var(--text);}
   .section-title-wrap{text-align:center;margin-bottom:42px;}
@@ -67,7 +71,7 @@
   .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;align-items:stretch;}
   .info-box{padding:30px 26px;text-align:center;height:100%;}
-  .icon{width:56px;height:56px;border-radius:50%;background:var(--soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;margin:0 auto 16px;}
+  .icon{width:56px;height:56px;border-radius:50%;background:var(--soft);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;margin:0 auto 16px;font-family:'Playfair Display',serif;}
   .info-box h3{color:var(--navy);margin-bottom:10px;font-size:1.14rem;}
   .info-box p{color:var(--muted);font-size:0.98rem;}
   .accent-card-bleu{border-top:4px solid var(--bleu)!important;}
@@ -81,14 +85,43 @@
   .testimonial-card{padding:30px 26px;text-align:center;height:100%;}
   .testimonial-card p{color:var(--text);font-size:1rem;font-style:italic;}
   .testimonial-note{text-align:center;color:var(--muted);margin-top:18px;font-size:0.82rem;}
-  .pricing-card{max-width:780px;margin:0 auto;padding:38px 28px;text-align:center;}
-  .pricing-badge{display:inline-block;margin-bottom:14px;background:rgba(31,58,95,0.08);color:var(--navy);padding:8px 14px;border-radius:999px;font-weight:700;font-size:0.92rem;}
-  .price-launch{font-size:clamp(2.3rem,5vw,3.6rem);color:var(--navy);font-weight:800;line-height:1.05;}
-  .price-note{color:var(--muted);margin-top:8px;font-size:1rem;}
-  .standard-price{margin-top:18px;color:var(--muted);font-size:1.04rem;}
-  .pricing-list{list-style:none;margin:24px 0 18px;display:grid;gap:12px;color:var(--text);}
-  .pricing-list li{background:var(--soft);padding:12px 16px;border-radius:12px;}
-  .mini-note{margin-top:16px;color:var(--muted);font-size:0.95rem;}
+
+  /* ===== PRICING SECTION ===== */
+  .pricing-wrapper{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;}
+  .pricing-plan{padding:36px 30px;text-align:center;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+  .plan-best{border:2px solid var(--navy)!important;transform:scale(1.02);}
+  .plan-badge{position:absolute;top:18px;right:-28px;background:var(--navy);color:#fff;font-size:0.75rem;font-weight:700;padding:5px 36px;transform:rotate(45deg);letter-spacing:1px;}
+  .plan-label{font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;}
+  .plan-price{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,3.8rem);color:var(--navy);font-weight:800;line-height:1;}
+  .plan-per{font-size:1rem;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:500;}
+  .plan-total{margin-top:8px;font-size:0.95rem;color:var(--muted);}
+  .plan-saving{display:inline-block;margin-top:10px;background:linear-gradient(135deg,#e8f5e9,#c8e6c9);color:#2e7d32;padding:6px 14px;border-radius:999px;font-size:0.88rem;font-weight:700;}
+  .plan-divider{height:1px;background:var(--border);margin:24px 0;}
+  .plan-features{list-style:none;text-align:left;display:grid;gap:12px;margin-bottom:28px;flex:1;}
+  .plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:0.97rem;color:var(--text);}
+  .plan-features li .tick{color:var(--bleu);font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+  .plan-cta{margin-top:auto;display:block;padding:15px 24px;border-radius:999px;font-weight:700;font-size:1rem;transition:all 0.25s ease;border:none;cursor:pointer;text-align:center;}
+  .plan-cta-primary{background:var(--navy);color:#fff;}
+  .plan-cta-primary:hover{background:var(--navy-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(31,58,95,0.3);}
+  .plan-cta-secondary{background:transparent;color:var(--navy);border:2px solid var(--navy);}
+  .plan-cta-secondary:hover{background:rgba(31,58,95,0.05);transform:translateY(-2px);}
+
+  /* Grind comparison banner */
+  .grind-compare{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-dark) 100%);color:#fff;border-radius:var(--radius);padding:32px 36px;text-align:center;max-width:900px;margin:32px auto 0;position:relative;overflow:hidden;}
+  .grind-compare::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+  .grind-compare h3{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,3vw,1.8rem);margin-bottom:16px;}
+  .grind-compare-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;max-width:580px;margin:0 auto;}
+  .grind-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:18px;}
+  .grind-box .label{font-size:0.78rem;letter-spacing:1.5px;text-transform:uppercase;opacity:0.6;margin-bottom:6px;}
+  .grind-box .amount{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;}
+  .grind-box .sub{font-size:0.85rem;opacity:0.7;margin-top:4px;}
+  .grind-vs{font-size:1.3rem;font-weight:800;opacity:0.4;}
+  .grind-note{margin-top:16px;opacity:0.7;font-size:0.9rem;}
+
+  /* Countdown urgency */
+  .urgency-bar{background:linear-gradient(90deg,var(--bleu),#0040c8);color:#fff;text-align:center;padding:14px 20px;font-size:0.95rem;font-weight:600;}
+  .urgency-bar span{background:rgba(255,255,255,0.2);padding:3px 10px;border-radius:999px;margin:0 4px;}
+
   .about-card{padding:34px;height:100%;}
   .about-card h3{color:var(--navy);margin-bottom:14px;font-size:1.45rem;}
   .about-card p{color:var(--muted);font-size:1rem;}
@@ -123,13 +156,23 @@
   .popup-tricolore .t2{flex:1;background:var(--blanc);border-left:1px solid rgba(0,0,0,0.05);border-right:1px solid rgba(0,0,0,0.05);}
   .popup-tricolore .t3{flex:1;background:var(--rouge);}
   .popup-badge{display:inline-block;margin-bottom:16px;background:var(--gold-soft);color:var(--navy);border:1px solid rgba(197,164,109,0.30);border-radius:999px;padding:8px 14px;font-size:0.88rem;font-weight:700;}
-  .popup-box h2{color:var(--navy);font-size:clamp(1.8rem,4vw,2.3rem);margin-bottom:10px;}
+  .popup-box h2{color:var(--navy);font-size:clamp(1.8rem,4vw,2.3rem);margin-bottom:10px;font-family:'Playfair Display',serif;}
   .popup-box p{color:var(--muted);margin-bottom:24px;font-size:1rem;}
   .popup-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
   @keyframes popupFade{from{opacity:0;transform:translateY(8px) scale(0.98);}to{opacity:1;transform:translateY(0) scale(1);}}
   #faq .card{overflow:hidden;}
-  @media(max-width:900px){.grid-3,.grid-2,.form-row{grid-template-columns:1fr;}.nav{flex-direction:column;align-items:flex-start;}.nav-links{gap:14px;}.hero{padding-top:76px;}}
-  @media(max-width:640px){.section{padding:66px 0;}.hero-card,.pricing-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card{padding:24px 20px;}.success-message .card{padding:24px 20px;}.btn{width:100%;}.btn-wrap,.popup-actions{flex-direction:column;}.nav{align-items:stretch;}.nav-links{flex-direction:column;align-items:stretch;}.btn-nav{text-align:center;}.hero-eiffel{font-size:160px;}}
+  .mini-note{margin-top:16px;color:var(--muted);font-size:0.95rem;}
+
+  /* Form inside pricing */
+  .form-card{max-width:780px;margin:40px auto 0;padding:38px 36px;}
+  .form-card h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.6rem;margin-bottom:8px;text-align:center;}
+  .form-card .sub{text-align:center;color:var(--muted);margin-bottom:24px;}
+
+  /* Tabs for pricing toggle */
+  .pricing-note{text-align:center;color:var(--muted);margin-top:20px;font-size:0.9rem;}
+
+  @media(max-width:900px){.grid-3,.grid-2,.form-row,.pricing-wrapper,.grind-compare-grid{grid-template-columns:1fr;}.plan-best{transform:none;}.nav{flex-direction:column;align-items:flex-start;}.nav-links{gap:14px;}.hero{padding-top:76px;}.grind-vs{transform:rotate(90deg);}}
+  @media(max-width:640px){.section{padding:66px 0;}.hero-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card,.pricing-plan,.form-card{padding:24px 20px;}.success-message .card{padding:24px 20px;}.btn{width:100%;}.btn-wrap,.popup-actions{flex-direction:column;}.nav{align-items:stretch;}.nav-links{flex-direction:column;align-items:stretch;}.btn-nav{text-align:center;}.hero-eiffel{font-size:160px;}}
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -145,6 +188,11 @@
 
 <div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
 
+<!-- Urgency bar -->
+<div class="urgency-bar">
+  🎓 September launch — early access spots filling fast · <span>Monthly from €25.99</span> or <span>Save €44 with full-year access</span>
+</div>
+
 <div class="popup-overlay" id="comingSoonPopup">
   <div class="popup-box">
     <div class="popup-tricolore"><div class="t1"></div><div class="t2"></div><div class="t3"></div></div>
@@ -154,7 +202,7 @@
       <p>A premium Higher Level Leaving Cert French programme is on the way, created by a teacher with nearly 20 years' experience, including work as an SEC oral examiner and corrector.</p>
       <div class="popup-actions">
         <button class="btn btn-primary" onclick="closePopup()">Enter Site</button>
-        <a href="#pricing" class="btn btn-light" onclick="closePopup()">Join Early Access</a>
+        <a href="#pricing" class="btn btn-light" onclick="closePopup()">See Pricing</a>
       </div>
     </div>
   </div>
@@ -170,7 +218,7 @@
       <a href="#how-it-works">How It Works</a>
       <a href="#what-you-get">What You Get</a>
       <a href="#about">About</a>
-      <a href="#pricing" class="btn-nav">Join Early Access</a>
+      <a href="#pricing" class="btn-nav">See Pricing</a>
     </nav>
   </div>
 </header>
@@ -180,11 +228,11 @@
     <div class="hero-bg-pattern"></div>
     <div class="hero-eiffel">🗼</div>
     <div class="container" style="position:relative;z-index:1;">
-      <div class="hero-badge">✨ Offre de lancement — First 20 Students Only</div>
+      <div class="hero-badge">✨ Launching September 2025 — Limited Places</div>
       <h1>A Smarter Way to Prepare for Higher Level Leaving Cert French</h1>
       <p>A premium step-by-step programme for ambitious students who want strong structure, clear guidance, and the confidence to aim high.</p>
       <div class="btn-wrap">
-        <a href="#pricing" class="btn btn-primary">Join Early Access</a>
+        <a href="#pricing" class="btn btn-primary">See Pricing &amp; Join</a>
         <a href="#how-it-works" class="btn btn-secondary">Comment ça marche ?</a>
       </div>
       <div class="hero-card card">
@@ -335,34 +383,88 @@
 
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Is this suitable for 5th year and 6th year students?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Yes. The programme supports Higher Level students across both years. 5th years benefit from building strong foundations early, while 6th years can use it for focused exam preparation throughout the year.</p></div></div>
 
-        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How is this different from weekly grinds?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Weekly grinds can cost €40–€60 per session, adding up to hundreds of euro over the year. This programme gives students expert guidance and structured support for a once-off payment — far more affordable while still covering everything needed for Higher Level French.</p></div></div>
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How is this different from weekly grinds?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Weekly grinds can cost €40–€60 per session, adding up to hundreds of euro over the year. This programme gives students expert guidance and structured support at a fraction of the cost — far more affordable while still covering everything needed for Higher Level French.</p></div></div>
+
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Can I cancel my monthly subscription?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Yes — the monthly plan offers full flexibility. You can cancel at any time. For the best value, the full-year access option at €188 covers the entire September–May programme and works out at less than €21 a month.</p></div></div>
 
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How long will I have access to the lessons?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Access runs through to the end of the Leaving Cert exams, giving students plenty of time to revisit lessons right up to exam day.</p></div></div>
-
-        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Is the early access price still available?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">The early access price of €129 is available to the first 20 students only. After that, the standard price of €149 applies. Register your interest using the form and you'll be contacted with payment details ahead of the September launch.</p></div></div>
 
       </div>
     </div>
   </section>
 
+  <!-- ===== PRICING ===== -->
   <section id="pricing" class="section">
     <div class="container">
       <div class="section-title-wrap">
         <h2 class="section-title">Rejoignez-nous<span class="title-underline"></span></h2>
-        <p class="section-subtitle">Join the students already building confidence in Higher Level French. Early access is limited to the first 20 students and places will be offered on a first come, first served basis.</p>
+        <p class="section-subtitle">Choose the plan that works best for you. Both options give full access to the complete programme from September through to May.</p>
       </div>
-      <div class="pricing-card card" style="border-top:5px solid;border-image:linear-gradient(90deg,var(--bleu),var(--blanc),var(--rouge)) 1;">
-        <div class="pricing-badge">Early Access Offer · Offre de lancement</div>
-        <div class="price-launch">€129 once-off</div>
-        <p class="price-note">Available to the first 20 students only</p>
-        <p class="standard-price">Standard price: €149</p>
-        <ul class="pricing-list">
-          <li>Full programme access</li>
-          <li>Structured weekly lessons</li>
-          <li>Watch anytime, at your own pace</li>
-        </ul>
-        <p class="interest-copy">Designed to give students expert support across the full year at a far lower cost than paying for weekly grinds.</p>
-        <p class="mini-note">Students who join later in the year will receive immediate access to all previous lessons, making it ideal for focused exam preparation too.</p>
+
+      <div class="pricing-wrapper">
+
+        <!-- Monthly -->
+        <div class="pricing-plan card">
+          <div class="plan-label">Monthly · Flexible</div>
+          <div class="plan-price">€25.99<span class="plan-per">/month</span></div>
+          <div class="plan-total">€233.91 total over Sept–May</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="tick">✓</span> Full programme access each month</li>
+            <li><span class="tick">✓</span> Weekly new lessons released</li>
+            <li><span class="tick">✓</span> Watch anytime, on any device</li>
+            <li><span class="tick">✓</span> Revisit lessons as often as you like</li>
+            <li><span class="tick">✓</span> Cancel anytime — full flexibility</li>
+          </ul>
+          <a href="#join-form" class="plan-cta plan-cta-secondary">Start Monthly</a>
+        </div>
+
+        <!-- Full Year — Best Value -->
+        <div class="pricing-plan card plan-best">
+          <div class="plan-badge">BEST VALUE</div>
+          <div class="plan-label">Full Year · Sept–May</div>
+          <div class="plan-price">€188</div>
+          <div class="plan-total">One payment — full year covered</div>
+          <div class="plan-saving">🎉 Save €45.91 vs monthly</div>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><span class="tick">✓</span> Full programme access, September to May</li>
+            <li><span class="tick">✓</span> Weekly new lessons released</li>
+            <li><span class="tick">✓</span> Watch anytime, on any device</li>
+            <li><span class="tick">✓</span> Revisit every lesson right up to exam day</li>
+            <li><span class="tick">✓</span> Access to all previous lessons if joining mid-year</li>
+            <li><span class="tick">✓</span> One payment — nothing more to think about</li>
+          </ul>
+          <a href="#join-form" class="plan-cta plan-cta-primary">Get Full Year Access</a>
+        </div>
+
+      </div>
+
+      <p class="pricing-note">Not sure which to pick? Most families choose the full-year option — it's less than €21 a month and there's nothing more to worry about for the rest of the year.</p>
+
+      <!-- Grind comparison -->
+      <div class="grind-compare">
+        <h3>Put it in perspective 💡</h3>
+        <div class="grind-compare-grid">
+          <div class="grind-box">
+            <div class="label">One grind session</div>
+            <div class="amount">€40–60</div>
+            <div class="sub">One topic · One hour</div>
+          </div>
+          <div class="grind-vs">vs</div>
+          <div class="grind-box">
+            <div class="label">Full year on FrenchExam.ie</div>
+            <div class="amount">€188</div>
+            <div class="sub">Every topic · Sept to May</div>
+          </div>
+        </div>
+        <p class="grind-note">That's less than 5 grinds sessions for an entire year of expert French support.</p>
+      </div>
+
+      <!-- Sign up form -->
+      <div class="form-card card" id="join-form">
+        <h3>Register Your Interest</h3>
+        <p class="sub">Secure your place ahead of the September launch. We'll be in touch with full payment details shortly.</p>
 
         <form id="interestForm" class="interest-form" action="https://formsubmit.co/lcfrenchworkshop@gmail.com" method="POST">
           <div class="form-row">
@@ -370,28 +472,34 @@
             <input type="email" name="parent_guardian_email" placeholder="Parent/Guardian Email" required>
           </div>
           <div class="form-row">
-            <select name="level" required><option value="">Select Level</option><option value="Higher Level">Higher Level</option></select>
+            <select name="plan_choice" required>
+              <option value="">Preferred Plan</option>
+              <option value="Full Year - €188">Full Year Access — €188 ⭐ Best Value</option>
+              <option value="Monthly - €25.99/month">Monthly — €25.99/month</option>
+            </select>
             <select name="year_group" required><option value="">Year Group</option><option value="5th Year">5th Year</option><option value="6th Year">6th Year</option><option value="Other">Other</option></select>
           </div>
           <label class="checkbox-wrap">
             <input type="checkbox" name="parent_permission_confirmed" value="Yes" required>
             <span>I confirm that I am the parent/guardian, or that parent/guardian permission has been given to register interest in this programme.</span>
           </label>
-          <input type="hidden" name="_subject" value="New FrenchExam.ie early access enquiry">
+          <input type="hidden" name="_subject" value="New FrenchExam.ie interest registration">
           <input type="hidden" name="_captcha" value="false">
           <div class="form-submit">
-            <button type="submit" class="btn btn-primary">Rejoindre · Join Early Access</button>
+            <button type="submit" class="btn btn-primary" style="font-size:1.05rem;padding:16px 36px;">Rejoindre · Register Interest</button>
           </div>
+          <p class="mini-note" style="text-align:center;">No payment is taken now — we'll contact you with details before September.</p>
         </form>
 
         <div id="formSuccess" class="success-message">
           <div class="card">
-            <h3>Félicitations ! You're on the early access list 👏</h3>
-            <p>We'll be in touch with launch details soon.</p>
-            <p class="small">First 20 students will get access at the special launch price of €129.</p>
+            <h3>Félicitations ! You're on the list 👏</h3>
+            <p>We'll be in touch with all payment and launch details ahead of September.</p>
+            <p class="small">Thank you for choosing FrenchExam.ie — we can't wait to get started!</p>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -415,7 +523,7 @@
       <h2>Donnez-vous l'avantage en français</h2>
       <p>Start strong, stay organised, and build steadily towards the result you want.</p>
       <div class="btn-wrap">
-        <a href="#pricing" class="btn btn-primary">Join Early Access</a>
+        <a href="#join-form" class="btn btn-primary">Register Interest Today</a>
       </div>
     </div>
   </section>
@@ -425,7 +533,7 @@
 
 <footer>
   <div class="container">
-    <div>© 2026 FrenchExam.ie. All rights reserved.
+    <div>© 2025 FrenchExam.ie. All rights reserved.
       <span class="footer-flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></span>
     </div>
     <div class="footer-line">Higher Level Leaving Cert French support by Nicola</div>
