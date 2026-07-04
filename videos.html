@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>French Crimes | FrenchExam.ie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0f1923;--card:#16232f;--card-2:#1c2d3d;
+    --navy:#1f3a5f;--gold:#c5a46d;--gold-soft:rgba(197,164,109,0.14);
+    --rouge:#ED2939;--bleu:#002395;--blanc:#ffffff;
+    --text:#f0ede8;--muted:#8a9bb0;
+    --border:rgba(255,255,255,0.08);
+    --shadow:0 12px 40px rgba(0,0,0,0.4);
+    --radius:20px;--max:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;}
+  a{text-decoration:none;color:inherit;}
+  .container{width:min(92%,var(--max));margin:0 auto;}
+  .section{padding:80px 0;}
+
+  /* TRICOLORE */
+  .tricolore-stripe{height:5px;display:flex;}
+  .tricolore-stripe .bleu{flex:1;background:var(--bleu);}
+  .tricolore-stripe .blanc{flex:1;background:var(--blanc);border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);}
+  .tricolore-stripe .rouge{flex:1;background:var(--rouge);}
+
+  /* HEADER */
+  header{padding:18px 0;background:rgba(15,25,35,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .logo{font-size:1.2rem;font-weight:800;color:var(--text);font-family:'Playfair Display',serif;display:flex;align-items:center;gap:8px;}
+  .logo-flag{display:flex;height:18px;width:27px;border-radius:3px;overflow:hidden;flex-shrink:0;border:1px solid rgba(255,255,255,0.2);}
+  .logo-flag .f1{flex:1;background:var(--bleu);}
+  .logo-flag .f2{flex:1;background:var(--blanc);}
+  .logo-flag .f3{flex:1;background:var(--rouge);}
+  .nav-links{display:flex;gap:20px;align-items:center;}
+  .nav-links a{color:var(--muted);font-weight:600;font-size:0.95rem;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--text);}
+  .btn-nav{background:var(--rouge);color:#fff!important;padding:10px 18px;border-radius:999px;}
+  .btn-nav:hover{background:#c41e2a;}
+
+  /* HERO */
+  .crimes-hero{padding:80px 0 60px;text-align:center;position:relative;overflow:hidden;}
+  .crimes-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center top,rgba(237,41,57,0.12) 0%,transparent 70%);}
+  .crimes-hero::after{content:'FRENCH CRIMES';position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);font-family:'Playfair Display',serif;font-size:clamp(80px,15vw,180px);font-weight:800;color:rgba(237,41,57,0.04);white-space:nowrap;pointer-events:none;letter-spacing:4px;}
+
+  .warning-badge{display:inline-flex;align-items:center;gap:8px;background:var(--rouge);color:#fff;border-radius:999px;padding:10px 20px;font-size:0.9rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:28px;}
+  .crimes-hero h1{font-size:clamp(2.8rem,7vw,5.5rem);line-height:1.05;color:var(--text);margin-bottom:16px;}
+  .crimes-hero h1 span{color:var(--rouge);}
+  .crimes-hero .sub{color:var(--muted);font-size:1.1rem;max-width:640px;margin:0 auto 40px;}
+
+  /* MEET MADAME NICOLA */
+  .meet-section{padding:60px 0;background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .meet-inner{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:900px;margin:0 auto;}
+  .meet-video-wrap{position:relative;border-radius:16px;overflow:hidden;border:2px solid var(--rouge);box-shadow:0 0 40px rgba(237,41,57,0.2);}
+  .meet-video-wrap video{width:100%;display:block;border-radius:14px;}
+  .meet-text h2{font-size:clamp(1.8rem,3vw,2.6rem);color:var(--text);margin-bottom:16px;}
+  .meet-text h2 span{color:var(--rouge);}
+  .meet-text p{color:var(--muted);font-size:1rem;line-height:1.75;margin-bottom:16px;}
+  .meet-text p strong{color:var(--gold);}
+
+  /* CASE FILES GRID */
+  .case-number{display:inline-block;background:var(--rouge);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:14px;}
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .case-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform 0.25s ease,box-shadow 0.25s ease;}
+  .case-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.5);}
+  .case-card-top{position:relative;background:#000;aspect-ratio:9/16;max-height:420px;}
+  .case-card-top video{width:100%;height:100%;object-fit:cover;display:block;}
+  .case-tape{position:absolute;top:16px;left:-8px;background:var(--rouge);color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;box-shadow:2px 2px 8px rgba(0,0,0,0.3);}
+  .case-body{padding:22px 20px;}
+  .case-crime{font-family:'Playfair Display',serif;font-size:1.18rem;color:var(--text);margin-bottom:8px;font-style:italic;}
+  .case-crime span{color:var(--rouge);}
+  .case-verdict{font-size:0.88rem;color:var(--muted);line-height:1.6;}
+  .case-sentence{display:inline-block;margin-top:12px;background:rgba(197,164,109,0.12);border:1px solid rgba(197,164,109,0.25);color:var(--gold);font-size:0.8rem;font-weight:700;padding:5px 14px;border-radius:999px;letter-spacing:0.5px;}
+
+  /* PLAY BUTTON OVERLAY */
+  .play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.3);transition:opacity 0.2s;cursor:pointer;}
+  .play-overlay:hover{background:rgba(0,0,0,0.15);}
+  .play-btn{width:56px;height:56px;border-radius:50%;background:rgba(237,41,57,0.9);display:flex;align-items:center;justify-content:center;}
+  .play-btn::after{content:'';border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:4px;}
+
+  /* BOTTOM CTA */
+  .crimes-cta{text-align:center;padding:80px 0;position:relative;}
+  .crimes-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(197,164,109,0.06) 0%,transparent 70%);}
+  .crimes-cta h2{font-size:clamp(2rem,4vw,3rem);color:var(--text);margin-bottom:16px;position:relative;}
+  .crimes-cta p{color:var(--muted);max-width:600px;margin:0 auto 32px;position:relative;}
+  .btn-primary{display:inline-block;background:var(--navy);color:#fff;padding:16px 32px;border-radius:999px;font-weight:700;font-size:1.05rem;transition:all 0.25s ease;border:none;cursor:pointer;}
+  .btn-primary:hover{background:#162b47;transform:translateY(-2px);box-shadow:0 8px 24px rgba(31,58,95,0.4);}
+  .btn-secondary{display:inline-block;background:transparent;color:var(--text);padding:16px 32px;border-radius:999px;font-weight:700;font-size:1.05rem;border:1px solid rgba(255,255,255,0.2);transition:all 0.25s ease;}
+  .btn-secondary:hover{background:rgba(255,255,255,0.06);transform:translateY(-2px);}
+  .btn-wrap{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+
+  /* STAMP */
+  .stamp{display:inline-block;border:4px solid var(--rouge);border-radius:8px;color:var(--rouge);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;padding:8px 20px;transform:rotate(-8deg);opacity:0.85;margin-bottom:24px;}
+
+  footer{padding:28px 0 40px;text-align:center;color:var(--muted);font-size:0.9rem;border-top:1px solid var(--border);}
+  .footer-line{margin-top:6px;}
+
+  @media(max-width:900px){.case-grid{grid-template-columns:1fr 1fr;}.meet-inner{grid-template-columns:1fr;}}
+  @media(max-width:600px){.case-grid{grid-template-columns:1fr;}.nav{flex-direction:column;align-items:stretch;}.nav-links{flex-direction:column;}.btn-nav{text-align:center;}}
+</style>
+</head>
+<body>
+
+<div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-flag"><div class="f1"></div><div class="f2"></div><div class="f3"></div></div>
+      FrenchExam.ie
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">← Back to Main Site</a>
+      <a href="index.html#pricing" class="btn-nav">Join the Course</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="crimes-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="warning-badge">🚔 Garda Linguistique</div>
+      <h1>French <span>Crimes</span></h1>
+      <p class="sub">Every week, Madame Nicola investigates the most shocking crimes committed against the French language. Are you guilty? 👀</p>
+    </div>
+  </section>
+
+  <!-- MEET MADAME NICOLA -->
+  <div class="meet-section">
+    <div class="container">
+      <div class="meet-inner">
+        <div class="meet-video-wrap">
+          <video src="meet-madame-nicola.mp4" controls playsinline poster="madame-nicola.png"></video>
+        </div>
+        <div class="meet-text">
+          <h2>Meet <span>Madame Nicola</span></h2>
+          <p>You may know her from the French Crimes series — the strictest language officer in the country, with <strong>zero tolerance</strong> for linguistic misdemeanours.</p>
+          <p>Inside the FrenchExam.ie course, she's slightly nicer. <strong>Slightly.</strong></p>
+          <p>With nearly 20 years of teaching experience and a background as an SEC oral examiner and corrector, she's seen every crime in the book — and she's here to make sure you don't commit them in your Leaving Cert.</p>
+          <div style="margin-top:24px;">
+            <a href="index.html#pricing" class="btn-primary">Join the Course</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE FILES -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <h2 style="font-size:clamp(2rem,4vw,3rem);margin-bottom:12px;">The Case Files 🗂️</h2>
+        <p style="color:var(--muted);max-width:560px;margin:0 auto;">Five crimes. Five verdicts. All committed by real students. Names have been withheld to protect the guilty.</p>
+      </div>
+
+      <div class="case-grid">
+
+        <!-- Crime 1 -->
+        <div class="case-card">
+          <div class="case-card-top">
+            <video src="crime-1.mp4" loop playsinline preload="metadata"></video>
+            <div class="play-overlay" onclick="playVideo(this)"><div class="play-btn"></div></div>
+            <div class="case-tape">Case #001</div>
+          </div>
+          <div class="case-body">
+            <div class="case-number">Crime #1</div>
+            <div class="case-crime">Le Crime: <span>"Je suis 17 ans"</span></div>
+            <div class="case-verdict">The accused claimed to BE 17 years old. As in, physically made of years. The correct form, <em>j'ai 17 ans</em>, uses avoir — to have — because in French, you have an age. You don't become it.</div>
+            <span class="case-sentence">⚖️ Verdict: Guilty · Use avoir!</span>
+          </div>
+        </div>
+
+        <!-- Crime 2 -->
+        <div class="case-card">
+          <div class="case-card-top">
+            <video src="crime-2.mp4" loop playsinline preload="metadata"></video>
+            <div class="play-overlay" onclick="playVideo(this)"><div class="play-btn"></div></div>
+            <div class="case-tape">Case #002</div>
+          </div>
+          <div class="case-body">
+            <div class="case-number">Crime #2</div>
+            <div class="case-crime">Le Crime: <span>"Je suis faim"</span></div>
+            <div class="case-verdict">The accused declared themselves to BE hunger. Not hungry. Hunger itself. A physical embodiment of starvation. The correct form is <em>j'ai faim</em> — I have hunger. Avoir strikes again.</div>
+            <span class="case-sentence">⚖️ Verdict: Guilty · J'ai faim!</span>
+          </div>
+        </div>
+
+        <!-- Crime 3 -->
+        <div class="case-card">
+          <div class="case-card-top">
+            <video src="crime-3.mp4" loop playsinline preload="metadata"></video>
+            <div class="play-overlay" onclick="playVideo(this)"><div class="play-btn"></div></div>
+            <div class="case-tape">Case #003</div>
+          </div>
+          <div class="case-body">
+            <div class="case-number">Crime #3</div>
+            <div class="case-crime">Le Crime: <span>"Ce gâteau a besoin d'un préservatif"</span></div>
+            <div class="case-verdict">The accused requested a condom for their cake. In front of everyone. They meant <em>conservateur</em> — a preservative. <em>Préservatif</em> is a false friend of the most spectacular variety.</div>
+            <span class="case-sentence">⚖️ Verdict: Très Guilty · Faux ami!</span>
+          </div>
+        </div>
+
+        <!-- Crime 4 -->
+        <div class="case-card">
+          <div class="case-card-top">
+            <video src="crime-4.mp4" loop playsinline preload="metadata"></video>
+            <div class="play-overlay" onclick="playVideo(this)"><div class="play-btn"></div></div>
+            <div class="case-tape">Case #004</div>
+          </div>
+          <div class="case-body">
+            <div class="case-number">Crime #4</div>
+            <div class="case-crime">Le Crime: <span>"Mon père est enceinte"</span></div>
+            <div class="case-verdict">The accused announced that their father is pregnant. A remarkable revelation. <em>Enceinte</em> is exclusively used for women. If you must describe a pregnant family member, make sure it's <em>ma mère</em>.</div>
+            <span class="case-sentence">⚖️ Verdict: Scandalement Guilty!</span>
+          </div>
+        </div>
+
+        <!-- Crime 5 -->
+        <div class="case-card">
+          <div class="case-card-top">
+            <video src="crime-5.mp4" loop playsinline preload="metadata"></video>
+            <div class="play-overlay" onclick="playVideo(this)"><div class="play-btn"></div></div>
+            <div class="case-tape">Case #005</div>
+          </div>
+          <div class="case-body">
+            <div class="case-number">Crime #5</div>
+            <div class="case-crime">Le Crime: <span>"Je vais a France"</span></div>
+            <div class="case-verdict">The accused attempted to travel to France without the correct preposition. You go <em>en</em> France — not <em>à</em> France. Countries that are feminine take <em>en</em>. La France is very much feminine.</div>
+            <span class="case-sentence">⚖️ Verdict: Guilty · Je vais en France!</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="crimes-cta">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="stamp">Ne soyez pas coupable!</div>
+      <h2>Don't end up in the case files.</h2>
+      <p>Join FrenchExam.ie and learn how to avoid every one of these crimes — and the hundreds of others lurking in your Leaving Cert paper.</p>
+      <div class="btn-wrap">
+        <a href="index.html#pricing" class="btn-primary">Join the Course</a>
+        <a href="index.html" class="btn-secondary">Back to FrenchExam.ie</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
+
+<footer>
+  <div class="container">
+    <div>© 2026 FrenchExam.ie. All rights reserved.</div>
+    <div class="footer-line">Higher Level Leaving Cert French support by Nicola</div>
+  </div>
+</footer>
+
+<script>
+  function playVideo(overlay){
+    var video = overlay.previousElementSibling;
+    overlay.style.display = 'none';
+    video.play();
+  }
+</script>
+
+</body>
+</html>
