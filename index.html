@@ -213,21 +213,6 @@
   🎓 September launch — early access spots filling fast · <span>Monthly from €25.99</span> or <span>Save €44 with full-year access</span>
 </div>
 
-<div class="popup-overlay" id="comingSoonPopup">
-  <div class="popup-box">
-    <div class="popup-tricolore"><div class="t1"></div><div class="t2"></div><div class="t3"></div></div>
-    <div style="margin-top:16px;">
-      <div class="popup-badge">Coming Soon · Bientôt disponible</div>
-      <h2>FrenchExam.ie is launching soon</h2>
-      <p>A premium Higher Level Leaving Cert French programme is on the way, created by a teacher with nearly 20 years' experience, including work as an SEC oral examiner and corrector.</p>
-      <div class="popup-actions">
-        <button class="btn btn-primary" onclick="closePopup()">Enter Site</button>
-        <a href="#pricing" class="btn btn-light" onclick="closePopup()">See Pricing</a>
-      </div>
-    </div>
-  </div>
-</div>
-
 <header>
   <div class="container nav">
     <div class="logo">
@@ -606,7 +591,6 @@
 </footer>
 
 <script>
-  function closePopup(){var p=document.getElementById('comingSoonPopup');if(p)p.style.display='none';}
   function toggleFaq(btn){var panel=btn.nextElementSibling,icon=btn.querySelector('span'),isOpen=panel.style.maxHeight&&panel.style.maxHeight!=='0px';document.querySelectorAll('#faq .card > div').forEach(function(p){p.style.maxHeight='0px';});document.querySelectorAll('#faq .card button span').forEach(function(i){i.style.transform='';});if(!isOpen){panel.style.maxHeight=panel.scrollHeight+'px';icon.style.transform='rotate(45deg)';}}
   document.addEventListener("DOMContentLoaded",function(){
     var form=document.getElementById("interestForm"),successBox=document.getElementById("formSuccess");
