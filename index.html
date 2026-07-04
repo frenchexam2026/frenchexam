@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -61,19 +61,10 @@
   .hero-text p{color:var(--muted);font-size:1.08rem;max-width:560px;}
   .hero-card{margin-top:28px;padding:24px 28px;background:rgba(255,255,255,0.8);border:1px solid var(--border);border-radius:16px;}
   .hero-card strong{color:var(--navy);}
-
-  /* Madame Nicola portrait */
   .nicola-portrait{display:flex;flex-direction:column;align-items:center;gap:16px;}
-  .nicola-img-wrap{width:320px;height:320px;border-radius:50%;background:var(--nicola-bg);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;flex-shrink:0;box-shadow:0 16px 48px rgba(31,58,95,0.14);border:4px solid rgba(255,255,255,0.9);animation:nicolaFloat 4s ease-in-out infinite;}
-  .nicola-img-wrap img{width:100%;height:100%;object-fit:contain;object-position:center center;}
-  @keyframes nicolaFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   .nicola-speech{background:#fff;border:1px solid var(--border);border-radius:18px 18px 18px 4px;padding:14px 20px;box-shadow:var(--shadow);max-width:280px;text-align:center;}
   .nicola-speech .bonjour{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--navy);font-style:italic;}
   .nicola-speech .sub{font-size:0.88rem;color:var(--muted);margin-top:4px;}
-
-  /* Small Nicola avatar for callouts */
-  .nicola-avatar{width:44px;height:44px;border-radius:50%;background:var(--nicola-bg);overflow:hidden;flex-shrink:0;border:2px solid rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(31,58,95,0.12);}
-  .nicola-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
   .nicola-tip{display:flex;align-items:flex-start;gap:14px;background:var(--gold-soft);border:1px solid rgba(197,164,109,0.25);border-radius:16px;padding:16px 20px;margin-top:24px;}
   .nicola-tip-text{font-size:0.95rem;color:var(--navy);}
   .nicola-tip-text strong{display:block;font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
@@ -83,7 +74,6 @@
   .quote-banner::before{left:0;background:var(--bleu);}
   .quote-banner::after{right:0;background:var(--rouge);}
   .quote-banner blockquote{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;opacity:0.92;max-width:700px;margin:0 auto;}
-  .quote-banner cite{display:block;margin-top:10px;font-size:0.9rem;opacity:0.6;font-style:normal;letter-spacing:1px;}
   .value-line{text-align:center;font-size:1.08rem;max-width:920px;margin:0 auto;color:var(--text);}
   .section-title-wrap{text-align:center;margin-bottom:42px;}
   .section-title{text-align:center;font-size:clamp(1.9rem,4vw,2.6rem);color:var(--navy);margin-bottom:14px;}
@@ -151,7 +141,6 @@
   .footer-flag .f1{flex:1;background:var(--bleu);}
   .footer-flag .f2{flex:1;background:var(--blanc);}
   .footer-flag .f3{flex:1;background:var(--rouge);}
-  .interest-copy{max-width:620px;margin:18px auto 0;color:var(--muted);}
   .interest-form{margin-top:28px;display:grid;gap:14px;text-align:left;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .interest-form input,.interest-form select{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(31,58,95,0.14);background:#fff;color:var(--text);outline:none;transition:border-color 0.2s ease,box-shadow 0.2s ease;}
@@ -181,23 +170,13 @@
   .form-card h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.6rem;margin-bottom:8px;text-align:center;}
   .form-card .sub{text-align:center;color:var(--muted);margin-bottom:24px;}
   .pricing-note{text-align:center;color:var(--muted);margin-top:20px;font-size:0.9rem;}
-
-  /* Success with Nicola */
   .success-nicola{display:flex;align-items:center;gap:20px;text-align:left;margin-bottom:20px;}
-  .success-nicola-img{width:90px;height:90px;border-radius:50%;background:var(--nicola-bg);overflow:hidden;flex-shrink:0;border:3px solid var(--white);box-shadow:0 4px 16px rgba(31,58,95,0.12);}
-  .success-nicola-img img{width:100%;height:100%;object-fit:cover;object-position:center top;}
   .success-nicola-speech{background:var(--soft);border-radius:0 16px 16px 16px;padding:14px 18px;}
   .success-nicola-speech p{color:var(--navy);font-style:italic;font-family:'Playfair Display',serif;font-size:1.05rem;margin:0;}
 
-  @media(max-width:960px){
-    .hero-inner{grid-template-columns:1fr;text-align:center;}
-    .hero-text p{max-width:100%;}
-    .nicola-portrait{flex-direction:row;justify-content:center;}
-    .nicola-img-wrap{width:220px;height:220px;}
-    .btn-wrap{justify-content:center;}
-  }
+  @media(max-width:960px){.hero-inner{grid-template-columns:1fr;text-align:center;}.hero-text p{max-width:100%;}.nicola-portrait{flex-direction:row;justify-content:center;}.btn-wrap{justify-content:center;}}
   @media(max-width:900px){.grid-3,.grid-2,.form-row,.pricing-wrapper,.grind-compare-grid{grid-template-columns:1fr;}.plan-best{transform:none;}.nav{flex-direction:column;align-items:flex-start;}.nav-links{gap:14px;}.grind-vs{transform:rotate(90deg);}}
-  @media(max-width:640px){.section{padding:66px 0;}.hero-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card,.pricing-plan,.form-card{padding:24px 20px;}.success-message .card{padding:24px 20px;}.btn{width:100%;}.btn-wrap,.popup-actions{flex-direction:column;}.nav{align-items:stretch;}.nav-links{flex-direction:column;align-items:stretch;}.btn-nav{text-align:center;}.nicola-img-wrap{width:180px;height:180px;}.success-nicola{flex-direction:column;text-align:center;}.success-nicola-speech{border-radius:16px;}}
+  @media(max-width:640px){.section{padding:66px 0;}.hero-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card,.pricing-plan,.form-card{padding:24px 20px;}.success-message .card{padding:24px 20px;}.btn{width:100%;}.btn-wrap,.popup-actions{flex-direction:column;}.nav{align-items:stretch;}.nav-links{flex-direction:column;align-items:stretch;}.btn-nav{text-align:center;}.success-nicola{flex-direction:column;text-align:center;}.success-nicola-speech{border-radius:16px;}}
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -250,13 +229,11 @@
 
 <main>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-bg-pattern"></div>
     <div class="container">
       <div class="hero-inner">
-
-        <!-- Left: text -->
         <div class="hero-text">
           <div class="hero-badge">✨ Launching September 2026 — Limited Places</div>
           <h1>A Smarter Way to Prepare for Higher Level Leaving Cert French</h1>
@@ -269,16 +246,13 @@
             <p><strong>New structured lesson released each week</strong> — watch anytime, revisit as needed, and build skills steadily across the year in oral, aural and written French. A more affordable alternative to weekly grinds, with expert guidance from a teacher with nearly 20 years' experience, including work as an SEC oral examiner and corrector.</p>
           </div>
         </div>
-
-        <!-- Right: Madame Nicola -->
-       <div class="nicola-portrait">
-  <img src="madame-nicola.png" alt="Madame Nicola — FrenchExam.ie" style="width:320px;max-width:100%;border-radius:24px;background:#f5e6d3;padding:10px;">
-  <div class="nicola-speech">
-    <div class="bonjour">"Bonjour! Je suis Madame Nicola."</div>
-    <div class="sub">Helping you ace Higher Level French — one week at a time.</div>
-  </div>
-</div>
-
+        <div class="nicola-portrait">
+          <img src="madame-nicola.png" alt="Madame Nicola — FrenchExam.ie" style="width:320px;max-width:100%;border-radius:24px;background:#f5e6d3;padding:10px;">
+          <div class="nicola-speech">
+            <div class="bonjour">"Bonjour! Je suis Madame Nicola."</div>
+            <div class="sub">Helping you ace Higher Level French — one week at a time.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -294,6 +268,7 @@
     </div>
   </section>
 
+  <!-- HOW IT WORKS -->
   <section id="how-it-works" class="section">
     <div class="container">
       <div class="section-title-wrap">
@@ -317,13 +292,11 @@
           <p>Students develop confidence, technique and stronger answers step by step over the course of the year.</p>
         </div>
       </div>
-
-      <!-- Madame Nicola tip -->
       <div class="nicola-tip">
         <img src="madame-nicola.png" alt="Madame Nicola" style="width:44px;height:44px;border-radius:50%;object-fit:cover;background:#f5e6d3;flex-shrink:0;">
         <div class="nicola-tip-text">
           <strong>💡 Madame Nicola says</strong>
-          Consistency is everything in French. A focused 30 minutes each week beats a last-minute panic every time. That's exactly what this programme is built around.
+          Consistency is everything in French. A focused 30–45 minutes each week beats a last-minute panic every time. That's exactly what this programme is built around.
         </div>
       </div>
     </div>
@@ -335,6 +308,7 @@
     </svg>
   </div>
 
+  <!-- WHAT YOU GET -->
   <section id="what-you-get" class="section">
     <div class="container">
       <div class="section-title-wrap">
@@ -351,8 +325,6 @@
           <li>Proven exam techniques to help students perform at their best</li>
         </ul>
       </div>
-
-      <!-- Madame Nicola tip -->
       <div class="nicola-tip">
         <img src="madame-nicola.png" alt="Madame Nicola" style="width:44px;height:44px;border-radius:50%;object-fit:cover;background:#f5e6d3;flex-shrink:0;">
         <div class="nicola-tip-text">
@@ -363,53 +335,24 @@
     </div>
   </section>
 
-<section id="curriculum" class="section">
-  <div class="container">
-    <div class="section-title-wrap">
-      <h2 class="section-title">Le Programme — 36 Weeks<span class="title-underline"></span></h2>
-      <p class="section-subtitle">A carefully structured programme that builds steadily from September through to the Leaving Cert in June. Click to view in full.</p>
-    </div>
-    <a href="curriculum.png" target="_blank" rel="noopener" style="display:block;max-width:780px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(17,24,39,0.12);transition:transform 0.25s ease,box-shadow 0.25s ease;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 24px 64px rgba(17,24,39,0.18)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 16px 48px rgba(17,24,39,0.12)'">
-      <img src="curriculum.png" alt="36-Week Higher Level French Success Programme" style="width:100%;display:block;">
-    </a>
-    <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-top:14px;">🔍 Click to open full size</p>
-  </div>
-</section>
-
-  <section class="section-sm">
-    <div class="container">
-      <div class="results-box card" style="border-left:5px solid var(--bleu);border-right:5px solid var(--rouge);">
-        Expert guidance from a teacher with nearly 20 years' experience, including work as an SEC oral examiner and corrector
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
+  <!-- CURRICULUM -->
+  <section id="curriculum" class="section">
     <div class="container">
       <div class="section-title-wrap">
-        <h2 class="section-title">Pour qui ?<span class="title-underline"></span></h2>
-        <p class="section-subtitle">Designed for Higher Level students who want more than last-minute cramming.</p>
+        <h2 class="section-title">Le Programme — 36 Weeks<span class="title-underline"></span></h2>
+        <p class="section-subtitle">A carefully structured programme that builds steadily from September through to the Leaving Cert in June. Click to view in full.</p>
       </div>
-      <div class="grid-3">
-        <div class="info-box card">
-          <div class="icon">✓</div>
-          <h3>Students Who Want Structure</h3>
-          <p>Ideal for students who want a clear weekly plan rather than trying to piece everything together alone.</p>
-        </div>
-        <div class="info-box card">
-          <div class="icon">✓</div>
-          <h3>Students Aiming High</h3>
-          <p>Perfect for students who want to improve their confidence, sharpen technique, and push for a strong result.</p>
-        </div>
-        <div class="info-box card">
-          <div class="icon">✓</div>
-          <h3>Students Who Need Clarity</h3>
-          <p>Especially useful for students who feel unsure about oral, aural, or written preparation and want expert guidance.</p>
-        </div>
-      </div>
+      <a href="curriculum.png" target="_blank" rel="noopener"
+        style="display:block;max-width:780px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(17,24,39,0.12);transition:transform 0.25s ease,box-shadow 0.25s ease;"
+        onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 24px 64px rgba(17,24,39,0.18)'"
+        onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 16px 48px rgba(17,24,39,0.12)'">
+        <img src="curriculum.png" alt="36-Week Higher Level French Success Programme" style="width:100%;display:block;">
+      </a>
+      <p style="text-align:center;color:var(--muted);font-size:0.9rem;margin-top:14px;">🔍 Click to open full size</p>
     </div>
   </section>
 
+  <!-- RESULTS -->
   <section class="section">
     <div class="container">
       <div class="section-title-wrap">
@@ -438,6 +381,7 @@
     </div>
   </section>
 
+  <!-- FAQ -->
   <section id="faq" class="section">
     <div class="container">
       <div class="section-title-wrap">
@@ -447,17 +391,15 @@
       <div style="max-width:780px;margin:0 auto;display:grid;gap:10px;">
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Is this live classes or recorded lessons?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">The lessons are pre-recorded, so students can watch at a time that suits them and revisit any lesson as many times as they need. A new lesson is released each week from September through to May, keeping students on track without the pressure of a fixed schedule.</p></div></div>
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">What platform are the lessons on?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Lessons are hosted on a dedicated members area — once you join, you'll receive your login details and can access everything straight away from any device.</p></div></div>
-        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How long is each lesson?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Each lesson is designed to be focused and manageable — roughly 30 to 45 minutes — so students can fit it into a busy school week without feeling overwhelmed.</p></div></div>
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How long is each lesson?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Each lesson is designed to be focused and manageable — between 30 and 45 minutes depending on the topic — so students can fit it into a busy school week without feeling overwhelmed.</p></div></div>
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">What if my child joins mid-year?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">No problem at all. Students who join later in the year receive immediate access to all lessons released up to that point, so they can catch up at their own pace and still benefit from the full programme going forward.</p></div></div>
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Is this suitable for 5th year and 6th year students?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Yes. The programme supports Higher Level students across both years. 5th years benefit from building strong foundations early, while 6th years can use it for focused exam preparation throughout the year.</p></div></div>
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How is this different from weekly grinds?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Weekly grinds can cost €40–€60 per session, adding up to hundreds of euro over the year. This programme gives students expert guidance and structured support at a fraction of the cost — far more affordable while still covering everything needed for Higher Level French.</p></div></div>
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Can I cancel my monthly subscription?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Yes — the monthly plan offers full flexibility. You can cancel at any time. For the best value, the full-year access option at €188 covers the entire September–May programme and works out at less than €21 a month.</p></div></div>
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How long will I have access to the lessons?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Access runs through to the end of the Leaving Cert exams, giving students plenty of time to revisit lessons right up to exam day.</p></div></div>
       </div>
-
-      <!-- Madame Nicola tip -->
       <div class="nicola-tip" style="max-width:780px;margin:24px auto 0;">
-       <img src="madame-nicola.png" alt="Madame Nicola" style="width:44px;height:44px;border-radius:50%;object-fit:cover;background:#f5e6d3;flex-shrink:0;">
+        <img src="madame-nicola.png" alt="Madame Nicola" style="width:44px;height:44px;border-radius:50%;object-fit:cover;background:#f5e6d3;flex-shrink:0;">
         <div class="nicola-tip-text">
           <strong>⚠️ Common Mistake</strong>
           Waiting until 6th year to start preparing for the oral. Your document topic is chosen early in 6th year — which means preparation starts in 5th year. Don't wait!
@@ -466,7 +408,7 @@
     </div>
   </section>
 
-  <!-- ===== PRICING ===== -->
+  <!-- PRICING -->
   <section id="pricing" class="section">
     <div class="container">
       <div class="section-title-wrap">
@@ -515,7 +457,7 @@
           <div class="grind-box">
             <div class="label">One grind session</div>
             <div class="amount">€40–60</div>
-            <div class="sub">One topic · 30-45 mins</div>
+            <div class="sub">One topic · 30–45 mins</div>
           </div>
           <div class="grind-vs">vs</div>
           <div class="grind-box">
@@ -544,7 +486,12 @@
               <option value="Full Year - €188">Full Year Access — €188 ⭐ Best Value</option>
               <option value="Monthly - €25.99/month">Monthly — €25.99/month</option>
             </select>
-            <select name="year_group" required><option value="">Year Group</option><option value="5th Year">5th Year</option><option value="6th Year">6th Year</option><option value="Other">Other</option></select>
+            <select name="year_group" required>
+              <option value="">Year Group</option>
+              <option value="5th Year">5th Year</option>
+              <option value="6th Year">6th Year</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
           <label class="checkbox-wrap">
             <input type="checkbox" name="parent_permission_confirmed" value="Yes" required>
@@ -555,7 +502,6 @@
           </div>
           <p class="mini-note" style="text-align:center;">No payment is taken now — we'll contact you with details before September.</p>
         </form>
-
         <div id="formSuccess" class="success-message">
           <div class="card" style="padding:30px;">
             <div class="success-nicola">
@@ -573,6 +519,7 @@
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section id="about" class="section">
     <div class="container">
       <div class="grid-2">
@@ -593,6 +540,7 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="section cta">
     <div class="container">
       <h2>Donnez-vous l'avantage en français</h2>
@@ -621,7 +569,7 @@
   function toggleFaq(btn){var panel=btn.nextElementSibling,icon=btn.querySelector('span'),isOpen=panel.style.maxHeight&&panel.style.maxHeight!=='0px';document.querySelectorAll('#faq .card > div').forEach(function(p){p.style.maxHeight='0px';});document.querySelectorAll('#faq .card button span').forEach(function(i){i.style.transform='';});if(!isOpen){panel.style.maxHeight=panel.scrollHeight+'px';icon.style.transform='rotate(45deg)';}}
   document.addEventListener("DOMContentLoaded",function(){
     var form=document.getElementById("interestForm"),successBox=document.getElementById("formSuccess");
-    if(window.location.search.indexOf("success=true")>-1 && form && successBox){
+    if(window.location.search.indexOf("success=true")>-1&&form&&successBox){
       form.style.display="none";
       successBox.style.display="block";
       document.getElementById("pricing").scrollIntoView();
