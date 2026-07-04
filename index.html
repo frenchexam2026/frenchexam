@@ -432,7 +432,15 @@
         <h2 class="section-title">Rejoignez-nous<span class="title-underline"></span></h2>
         <p class="section-subtitle">Choose the plan that works best for you. Both options give full access to the complete programme from September through to May.</p>
       </div>
-      <div class="pricing-wrapper">
+      <div style="max-width:900px;margin:0 auto 32px;background:#fff8f0;border:1px solid rgba(197,164,109,0.3);border-radius:16px;padding:20px 24px;">
+  <p style="font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:8px;">📌 Please note before registering:</p>
+  <ul style="list-style:none;display:grid;gap:8px;">
+    <li style="color:var(--muted);font-size:0.93rem;">• This is a self-paced online programme — Madame Nicola does not correct homework, essays or oral practice tasks.</li>
+    <li style="color:var(--muted);font-size:0.93rem;">• The full-year access fee of €188 is non-refundable once payment has been processed.</li>
+  </ul>
+</div>
+
+<div class="pricing-wrapper">
         <div class="pricing-plan card">
           <div class="plan-label">Monthly · Flexible</div>
           <div class="plan-price">€25.99<span class="plan-per">/month</span></div>
@@ -510,10 +518,14 @@
               <option value="Other">Other</option>
             </select>
           </div>
-          <label class="checkbox-wrap">
-            <input type="checkbox" name="parent_permission_confirmed" value="Yes" required>
-            <span>I confirm that I am the parent/guardian, or that parent/guardian permission has been given to register interest in this programme.</span>
-          </label>
+         <label class="checkbox-wrap">
+  <input type="checkbox" name="parent_permission_confirmed" value="Yes" required>
+  <span>I confirm that I am the parent/guardian, or that parent/guardian permission has been given to register interest in this programme.</span>
+</label>
+<label class="checkbox-wrap">
+  <input type="checkbox" name="terms_confirmed" value="Yes" required>
+  <span>I understand that this is a self-paced programme and that Madame Nicola does not provide individual feedback or corrections. I also understand that the full-year fee of €188 is non-refundable once payment has been processed.</span>
+</label>
           <div class="form-submit">
             <button type="submit" class="btn btn-primary" style="font-size:1.05rem;padding:16px 36px;">Rejoindre · Register Interest</button>
           </div>
