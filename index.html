@@ -210,7 +210,7 @@
 <div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
 
 <div class="urgency-bar">
-  🎓 September launch — early access spots filling fast · <span>Monthly from €25.99</span> or <span>Save €44 with full-year access</span>
+  🎓 Launching 1st September 2026 — <span id="countdown">Loading...</span> · <span>Monthly from €25.99</span> or <span>Save €44 with full-year access</span>
 </div>
 
 <header>
@@ -601,5 +601,22 @@
     }
   });
 </script>
-</body>
+
+<script>
+  function updateCountdown(){
+    var launch = new Date('2026-09-01T00:00:00');
+    var now = new Date();
+    var diff = launch - now;
+    if(diff <= 0){
+      document.getElementById('countdown').textContent = 'Now live!';
+      return;
+    }
+    var days = Math.floor(diff / (1000*60*60*24));
+    var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    var mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+    document.getElementById('countdown').textContent = days + 'd ' + hours + 'h ' + mins + 'm remaining';
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 60000);
+</script></body>
 </html>
