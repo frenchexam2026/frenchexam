@@ -65,7 +65,7 @@
   /* Madame Nicola portrait */
   .nicola-portrait{display:flex;flex-direction:column;align-items:center;gap:16px;}
   .nicola-img-wrap{width:320px;height:320px;border-radius:50%;background:var(--nicola-bg);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;flex-shrink:0;box-shadow:0 16px 48px rgba(31,58,95,0.14);border:4px solid rgba(255,255,255,0.9);animation:nicolaFloat 4s ease-in-out infinite;}
-  .nicola-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .nicola-img-wrap img{width:100%;height:100%;object-fit:contain;object-position:center center;}
   @keyframes nicolaFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
   .nicola-speech{background:#fff;border:1px solid var(--border);border-radius:18px 18px 18px 4px;padding:14px 20px;box-shadow:var(--shadow);max-width:280px;text-align:center;}
   .nicola-speech .bonjour{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--navy);font-style:italic;}
