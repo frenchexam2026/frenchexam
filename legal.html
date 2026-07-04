@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Legal — FrenchExam.ie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f4ee;--white:#ffffff;--text:#1f2937;--muted:#5d6675;
+    --navy:#1f3a5f;--navy-dark:#162b47;--gold:#c5a46d;
+    --soft:#eef3f8;--border:rgba(31,58,95,0.10);
+    --shadow:0 12px 32px rgba(17,24,39,0.07);--radius:20px;--max:860px;
+    --bleu:#002395;--blanc:#ffffff;--rouge:#ED2939;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;}
+  a{text-decoration:none;color:var(--navy);}
+  a:hover{text-decoration:underline;}
+  .container{width:min(92%,var(--max));margin:0 auto;}
+  .tricolore-stripe{height:5px;display:flex;}
+  .tricolore-stripe .bleu{flex:1;background:var(--bleu);}
+  .tricolore-stripe .blanc{flex:1;background:var(--blanc);border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);}
+  .tricolore-stripe .rouge{flex:1;background:var(--rouge);}
+  header{padding:20px 0;background:rgba(247,244,238,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(31,58,95,0.06);}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .logo{font-size:1.25rem;font-weight:800;color:var(--navy);font-family:'Playfair Display',serif;display:flex;align-items:center;gap:8px;}
+  .logo-flag{display:flex;height:18px;width:27px;border-radius:3px;overflow:hidden;flex-shrink:0;border:1px solid rgba(0,0,0,0.08);}
+  .logo-flag .f1{flex:1;background:var(--bleu);}
+  .logo-flag .f2{flex:1;background:var(--blanc);}
+  .logo-flag .f3{flex:1;background:var(--rouge);}
+  .back-link{color:var(--muted);font-weight:600;font-size:0.95rem;}
+  .back-link:hover{color:var(--navy);text-decoration:none;}
+
+  .page-hero{padding:60px 0 40px;text-align:center;}
+  .page-hero h1{font-size:clamp(2rem,4vw,3rem);color:var(--navy);margin-bottom:12px;}
+  .page-hero p{color:var(--muted);font-size:1rem;}
+
+  .tab-nav{display:flex;justify-content:center;gap:12px;margin-bottom:48px;flex-wrap:wrap;}
+  .tab-btn{padding:12px 24px;border-radius:999px;font-weight:700;font-size:0.95rem;cursor:pointer;border:2px solid var(--navy);background:transparent;color:var(--navy);transition:all 0.2s ease;}
+  .tab-btn.active{background:var(--navy);color:#fff;}
+  .tab-btn:hover{background:var(--navy);color:#fff;}
+
+  .legal-section{display:none;}
+  .legal-section.active{display:block;}
+
+  .legal-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:48px;}
+  .legal-card h2{color:var(--navy);font-size:1.6rem;margin-bottom:8px;margin-top:36px;}
+  .legal-card h2:first-child{margin-top:0;}
+  .legal-card h3{color:var(--navy);font-size:1.1rem;margin-bottom:8px;margin-top:24px;}
+  .legal-card p{color:var(--muted);font-size:0.97rem;margin-bottom:14px;}
+  .legal-card ul{list-style:none;display:grid;gap:8px;margin-bottom:14px;}
+  .legal-card ul li{color:var(--muted);font-size:0.97rem;padding-left:20px;position:relative;}
+  .legal-card ul li::before{content:"•";position:absolute;left:4px;color:var(--gold);font-size:1.2rem;line-height:1;}
+  .legal-card .divider{height:1px;background:var(--border);margin:32px 0;}
+  .last-updated{display:inline-block;background:rgba(31,58,95,0.06);color:var(--muted);font-size:0.85rem;padding:6px 14px;border-radius:999px;margin-bottom:32px;}
+  .highlight-box{background:var(--soft);border:1px solid rgba(31,58,95,0.08);border-radius:12px;padding:18px 20px;margin-bottom:14px;}
+  .highlight-box p{margin:0;color:var(--navy);font-weight:600;font-size:0.95rem;}
+
+  footer{padding:28px 0 42px;text-align:center;color:var(--muted);font-size:0.95rem;margin-top:60px;}
+  .footer-flag{display:inline-flex;height:14px;width:21px;border-radius:2px;overflow:hidden;border:1px solid rgba(0,0,0,0.1);vertical-align:middle;margin:0 4px;}
+  .footer-flag .f1{flex:1;background:var(--bleu);}
+  .footer-flag .f2{flex:1;background:var(--blanc);}
+  .footer-flag .f3{flex:1;background:var(--rouge);}
+
+  @media(max-width:640px){.legal-card{padding:28px 20px;}.tab-btn{width:100%;text-align:center;}}
+</style>
+</head>
+<body>
+
+<div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
+
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <div class="logo-flag"><div class="f1"></div><div class="f2"></div><div class="f3"></div></div>
+      FrenchExam.ie
+    </div>
+    <a href="index.html" class="back-link">← Back to FrenchExam.ie</a>
+  </div>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <h1>Legal Information</h1>
+      <p>Privacy Policy and Terms & Conditions for FrenchExam.ie</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="showTab('privacy')">Privacy Policy</button>
+      <button class="tab-btn" onclick="showTab('terms')">Terms & Conditions</button>
+    </div>
+
+    <!-- PRIVACY POLICY -->
+    <div id="privacy" class="legal-section active">
+      <div class="legal-card">
+        <span class="last-updated">Last updated: July 2026</span>
+
+        <h2>Privacy Policy</h2>
+        <p>This Privacy Policy explains how FrenchExam.ie, operated by Nicola Rowan, Carlow, Ireland, collects, uses and protects your personal data in accordance with the General Data Protection Regulation (GDPR) and applicable Irish data protection law.</p>
+
+        <div class="divider"></div>
+
+        <h2>Who We Are</h2>
+        <p>FrenchExam.ie is an online Higher Level Leaving Certificate French programme created and operated by Nicola Rowan, based in Carlow, Ireland.</p>
+        <p><strong>Contact:</strong> <a href="mailto:lcfrenchworkshop@gmail.com">lcfrenchworkshop@gmail.com</a></p>
+
+        <div class="divider"></div>
+
+        <h2>What Data We Collect</h2>
+        <p>We collect the following personal data when you interact with FrenchExam.ie:</p>
+        <ul>
+          <li>Your name and email address when you register interest in the programme</li>
+          <li>Your child's name and year group when you complete the registration form</li>
+          <li>Your email address when you sign up to receive the French Crimes guide or any other free resource</li>
+          <li>Technical data such as browser type and pages visited, collected automatically via Google Analytics</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>How We Use Your Data</h2>
+        <p>We use your personal data for the following purposes:</p>
+        <ul>
+          <li>To contact you with details about the FrenchExam.ie programme ahead of the September 2026 launch</li>
+          <li>To send you the free resource you requested (e.g. the French Crimes guide)</li>
+          <li>To send you follow-up emails with French language tips and programme information</li>
+          <li>To analyse website traffic and improve our content via Google Analytics</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Legal Basis for Processing</h2>
+        <p>We process your personal data on the basis of your consent. You provide this consent when you tick the relevant checkbox on our registration or sign-up forms. You may withdraw your consent at any time by contacting us at <a href="mailto:lcfrenchworkshop@gmail.com">lcfrenchworkshop@gmail.com</a> or by clicking the unsubscribe link in any email we send you.</p>
+
+        <div class="divider"></div>
+
+        <h2>Email Marketing</h2>
+        <p>If you sign up to receive our free resource or register interest in the programme, you will be added to our mailing list managed by MailerLite. You will receive a small number of follow-up emails with French language tips and information about the FrenchExam.ie programme.</p>
+        <p>You can unsubscribe from these emails at any time by clicking the unsubscribe link at the bottom of any email. We will never send you spam or share your email address with third parties for marketing purposes.</p>
+
+        <div class="divider"></div>
+
+        <h2>Third Party Services</h2>
+        <p>We use the following third-party services which may process your data:</p>
+        <ul>
+          <li><strong>MailerLite</strong> — email marketing and automation. Their privacy policy is available at mailerlite.com</li>
+          <li><strong>Google Analytics</strong> — website analytics. Data is anonymised and used only to understand how visitors use our site</li>
+          <li><strong>Web3Forms</strong> — form submission processing</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Data Retention</h2>
+        <p>We will retain your personal data for as long as necessary to fulfil the purposes for which it was collected, or for as long as you remain subscribed to our mailing list. You may request deletion of your data at any time by contacting us.</p>
+
+        <div class="divider"></div>
+
+        <h2>Your Rights</h2>
+        <p>Under GDPR, you have the following rights:</p>
+        <ul>
+          <li>The right to access the personal data we hold about you</li>
+          <li>The right to correct inaccurate personal data</li>
+          <li>The right to request deletion of your personal data</li>
+          <li>The right to withdraw consent at any time</li>
+          <li>The right to lodge a complaint with the Data Protection Commission (dataprotection.ie)</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us at <a href="mailto:lcfrenchworkshop@gmail.com">lcfrenchworkshop@gmail.com</a>.</p>
+
+        <div class="divider"></div>
+
+        <h2>Cookies</h2>
+        <p>FrenchExam.ie uses cookies for analytics purposes via Google Analytics and for the functioning of our MailerLite popup form. By continuing to use this website you consent to the use of these cookies.</p>
+
+        <div class="divider"></div>
+
+        <h2>Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. We encourage you to review this page periodically.</p>
+      </div>
+    </div>
+
+    <!-- TERMS & CONDITIONS -->
+    <div id="terms" class="legal-section">
+      <div class="legal-card">
+        <span class="last-updated">Last updated: July 2026</span>
+
+        <h2>Terms & Conditions</h2>
+        <p>Please read these Terms & Conditions carefully before registering for or purchasing access to the FrenchExam.ie programme. By registering or purchasing, you agree to be bound by these terms.</p>
+
+        <div class="divider"></div>
+
+        <h2>About the Programme</h2>
+        <p>FrenchExam.ie is an online self-paced Higher Level Leaving Certificate French programme operated by Nicola Rowan, Carlow, Ireland.</p>
+        <p><strong>Contact:</strong> <a href="mailto:lcfrenchworkshop@gmail.com">lcfrenchworkshop@gmail.com</a></p>
+
+        <div class="divider"></div>
+
+        <h2>Programme Description</h2>
+        <p>FrenchExam.ie provides pre-recorded video lessons, notes and resources to support Higher Level Leaving Certificate French students. New lessons are released on a weekly basis from September through to May.</p>
+
+        <div class="highlight-box">
+          <p>⚠️ This is a self-paced online programme. Madame Nicola does not provide individual feedback, corrections or responses to homework, essays, oral practice tasks or any other student work. The programme is designed for independent study alongside classroom learning.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2>Pricing & Payment</h2>
+        <p>FrenchExam.ie is available on the following plans:</p>
+        <ul>
+          <li><strong>Full Year Access — €188:</strong> A single once-off payment covering full access from September to the end of the Leaving Certificate examinations</li>
+          <li><strong>Monthly Access — €25.99/month:</strong> A rolling monthly subscription which can be cancelled at any time</li>
+        </ul>
+        <p>Payment details will be provided to registered students ahead of the September 2026 launch. No payment is taken at the point of registering interest.</p>
+
+        <div class="divider"></div>
+
+        <h2>Refund Policy</h2>
+        <div class="highlight-box">
+          <p>💳 The full-year access fee of €188 is strictly non-refundable once payment has been processed. Please ensure you have read the programme description fully before making payment.</p>
+        </div>
+        <p>Monthly subscribers may cancel their subscription at any time. Cancellation will take effect from the end of the current billing period. No refunds will be issued for partial months already paid.</p>
+
+        <div class="divider"></div>
+
+        <h2>Access & Programme Delivery</h2>
+        <ul>
+          <li>Access to the programme is provided via a dedicated members area on Systeme.io</li>
+          <li>Login details will be provided upon receipt of payment</li>
+          <li>Students who join after September will receive immediate access to all lessons released up to that point</li>
+          <li>Full-year access runs through to the end of the Leaving Certificate examinations</li>
+          <li>Lessons are pre-recorded and available to watch at any time on any device</li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <h2>Acceptable Use</h2>
+        <p>Programme access is for the personal use of the registered student only. You may not:</p>
+        <ul>
+          <li>Share your login details with any other person</li>
+          <li>Reproduce, distribute or resell any programme content</li>
+          <li>Record or screenshot programme videos or materials for distribution</li>
+        </ul>
+        <p>Breach of these terms may result in immediate termination of access without refund.</p>
+
+        <div class="divider"></div>
+
+        <h2>Intellectual Property</h2>
+        <p>All content on FrenchExam.ie, including video lessons, notes, PDFs, graphics and the Madame Nicola brand and character, is the intellectual property of Nicola Rowan and may not be reproduced or distributed without written permission.</p>
+
+        <div class="divider"></div>
+
+        <h2>Limitation of Liability</h2>
+        <p>FrenchExam.ie provides educational support materials to assist students in their Leaving Certificate preparation. We make no guarantee of specific exam results. The programme is intended to complement, not replace, classroom teaching.</p>
+        <p>To the fullest extent permitted by law, Nicola Rowan shall not be liable for any indirect or consequential loss arising from use of or inability to use the programme.</p>
+
+        <div class="divider"></div>
+
+        <h2>Changes to the Programme</h2>
+        <p>We reserve the right to make changes to programme content, scheduling and delivery as necessary. We will endeavour to notify registered students of any significant changes by email.</p>
+
+        <div class="divider"></div>
+
+        <h2>Governing Law</h2>
+        <p>These Terms & Conditions are governed by the laws of Ireland. Any disputes shall be subject to the exclusive jurisdiction of the Irish courts.</p>
+
+        <div class="divider"></div>
+
+        <h2>Contact</h2>
+        <p>If you have any questions about these Terms & Conditions, please contact us at <a href="mailto:lcfrenchworkshop@gmail.com">lcfrenchworkshop@gmail.com</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
+
+<footer>
+  <div class="container">
+    <div>© 2026 FrenchExam.ie. All rights reserved.
+      <span class="footer-flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></span>
+    </div>
+    <div style="margin-top:8px;">Higher Level Leaving Cert French support by Nicola Rowan, Carlow, Ireland</div>
+  </div>
+</footer>
+
+<script>
+  function showTab(tab) {
+    document.querySelectorAll('.legal-section').forEach(function(s){ s.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+    document.getElementById(tab).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
