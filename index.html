@@ -230,7 +230,6 @@
     </nav>
   </div>
 </header>
-
 <main>
 
   <!-- HERO -->
@@ -412,7 +411,6 @@
       </div>
     </div>
   </section>
-
   <!-- PRICING -->
   <section id="pricing" class="section">
     <div class="container">
@@ -470,8 +468,8 @@
 
       <p class="pricing-note">Not sure which to pick? Most families choose the full-year option — it's less than €21 a month and there's nothing more to worry about for the rest of the year.</p>
 
-      <!-- Late-join teaser, shown under main pricing until 1 Nov -->
-      <div id="lateJoinTeaser" style="max-width:780px;margin:28px auto 0;background:var(--soft-2);border:1px solid var(--border);border-radius:16px;padding:20px 24px;text-align:center;">
+      <!-- Late-join teaser: hidden by default, only revealed by the date-check script once October begins -->
+      <div id="lateJoinTeaser" style="display:none;max-width:780px;margin:28px auto 0;background:var(--soft-2);border:1px solid var(--border);border-radius:16px;padding:20px 24px;text-align:center;">
         <p style="color:var(--navy);font-weight:700;margin-bottom:6px;">🚀 Missed the September start?</p>
         <p style="color:var(--muted);font-size:0.95rem;margin-bottom:10px;">Don't worry — our Higher Level Intensive Revision Programme gives immediate access to the complete course, allowing you to study at your own pace before the Leaving Certificate.</p>
         <button onclick="toggleLateJoinInfo()" style="background:none;border:none;color:var(--bleu);font-weight:700;cursor:pointer;padding:0;font-size:0.95rem;">🔵 Learn more</button>
@@ -616,7 +614,6 @@
   </section>
 
 </main>
-
 <div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
 
 <footer>
@@ -682,16 +679,24 @@
     }
   }
 
-  // Switch the pricing section from the Full Year Programme to the
-  // Intensive Revision Programme automatically once enrolment closes.
+  // Show the "Missed the September start?" teaser only from 1 Oct 2026,
+  // once regular enrolment is getting close to its 31 Oct cutoff.
+  // Then, from 1 Nov 2026, swap the whole pricing section over to the
+  // Intensive Revision Programme as before.
   document.addEventListener('DOMContentLoaded', function(){
+    var teaserStart = new Date('2026-10-01T00:00:00');
     var lateJoinCutoff = new Date('2026-11-01T00:00:00');
     var now = new Date();
+
+    var teaser = document.getElementById('lateJoinTeaser');
     var regular = document.getElementById('regularEnrolment');
     var intensive = document.getElementById('intensiveEnrolment');
+
     if(now >= lateJoinCutoff){
       if(regular) regular.style.display = 'none';
       if(intensive) intensive.style.display = 'block';
+    } else if(now >= teaserStart){
+      if(teaser) teaser.style.display = 'block';
     }
   });
 </script></body>
