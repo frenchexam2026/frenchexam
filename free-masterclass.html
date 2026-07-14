@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Masterclass: Comment Être un Élève H1 | FrenchExam.ie</title>
+<meta name="description" content="Free 20-minute masterclass from FrenchExam.ie: the subjunctive trigger phrases that move a H3 answer to a H1, taken from Week 9 of the full HL French course.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Georgia&display=swap" rel="stylesheet">
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2489675');
+</script>
+<!-- End MailerLite Universal -->
+<style>
+  :root {
+    --navy: #1F3A5F;
+    --blue: #002395;
+    --red: #ED2939;
+    --gold: #C5A46D;
+    --bg: #F7F4EE;
+    --soft: #EEF3F8;
+    --white: #FFFFFF;
+    --grey: #6B7280;
+    --border: #E0DED6;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0;
+  }
+
+  a { color: inherit; }
+
+  .tricolore {
+    height: 8px;
+    display: flex;
+    width: 100%;
+  }
+  .tricolore span { flex: 1; }
+  .tricolore .b { background: var(--blue); }
+  .tricolore .w { background: var(--white); }
+  .tricolore .r { background: var(--red); }
+
+  /* ---- NAV ---- */
+  .site-nav {
+    background: var(--navy);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-nav a.logo {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .site-nav a.logo span { color: var(--gold); }
+  .site-nav a.back {
+    color: var(--soft);
+    text-decoration: none;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: border-color 0.15s ease;
+  }
+  .site-nav a.back:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: var(--navy);
+    padding: 56px 24px 64px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    color: var(--white);
+    font-size: clamp(28px, 5vw, 44px);
+    max-width: 760px;
+    margin: 0 auto 14px;
+    line-height: 1.15;
+  }
+  .hero .subtitle {
+    color: var(--gold);
+    font-style: italic;
+    font-size: clamp(15px, 2vw, 19px);
+    max-width: 600px;
+    margin: 0 auto 28px;
+  }
+  .hero .checks {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    margin: 0 auto;
+  }
+  .hero .checks li {
+    list-style: none;
+    color: var(--white);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .hero .checks li::before {
+    content: "✓";
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .hero .checks { padding: 0; }
+
+  /* ---- VIDEO SECTION ---- */
+  .video-section {
+    max-width: 900px;
+    margin: -36px auto 0;
+    padding: 0 24px 48px;
+    position: relative;
+    z-index: 2;
+  }
+  .video-wrap {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 14px;
+    box-shadow: 0 12px 32px rgba(31,58,95,0.18);
+    border: 1px solid var(--border);
+  }
+  .video-embed {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 */
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+  }
+  .video-embed iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  /* ---- SIGNUP SECTION ---- */
+  .signup-section {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+    text-align: center;
+  }
+  .signup-section h2 {
+    font-size: 26px;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .signup-section p.lead {
+    color: var(--grey);
+    font-style: italic;
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+  .signup-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 32px 28px;
+    box-shadow: 0 6px 20px rgba(31,58,95,0.06);
+    text-align: left;
+  }
+  .signup-card .kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  /*
+    ============================================================
+    MAILERLITE EMBED GOES HERE
+    ------------------------------------------------------------
+    In MailerLite: Forms → Create form → Embedded form →
+    add Name + Email fields → assign to your "Taster - Week 9"
+    group → Publish → copy the embed code and paste it in place
+    of the placeholder block below (replacing the whole
+    .ml-placeholder div, including its wrapping div).
+    ============================================================
+  */
+  .ml-placeholder {
+    border: 2px dashed var(--gold);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+    color: var(--grey);
+    font-size: 13px;
+    background: var(--soft);
+  }
+  .ml-placeholder strong { color: var(--navy); display: block; margin-bottom: 6px; font-size: 14px; }
+
+  /* ---- CTA SECTION ---- */
+  .cta-section {
+    background: var(--navy);
+    padding: 56px 24px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    color: var(--white);
+    font-size: 28px;
+    max-width: 600px;
+    margin: 0 auto 14px;
+  }
+  .cta-section p {
+    color: var(--soft);
+    font-size: 14.5px;
+    max-width: 560px;
+    margin: 0 auto 26px;
+    line-height: 1.5;
+  }
+  .cta-button {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 38px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  }
+  .cta-button:hover { transform: translateY(-2px); }
+  .cta-note {
+    margin-top: 16px;
+    color: var(--gold);
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    background: var(--bg);
+    text-align: center;
+    padding: 24px;
+    font-size: 12px;
+    color: var(--grey);
+  }
+
+  @media (max-width: 600px) {
+    .video-section { margin-top: -24px; }
+    .signup-card { padding: 24px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="tricolore"><span class="b"></span><span class="w"></span><span class="r"></span></div>
+
+<nav class="site-nav">
+  <a class="logo" href="/">French<span>Exam</span>.ie</a>
+  <a class="back" href="/">← Back to Home</a>
+</nav>
+
+<section class="hero">
+  <span class="badge">FREE MASTERCLASS</span>
+  <h1>Comment Être un Élève H1</h1>
+  <p class="subtitle">How to Sound Like a H1 French Student — in 20 Minutes</p>
+  <ul class="checks">
+    <li>The phrases examiners love</li>
+    <li>The mistakes costing students marks</li>
+    <li>How to sound more fluent immediately</li>
+  </ul>
+</section>
+
+<section class="video-section">
+  <div class="video-wrap">
+    <div class="video-embed">
+      <!-- Replace YOUR_VIDEO_ID with your unlisted YouTube video ID -->
+      <iframe
+        src="https://www.youtube.com/embed/1mw9_LLavhA"
+        title="Comment Être un Élève H1 — Free Masterclass"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="signup-section">
+  <h2>Want the Full 36 Weeks?</h2>
+  <p class="lead">This is one lesson from Week 9. Pop your details below and I'll keep you posted on the full HL course — including the EARLYBIRD price before it goes up.</p>
+
+  <div class="signup-card">
+    <div class="kicker">STAY IN THE LOOP</div>
+
+    <!-- ============================================================
+         MAILERLITE EMBED GOES HERE — see comment in <style> above.
+         Delete this .ml-placeholder div and paste your MailerLite
+         embed code (script + form markup) in its place.
+         ============================================================ -->
+    <!-- MailerLite embedded form: Free 16-minute Taster Class -->
+    <div class="ml-embedded" data-form="8UscoB"></div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready for All 36 Weeks?</h2>
+  <p>Everything in this taster is one lesson. The full HL French course covers grammar, vocabulary, essays, letters, orals and aurals — sequenced to the school year, with oral prep landing the week before your exams begin.</p>
+  <a class="cta-button" href="/#pricing">Join FrenchExam.ie</a>
+  <div class="cta-note">EARLYBIRD — €18 off before 17 August 2026</div>
+</section>
+
+<footer>
+  © FrenchExam.ie — bonjour@frenchexam.ie
+</footer>
+
+</body>
+</html>
