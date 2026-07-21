@@ -191,6 +191,14 @@
         "@type": "Answer",
         "text": "Once you register your interest you'll receive an email from Nicola with full payment details ahead of the September launch. After payment is confirmed you'll receive your login details for the members area and full access to the programme from September."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I still need to buy the French Notes separately?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — if you join the full course (either payment option, or the Intensive Revision Programme), the Comprehensive Leaving Cert Higher Level French Notes (worth €19.99) are included at no extra cost. You'll receive a redemption code in your welcome email."
+      }
     }
   ]
 }
@@ -239,7 +247,7 @@
   .logo-flag .f1{flex:1;background:var(--bleu);}
   .logo-flag .f2{flex:1;background:var(--blanc);}
   .logo-flag .f3{flex:1;background:var(--rouge);}
-  .nav-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+  .nav-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:flex-end;}
   .nav-links a{color:var(--muted);font-weight:600;font-size:0.95rem;transition:color 0.2s ease;}
   .nav-links a:hover{color:var(--navy);}
 
@@ -289,6 +297,13 @@
   .testimonial-card p{color:var(--text);font-size:1rem;font-style:italic;}
   .testimonial-note{text-align:center;color:var(--muted);margin-top:18px;font-size:0.82rem;}
 
+  /* ===== SUCCESS GUIDE / NOTES PROMO ===== */
+  .notes-promo{max-width:900px;margin:0 auto;padding:40px 36px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;}
+  .notes-promo img{width:90px;height:90px;border-radius:50%;object-fit:cover;background:#f5e6d3;flex-shrink:0;}
+  .notes-promo h3{color:var(--navy);font-size:1.3rem;margin-bottom:8px;}
+  .notes-promo p{color:var(--muted);font-size:0.98rem;}
+  .notes-promo .btn{white-space:nowrap;}
+
   /* ===== PRICING ===== */
   .pricing-wrapper{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;}
   .pricing-plan{padding:36px 30px;text-align:center;display:flex;flex-direction:column;position:relative;overflow:hidden;}
@@ -303,6 +318,8 @@
   .plan-features{list-style:none;text-align:left;display:grid;gap:12px;margin-bottom:28px;flex:1;}
   .plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:0.97rem;color:var(--text);}
   .plan-features li .tick{color:var(--bleu);font-size:1.1rem;flex-shrink:0;margin-top:1px;}
+  .plan-features li.perk{background:var(--gold-soft);border:1px solid rgba(197,164,109,0.3);border-radius:10px;padding:10px 12px;margin:2px 0;}
+  .plan-features li.perk .tick{color:var(--gold);}
   .plan-cta{margin-top:auto;display:block;padding:15px 24px;border-radius:999px;font-weight:700;font-size:1rem;transition:all 0.25s ease;border:none;cursor:pointer;text-align:center;}
   .plan-cta-primary{background:var(--navy);color:#fff;}
   .plan-cta-primary:hover{background:var(--navy-dark);transform:translateY(-2px);box-shadow:0 8px 24px rgba(31,58,95,0.3);}
@@ -366,15 +383,36 @@
   .success-nicola-speech{background:var(--soft);border-radius:0 16px 16px 16px;padding:14px 18px;}
   .success-nicola-speech p{color:var(--navy);font-style:italic;font-family:'Playfair Display',serif;font-size:1.05rem;margin:0;}
 
- @media(max-width:960px){
-  .hero-inner{grid-template-columns:1fr;text-align:center;}
-  .hero-text p{max-width:100%;}
-  .nicola-portrait{flex-direction:column;align-items:center;}
-  .nicola-portrait img{width:260px;}
-  .nicola-speech{max-width:100%;width:100%;}
-  .btn-wrap{justify-content:center;}
-}
-  @media(max-width:900px){.grid-3,.grid-2,.form-row,.pricing-wrapper,.grind-compare-grid{grid-template-columns:1fr;}.plan-best{transform:none;}.nav{flex-direction:column;align-items:flex-start;}.nav-links{gap:14px;}.grind-vs{transform:rotate(90deg);}}@media(max-width:1150px){.nav{flex-direction:column;align-items:flex-start;}.nav-links{gap:14px;}}@media(max-width:640px){.section{padding:66px 0;}.hero-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card,.pricing-plan,.form-card{padding:24px 20px;}.success-message .card{padding:24px 20px;}.btn{width:100%;}.btn-wrap,.popup-actions{flex-direction:column;}.nav{align-items:stretch;}.nav-links{flex-direction:column;align-items:stretch;}.btn-nav{text-align:center;}.success-nicola{flex-direction:column;text-align:center;}.success-nicola-speech{border-radius:16px;}.success-guide-promo{grid-template-columns:1fr!important;text-align:center;}}
+  @media(max-width:1300px){
+    .nav{flex-direction:column;align-items:flex-start;}
+    .nav-links{gap:14px;justify-content:flex-start;}
+  }
+  @media(max-width:960px){
+    .hero-inner{grid-template-columns:1fr;text-align:center;}
+    .hero-text p{max-width:100%;}
+    .nicola-portrait{flex-direction:column;align-items:center;}
+    .nicola-portrait img{width:260px;}
+    .nicola-speech{max-width:100%;width:100%;}
+    .btn-wrap{justify-content:center;}
+  }
+  @media(max-width:900px){
+    .grid-3,.grid-2,.form-row,.pricing-wrapper,.grind-compare-grid{grid-template-columns:1fr;}
+    .plan-best{transform:none;}
+    .grind-vs{transform:rotate(90deg);}
+  }
+  @media(max-width:640px){
+    .section{padding:66px 0;}
+    .hero-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card,.pricing-plan,.form-card{padding:24px 20px;}
+    .success-message .card{padding:24px 20px;}
+    .btn{width:100%;}
+    .btn-wrap,.popup-actions{flex-direction:column;}
+    .nav{align-items:stretch;}
+    .nav-links{flex-direction:column;align-items:stretch;}
+    .btn-nav{text-align:center;}
+    .success-nicola{flex-direction:column;text-align:center;}
+    .success-nicola-speech{border-radius:16px;}
+    .notes-promo{grid-template-columns:1fr!important;text-align:center;}
+  }
 </style>
 
 <!-- Google tag (gtag.js) -->
@@ -418,7 +456,7 @@
   <a href="#about">About</a>
   <a href="videos.html">French Crimes 🚔</a>
   <a href="free-masterclass.html" class="btn-nav" style="background:var(--gold);border-color:var(--gold);color:var(--navy)!important;">Free Masterclass 🎓</a>
-  <a href="https://payhip.com/b/0po6d" target="_blank" rel="noopener" class="btn-nav">Success Guide €19.99</a>
+  <a href="https://payhip.com/b/0po6d" target="_blank" rel="noopener" class="btn-nav" style="background:var(--rouge);border-color:var(--rouge);">Notes €19.99</a>
   <a href="#pricing" class="btn-nav">See Pricing</a>
 </nav>
   </div>
@@ -458,19 +496,19 @@
     — Learning a language is having one more window from which to see the world
   </div>
 
-  <!-- SUCCESS GUIDE PROMO -->
-<section class="section-sm">
-  <div class="container">
-    <div class="card success-guide-promo" style="max-width:900px;margin:0 auto;padding:40px 36px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;">
-      <img src="madame-nicola.png" alt="Madame Nicola" style="width:90px;height:90px;border-radius:50%;object-fit:cover;background:#f5e6d3;flex-shrink:0;">
-      <div>
-        <h3 style="color:var(--navy);font-size:1.3rem;margin-bottom:8px;">Not ready for the full course yet?</h3>
-        <p style="color:var(--muted);font-size:0.98rem;">Get <strong>The FrenchExam.ie Success Guide</strong> — 76 pages covering oral topics, grammar, essay writing and exam technique. Instant download, €19.99.</p>
+  <!-- FRENCH NOTES PROMO -->
+  <section class="section-sm">
+    <div class="container">
+      <div class="card notes-promo">
+        <img src="madame-nicola.png" alt="Madame Nicola">
+        <div>
+          <h3>Not ready for the full course yet?</h3>
+          <p>Get the <strong>Comprehensive Leaving Cert Higher Level French Notes</strong> — 76 pages covering oral topics, grammar, essay writing and exam technique. Instant download, €19.99.</p>
+        </div>
+        <a href="https://payhip.com/b/0po6d" target="_blank" rel="noopener" class="btn btn-primary">Buy the Notes</a>
       </div>
-      <a href="https://payhip.com/b/0po6d" target="_blank" rel="noopener" class="btn btn-primary" style="white-space:nowrap;">Buy the Success Guide</a>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="section-sm">
     <div class="container">
@@ -608,6 +646,7 @@
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Can I pay in instalments?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Yes — you can spread the cost over 8 monthly payments of €24 instead of paying €188 upfront. This is a fixed instalment plan rather than a cancel-anytime subscription, so it stops automatically after the 8th payment. Both the one-off and instalment options give exactly the same full access to the complete programme.</p></div></div>
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">How long will I have access to the lessons?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Access runs through to the end of the Leaving Cert exams, giving students plenty of time to revisit lessons right up to exam day.</p></div></div>
         <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">What happens after I register?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">Once you register your interest you'll receive an email from Nicola with full payment details ahead of the September launch. After payment is confirmed you'll receive your login details for the members area and full access to the programme from September.</p></div></div>
+        <div class="card"><button onclick="toggleFaq(this)" style="width:100%;background:none;border:none;text-align:left;padding:18px 20px;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;">Do I still need to buy the French Notes separately?<span style="font-size:20px;color:var(--muted);flex-shrink:0;transition:transform 0.2s;">+</span></button><div style="max-height:0;overflow:hidden;transition:max-height 0.3s ease;padding:0 20px;"><p style="color:var(--muted);padding-bottom:18px;margin:0;font-size:0.98rem;line-height:1.75;">No — if you join the full course (either payment option, or the Intensive Revision Programme), the Comprehensive Leaving Cert Higher Level French Notes (worth €19.99) are included at no extra cost. You'll receive a redemption code in your welcome email.</p></div></div>
       </div>
       <div class="nicola-tip" style="max-width:780px;margin:24px auto 0;">
         <img src="madame-nicola.png" alt="Madame Nicola" style="width:44px;height:44px;border-radius:50%;object-fit:cover;background:#f5e6d3;flex-shrink:0;">
@@ -656,6 +695,7 @@
             <li><span class="tick">✓</span> Watch anytime, on any device</li>
             <li><span class="tick">✓</span> Revisit lessons as often as you like</li>
             <li><span class="tick">✓</span> Fixed 8-month plan — stops automatically, no ongoing subscription</li>
+            <li class="perk"><span class="tick">🎁</span> <strong>Comprehensive Leaving Cert Higher Level French Notes included free</strong> (worth €19.99)</li>
           </ul>
           <a href="#join-form" class="plan-cta plan-cta-secondary">Join the Waitlist</a>
         </div>
@@ -673,6 +713,7 @@
             <li><span class="tick">✓</span> Revisit every lesson right up to exam day</li>
             <li><span class="tick">✓</span> Access to all previous lessons if joining mid-year</li>
             <li><span class="tick">✓</span> One payment — nothing more to think about</li>
+            <li class="perk"><span class="tick">🎁</span> <strong>Comprehensive Leaving Cert Higher Level French Notes included free</strong> (worth €19.99)</li>
           </ul>
           <a href="#join-form" class="plan-cta plan-cta-primary">Join the Waitlist</a>
         </div>
@@ -711,6 +752,7 @@
               <li><span class="tick">✓</span> Ideal for students starting later in the year</li>
               <li><span class="tick">✓</span> Same content as the full-year programme</li>
               <li><span class="tick">✓</span> Access right up to exam day</li>
+              <li class="perk"><span class="tick">🎁</span> <strong>Comprehensive Leaving Cert Higher Level French Notes included free</strong> (worth €19.99)</li>
             </ul>
             <a href="#join-form" class="plan-cta plan-cta-primary">Join the Waitlist</a>
           </div>
