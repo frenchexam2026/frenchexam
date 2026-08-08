@@ -283,6 +283,14 @@
 
   @media(max-width:900px){.case-grid{grid-template-columns:1fr 1fr;}.meet-inner{grid-template-columns:1fr;}}
   @media(max-width:600px){.case-grid{grid-template-columns:1fr;}.nav{flex-direction:column;align-items:stretch;}.nav-links{flex-direction:column;}.btn-nav{text-align:center;}}
+
+  /* ============================================================ */
+  /* MOBILE-ONLY: un-stick the header so it scrolls away with the  */
+  /* page. Desktop keeps its sticky header untouched.              */
+  /* ============================================================ */
+  @media(max-width:768px){
+    header{position:static;top:auto;}
+  }
 </style>
 
 <!-- MailerLite Universal -->
