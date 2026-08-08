@@ -458,7 +458,7 @@
     .credentials-strip{display:none!important;}
 
     /* 3. Reset the header to a horizontal row so the logo sits left and the hamburger sits right */
-    header{padding:12px 0;position:relative;}
+    header{padding:12px 0;position:relative;z-index:1000;}
     header .container.nav{flex-direction:row!important;align-items:center!important;justify-content:space-between!important;flex-wrap:nowrap;gap:12px;}
     .logo{font-size:1.05rem;}
     .logo-flag{height:15px;width:23px;}
@@ -479,16 +479,20 @@
     .nav-toggle.open span:nth-child(2){opacity:0;}
     .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-    /* 4. Hide nav-links by default on mobile; open as a dropdown when hamburger is tapped */
+    /* 4. Hide nav-links by default on mobile; open as a dropdown when hamburger is tapped.
+          Uses a SOLID background (not rgba) so iOS Safari renders it opaque even without
+          backdrop-filter support. Very high z-index guarantees it sits above the hero. */
     .nav-links{
       display:none!important;
-      position:absolute;top:100%;left:0;right:0;
-      background:rgba(247,244,238,0.98);backdrop-filter:blur(10px);
+      position:absolute!important;top:100%;left:0;right:0;
+      background:#f7f4ee!important;
+      -webkit-backdrop-filter:blur(10px);
+      backdrop-filter:blur(10px);
       flex-direction:column!important;align-items:stretch!important;
       gap:6px!important;padding:14px 20px 20px!important;
       border-bottom:1px solid rgba(31,58,95,0.10);
-      box-shadow:0 12px 24px rgba(17,24,39,0.10);
-      z-index:100;
+      box-shadow:0 12px 24px rgba(17,24,39,0.15);
+      z-index:9999!important;
     }
     .nav-links.open{display:flex!important;}
     .nav-links a{
