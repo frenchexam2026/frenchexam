@@ -29,7 +29,7 @@
   "@type": "Course",
   "name": "Higher Level Leaving Cert French Programme",
   "description": "A 36-week structured online course covering oral, aural and written Higher Level Leaving Certificate French, with weekly lessons released September to May.",
-  "dateModified": "2026-08-01",
+  "dateModified": "2026-08-19",
   "provider": {
     "@type": "Organization",
     "name": "FrenchExam.ie",
@@ -52,7 +52,7 @@
       "category": "Full Year Access",
       "price": "188",
       "priceCurrency": "EUR",
-      "priceValidUntil": "2026-08-17",
+      "priceValidUntil": "2026-10-31",
       "availability": "https://schema.org/InStock",
       "url": "https://frenchexam.ie/#pricing"
     },
@@ -61,7 +61,7 @@
       "category": "8-Month Payment Plan",
       "price": "192",
       "priceCurrency": "EUR",
-      "priceValidUntil": "2026-08-17",
+      "priceValidUntil": "2026-10-31",
       "availability": "https://schema.org/InStock",
       "url": "https://frenchexam.ie/#pricing"
     }
@@ -78,7 +78,7 @@
   "url": "https://frenchexam.ie/",
   "logo": "https://frenchexam.ie/madame-nicola.png",
   "email": "bonjour@frenchexam.ie",
-  "dateModified": "2026-08-01",
+  "dateModified": "2026-08-19",
   "founder": {
     "@type": "Person",
     "name": "Nicola Rowan",
@@ -99,7 +99,7 @@
   "@type": "Course",
   "name": "Mock Oral French Exam Workshop",
   "description": "A mock oral practice session for Leaving Certificate French students, run by an SEC oral examiner and corrector, giving students exam-style practice and feedback ahead of their oral exam.",
-  "dateModified": "2026-08-01",
+  "dateModified": "2026-08-19",
   "provider": {
     "@type": "Organization",
     "name": "FrenchExam.ie",
@@ -117,7 +117,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "dateModified": "2026-08-01",
+  "dateModified": "2026-08-19",
   "@type": "FAQPage",
   "mainEntity": [
     {
@@ -405,8 +405,6 @@
   .success-nicola{display:flex;align-items:center;gap:20px;text-align:left;margin-bottom:20px;}
   .success-nicola-speech{background:var(--soft);border-radius:0 16px 16px 16px;padding:14px 18px;}
   .success-nicola-speech p{color:var(--navy);font-style:italic;font-family:'Playfair Display',serif;font-size:1.05rem;margin:0;}
-  .earlybird-box{max-width:900px;margin:0 auto 28px;background:linear-gradient(135deg,#fff8f0,#fef3e0);border:1px solid rgba(197,164,109,0.4);border-radius:16px;padding:18px 24px;text-align:center;}
-  .earlybird-box .code{display:inline-block;background:var(--navy);color:#fff;font-family:'DM Sans',sans-serif;font-weight:800;letter-spacing:2px;padding:6px 16px;border-radius:8px;margin:0 6px;}
 
   /* Hamburger button is hidden on desktop (shown only in the mobile media query below) */
   .nav-toggle{display:none;}
@@ -529,7 +527,7 @@
 <div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
 
 <div class="urgency-bar">
-  🎉 Enrolment is OPEN — code <span>EARLYBIRD</span> for the Full Year plan ends 17 Aug — <span id="countdown">Loading...</span>
+  🎉 Enrolment is OPEN for September 2026 · Closes <span>31 October</span> · <span id="countdown">Loading...</span>
 </div>
 <div class="credentials-strip" style="background:var(--soft-2,#f8fafc);border-bottom:1px solid rgba(31,58,95,0.08);padding:10px 20px;text-align:center;font-size:0.88rem;color:var(--muted);font-weight:600;">
   🇫🇷 Created by Nicola Rowan — Qualified French Teacher <span style="opacity:0.5;margin:0 6px;">•</span> Nearly 20 Years' Classroom Experience <span style="opacity:0.5;margin:0 6px;">•</span> SEC Oral Examiner &amp; Corrector
@@ -774,10 +772,6 @@
       </div>
       <p style="text-align:center;font-weight:700;color:var(--navy);letter-spacing:0.5px;margin-bottom:18px;">Higher Level Weekly Programme</p>
 
-      <div class="earlybird-box">
-        <p style="color:var(--navy);font-size:1rem;">🎁 Use code <span class="code">EARLYBIRD</span> at checkout on the <strong>Full Year plan</strong> to lock in the launch price — valid until <strong>17th August 2026</strong>. (Not applicable to the 8-instalment plan.)</p>
-      </div>
-
       <div style="max-width:900px;margin:0 auto 32px;background:#fff8f0;border:1px solid rgba(197,164,109,0.3);border-radius:16px;padding:20px 24px;">
   <p style="font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:8px;">📌 Please note before enrolling:</p>
   <ul style="list-style:none;display:grid;gap:8px;">
@@ -813,7 +807,7 @@
           <div class="plan-price">€188</div>
           <div class="plan-total">One payment — full year covered</div>
           <div class="plan-saving">🎉 Save €4 vs the payment plan</div>
-          <div style="margin-top:8px;font-size:0.85rem;color:var(--navy);font-weight:700;">🎁 EARLYBIRD code eligible — ends 17 Aug</div>
+          <div style="margin-top:8px;font-size:0.85rem;color:var(--navy);font-weight:700;">🎁 Includes free French Notes (worth €19.99)</div>
           <div class="plan-divider"></div>
           <ul class="plan-features">
             <li><span class="tick">✓</span> Full programme access, September to May</li>
@@ -952,18 +946,21 @@
 </script>
 
 <script>
+  // Countdown to enrolment close (31 October 2026)
   function updateCountdown(){
-    var deadline = new Date('2026-08-17T23:59:59');
+    var el = document.getElementById('countdown');
+    if(!el) return;
+    var deadline = new Date('2026-10-31T23:59:59');
     var now = new Date();
     var diff = deadline - now;
     if(diff <= 0){
-      document.getElementById('countdown').textContent = 'EARLYBIRD now closed';
+      el.textContent = 'Enrolment now closed';
       return;
     }
     var days = Math.floor(diff / (1000*60*60*24));
     var hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
     var mins = Math.floor((diff % (1000*60*60)) / (1000*60));
-    document.getElementById('countdown').textContent = days + 'd ' + hours + 'h ' + mins + 'm left';
+    el.textContent = days + 'd ' + hours + 'h ' + mins + 'm left';
   }
   updateCountdown();
   setInterval(updateCountdown, 60000);
