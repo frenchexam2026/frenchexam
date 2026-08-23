@@ -234,6 +234,16 @@
   .nav-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:flex-end;}
 .nav-links a{color:var(--muted);font-weight:600;font-size:0.88rem;transition:color 0.2s ease;white-space:nowrap;}
   .nav-links a:hover{color:var(--navy);}
+  .guide-dropdown{position:relative;color:var(--muted);font-weight:600;font-size:0.88rem;}
+  .guide-dropdown summary{list-style:none;cursor:pointer;white-space:nowrap;padding:7px 2px;color:var(--muted);transition:color 0.2s ease;}
+  .guide-dropdown summary::-webkit-details-marker{display:none;}
+  .guide-dropdown summary::after{content:'▾';display:inline-block;margin-left:5px;font-size:0.78rem;transition:transform 0.2s ease;}
+  .guide-dropdown[open] summary::after{transform:rotate(180deg);}
+  .guide-dropdown summary:hover,.guide-dropdown summary:focus{color:var(--navy);outline:none;}
+  .guide-menu{display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);width:285px;background:#fff;border:1px solid var(--border);border-radius:15px;padding:9px;box-shadow:0 16px 36px rgba(17,24,39,0.16);z-index:10000;}
+  .guide-dropdown[open] .guide-menu,.guide-dropdown:hover .guide-menu,.guide-dropdown:focus-within .guide-menu{display:grid;gap:3px;}
+  .guide-menu a{display:block;padding:10px 12px;border-radius:9px;white-space:normal!important;line-height:1.35;}
+  .guide-menu a:hover,.guide-menu a:focus{background:var(--soft);color:var(--navy);outline:none;}
 
   /* ===== HERO ===== */
   .hero{padding:70px 0 50px;position:relative;overflow:hidden;}
@@ -502,6 +512,16 @@
     .nav-links a:not(.btn-nav){background:transparent;}
     .nav-links a:not(.btn-nav):hover,.nav-links a:not(.btn-nav):focus{background:rgba(31,58,95,0.05);}
     .nav-links .btn-nav{font-size:0.92rem;padding:13px 16px!important;}
+    .guide-dropdown{width:100%;font-size:0.95rem;}
+    .guide-dropdown summary{padding:13px 16px;text-align:center;border-radius:10px;font-weight:700;}
+    .guide-dropdown[open] summary{background:rgba(31,58,95,0.05);}
+    .guide-menu,.guide-dropdown:hover .guide-menu,.guide-dropdown:focus-within .guide-menu{
+      position:static;transform:none;width:100%;margin-top:4px;padding:6px;
+      background:#fff;border-radius:12px;box-shadow:none;
+    }
+    .guide-dropdown:not([open]) .guide-menu{display:none;}
+    .guide-dropdown[open] .guide-menu{display:grid;}
+    .guide-menu a{font-size:0.9rem!important;padding:11px 13px!important;text-align:left!important;background:var(--soft-2)!important;}
   }
 </style>
 
@@ -531,6 +551,16 @@
   <a href="#why-us">Why FrenchExam.ie</a>
   <a href="#what-you-get">What You Get</a>
   <a href="#about">About</a>
+  <details class="guide-dropdown">
+    <summary>Free Guides</summary>
+    <div class="guide-menu">
+      <a href="leaving-cert-french-oral.html">French Oral Exam Guide</a>
+      <a href="leaving-cert-french-reading-comprehension.html">Reading Comprehension Guide</a>
+      <a href="leaving-cert-french-written-exam.html">Written Exam Guide</a>
+      <a href="leaving-cert-french-listening.html">French Listening Guide</a>
+      <a href="leaving-cert-french-study-plan.html">Leaving Cert French Study Plan</a>
+    </div>
+  </details>
   <a href="videos.html">French Crimes</a>
   <a href="free-masterclass.html" class="btn-nav" style="background:var(--gold);border-color:var(--gold);color:var(--navy)!important;">Masterclass 🎓</a>
   <a href="https://payhip.com/b/0po6d" target="_blank" rel="noopener" class="btn-nav" style="background:var(--rouge);border-color:var(--rouge);">Notes €19.99</a>
