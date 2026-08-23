@@ -225,13 +225,14 @@
   .tricolore-stripe .blanc{flex:1;background:var(--blanc);border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06);}
   .tricolore-stripe .rouge{flex:1;background:var(--rouge);}
   header{padding:20px 0;background:rgba(247,244,238,0.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(31,58,95,0.06);}
+  header .container{width:min(96%,1280px);}
   .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;}
   .logo{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:0.2px;display:flex;align-items:center;gap:8px;font-family:'Playfair Display',serif;}
   .logo-flag{display:flex;height:18px;width:27px;border-radius:3px;overflow:hidden;flex-shrink:0;border:1px solid rgba(0,0,0,0.08);}
   .logo-flag .f1{flex:1;background:var(--bleu);}
   .logo-flag .f2{flex:1;background:var(--blanc);}
   .logo-flag .f3{flex:1;background:var(--rouge);}
-  .nav-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap;justify-content:flex-end;}
+  .nav-links{display:flex;gap:11px;align-items:center;flex-wrap:nowrap;justify-content:flex-end;}
 .nav-links a{color:var(--muted);font-weight:600;font-size:0.88rem;transition:color 0.2s ease;white-space:nowrap;}
   .nav-links a:hover{color:var(--navy);}
   .guide-dropdown{position:relative;color:var(--muted);font-weight:600;font-size:0.88rem;}
@@ -420,7 +421,7 @@
   /* Hamburger button is hidden on desktop (shown only in the mobile media query below) */
   .nav-toggle{display:none;}
 
-  @media(max-width:1300px){
+  @media(max-width:1160px){
     .nav{flex-direction:column;align-items:flex-start;}
     .nav-links{gap:14px;justify-content:flex-start;}
   }
@@ -454,11 +455,11 @@
   }
 
   /* ============================================================ */
-  /* MOBILE-ONLY OVERRIDES (≤768px) — desktop is untouched         */
+  /* COMPACT NAVIGATION OVERRIDES (≤1160px)                        */
   /* These rules come LAST so they override the earlier media      */
-  /* queries above. All changes are gated to phone-sized screens.  */
+  /* queries above. This prevents the expanded navigation wrapping. */
   /* ============================================================ */
-  @media(max-width:768px){
+  @media(max-width:1160px){
     /* 1. Condense the top urgency bar so it fits in 1–2 lines */
     .urgency-bar{padding:9px 12px;font-size:0.78rem;line-height:1.45;font-weight:600;}
     .urgency-bar span{padding:2px 8px;font-size:0.72rem;margin:0 2px;display:inline-block;}
