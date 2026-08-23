@@ -358,6 +358,18 @@
   .footer-flag .f1{flex:1;background:var(--bleu);}
   .footer-flag .f2{flex:1;background:var(--blanc);}
   .footer-flag .f3{flex:1;background:var(--rouge);}
+  .cookie-banner{position:fixed;left:18px;right:18px;bottom:18px;z-index:9999;max-width:980px;margin:0 auto;background:#fff;border:1px solid rgba(31,58,95,0.16);border-radius:18px;box-shadow:0 20px 60px rgba(17,24,39,0.22);padding:22px;display:none;}
+  .cookie-banner.show{display:block;}
+  .cookie-banner h2{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.45rem;margin:0 0 7px;}
+  .cookie-banner p{color:var(--muted);font-size:0.93rem;margin:0;line-height:1.6;}
+  .cookie-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
+  .cookie-btn{border:1px solid var(--navy);border-radius:999px;padding:10px 16px;background:#fff;color:var(--navy);font-weight:700;cursor:pointer;}
+  .cookie-btn.primary{background:var(--navy);color:#fff;}
+  .cookie-options{display:none;margin-top:16px;padding-top:15px;border-top:1px solid var(--border);}
+  .cookie-options.open{display:grid;gap:11px;}
+  .cookie-option{display:flex;align-items:flex-start;gap:10px;color:var(--text);font-size:0.92rem;}
+  .cookie-option input{width:18px;height:18px;margin-top:2px;}
+  .cookie-settings-link{background:none;border:0;padding:0;color:var(--muted);font:inherit;font-size:0.9rem;font-weight:600;text-decoration:underline;cursor:pointer;}
   .interest-form{margin-top:28px;display:grid;gap:14px;text-align:left;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .interest-form input,.interest-form select{width:100%;padding:14px 16px;border-radius:14px;border:1px solid rgba(31,58,95,0.14);background:#fff;color:var(--text);outline:none;transition:border-color 0.2s ease,box-shadow 0.2s ease;}
@@ -493,24 +505,7 @@
   }
 </style>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CSW23XG5QJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CSW23XG5QJ');
-</script>
-
-<!-- MailerLite Universal -->
-<script>
-    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-    ml('account', '2489675');
-</script>
-<!-- End MailerLite Universal -->
+<!-- Analytics and MailerLite are loaded only after the visitor chooses the relevant optional cookies. -->
 
 </head>
 <body>
@@ -967,11 +962,29 @@
   <a href="https://www.instagram.com/frenchexam.ie" target="_blank" style="color:var(--muted);font-size:0.9rem;font-weight:600;">Instagram</a>
   <a href="https://www.facebook.com/frenchexam.ie" target="_blank" style="color:var(--muted);font-size:0.9rem;font-weight:600;">Facebook</a>
 </div>
-    <div style="margin-top:8px;">
-      <a href="legal.html" style="color:var(--muted);font-size:0.9rem;text-decoration:underline;">Privacy Policy & Terms</a>
+    <div style="margin-top:8px;display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
+      <a href="legal.html" style="color:var(--muted);font-size:0.9rem;text-decoration:underline;">Privacy, Cookies &amp; Terms</a>
+      <a href="child-protection.html" style="color:var(--muted);font-size:0.9rem;text-decoration:underline;">Online Safety &amp; Child Safeguarding</a>
+      <button type="button" class="cookie-settings-link" onclick="openCookieSettings()">Cookie settings</button>
     </div>
   </div>
 </footer>
+
+<aside class="cookie-banner" id="cookieBanner" role="dialog" aria-modal="true" aria-labelledby="cookieTitle" aria-describedby="cookieDescription">
+  <h2 id="cookieTitle">Your cookie choices</h2>
+  <p id="cookieDescription">We use necessary technology to operate this website. With your permission, we also use Google Analytics to understand website use and MailerLite technology for signup forms and popups. You can accept, reject or choose separately. Read our <a href="legal.html#cookies">Cookie Policy</a>.</p>
+  <div class="cookie-options" id="cookieOptions">
+    <label class="cookie-option"><input type="checkbox" checked disabled> <span><strong>Necessary</strong><br>Required to remember your choice and operate the website.</span></label>
+    <label class="cookie-option"><input type="checkbox" id="analyticsConsent"> <span><strong>Analytics</strong><br>Allows Google Analytics to measure visits and website use.</span></label>
+    <label class="cookie-option"><input type="checkbox" id="formsConsent"> <span><strong>Signup forms and popups</strong><br>Allows MailerLite technology used for optional forms and popups.</span></label>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-btn primary" onclick="acceptAllCookies()">Accept all</button>
+    <button type="button" class="cookie-btn" onclick="rejectOptionalCookies()">Reject non-essential</button>
+    <button type="button" class="cookie-btn" id="cookieChooseBtn" onclick="toggleCookieOptions()">Choose settings</button>
+    <button type="button" class="cookie-btn" id="cookieSaveBtn" onclick="saveCookieSettings()" style="display:none;">Save choices</button>
+  </div>
+</aside>
 
 <script>
   function toggleFaq(btn){var panel=btn.nextElementSibling,icon=btn.querySelector('span'),isOpen=panel.style.maxHeight&&panel.style.maxHeight!=='0px';document.querySelectorAll('#faq .card > div').forEach(function(p){p.style.maxHeight='0px';});document.querySelectorAll('#faq .card button span').forEach(function(i){i.style.transform='';});if(!isOpen){panel.style.maxHeight=panel.scrollHeight+'px';icon.style.transform='rotate(45deg)';}}
@@ -1065,6 +1078,86 @@
       });
     });
   });
+</script>
+<script>
+  (function(){
+    var storageKey='frenchexam_cookie_choices_v1';
+    var loaded={analytics:false,forms:false};
+
+    window.loadFrenchExamAnalytics=function(){
+      if(loaded.analytics) return;
+      loaded.analytics=true;
+      window.dataLayer=window.dataLayer||[];
+      window.gtag=function(){dataLayer.push(arguments);};
+      window.gtag('js',new Date());
+      window.gtag('config','G-CSW23XG5QJ',{anonymize_ip:true});
+      var script=document.createElement('script');
+      script.async=true;
+      script.src='https://www.googletagmanager.com/gtag/js?id=G-CSW23XG5QJ';
+      document.head.appendChild(script);
+    };
+
+    window.loadFrenchExamMailerLite=function(){
+      if(loaded.forms) return;
+      loaded.forms=true;
+      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments);};l=d.createElement(e);l.async=1;l.src=u;n=d.getElementsByTagName(e)[0];n.parentNode.insertBefore(l,n);})(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      window.ml('account','2489675');
+    };
+
+    function readChoices(){
+      try{return JSON.parse(localStorage.getItem(storageKey));}catch(e){return null;}
+    }
+
+    function applyChoices(choices){
+      if(!choices) return;
+      if(choices.analytics) window.loadFrenchExamAnalytics();
+      if(choices.forms) window.loadFrenchExamMailerLite();
+    }
+
+    function closeBanner(){
+      var banner=document.getElementById('cookieBanner');
+      if(banner) banner.classList.remove('show');
+    }
+
+    function storeChoices(analytics,forms){
+      var choices={analytics:!!analytics,forms:!!forms,savedAt:new Date().toISOString()};
+      try{localStorage.setItem(storageKey,JSON.stringify(choices));}catch(e){}
+      applyChoices(choices);
+      closeBanner();
+    }
+
+    window.acceptAllCookies=function(){storeChoices(true,true);};
+    window.rejectOptionalCookies=function(){storeChoices(false,false);};
+    window.saveCookieSettings=function(){
+      storeChoices(document.getElementById('analyticsConsent').checked,document.getElementById('formsConsent').checked);
+    };
+    window.toggleCookieOptions=function(){
+      var options=document.getElementById('cookieOptions');
+      var save=document.getElementById('cookieSaveBtn');
+      var choose=document.getElementById('cookieChooseBtn');
+      options.classList.add('open');
+      save.style.display='inline-block';
+      choose.style.display='none';
+    };
+    window.openCookieSettings=function(){
+      var choices=readChoices()||{analytics:false,forms:false};
+      document.getElementById('analyticsConsent').checked=!!choices.analytics;
+      document.getElementById('formsConsent').checked=!!choices.forms;
+      document.getElementById('cookieOptions').classList.add('open');
+      document.getElementById('cookieSaveBtn').style.display='inline-block';
+      document.getElementById('cookieChooseBtn').style.display='none';
+      document.getElementById('cookieBanner').classList.add('show');
+    };
+
+    document.addEventListener('DOMContentLoaded',function(){
+      var choices=readChoices();
+      if(choices){
+        applyChoices(choices);
+      }else{
+        document.getElementById('cookieBanner').classList.add('show');
+      }
+    });
+  })();
 </script>
 </body>
 </html>
