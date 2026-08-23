@@ -454,6 +454,13 @@
     .success-nicola-speech{border-radius:16px;}
     .promo-grid .notes-promo{grid-template-columns:1fr;text-align:center;}
     .promo-grid .notes-promo img{margin:0 auto;}
+    /* Let the Nicola biography wrap around the portrait, then use the full card width. */
+    #about .about-card:nth-child(2) > div{display:block!important;}
+    #about .about-card:nth-child(2) > div::after{content:'';display:block;clear:both;}
+    #about .about-card:nth-child(2) > div > img{
+      float:left;width:96px!important;margin:0 16px 10px 0;padding:5px!important;
+    }
+    #about .about-card:nth-child(2) h3{font-size:1.35rem;margin-bottom:9px;}
   }
 
   /* ============================================================ */
