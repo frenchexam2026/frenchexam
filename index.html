@@ -81,113 +81,7 @@
 }
 </script>
 
-<!-- Structured data: FAQPage -->
-<!-- Full FAQ structured data moved to frequently-asked-questions.html. -->
-<script type="application/json" id="archivedFaqData">
-{
-  "@context": "https://schema.org",
-  "dateModified": "2026-08-23",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How is this different from a general Leaving Cert revision app?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "General revision apps give students a searchable library of short overview videos and notes across many subjects. FrenchExam.ie is a complete Higher Level French course — one structured 30–45 minute lesson released each week from September to May, sequenced by a French specialist so students know exactly what to study and when. Ideal as a complete Higher Level French programme, or as dedicated French support alongside a student's other revision resources."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this live classes or recorded lessons?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The lessons are pre-recorded, so students can watch at a time that suits them and revisit any lesson as many times as they need. A new lesson is released each week from September through to May, keeping students on track without the pressure of a fixed schedule."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What platform are the lessons on?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Lessons are hosted on a dedicated members area — once you enrol, you'll receive your login details and can access everything straight away from any device."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long is each lesson?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Each lesson is designed to be focused and manageable — between 30 and 45 minutes depending on the topic — so students can fit it into a busy school week without feeling overwhelmed."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I join after the course has started?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Students enrolling from November onwards can join the Higher Level Intensive Revision Programme, which provides immediate access to the complete course. This allows late joiners to study at their own pace while preparing for the Leaving Certificate."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this suitable for 5th year and 6th year students?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The programme supports Higher Level students across both years. 5th years benefit from building strong foundations early, while 6th years can use it for focused exam preparation throughout the year."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is this different from weekly grinds?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Weekly grinds can cost €40–€60 per session, adding up to hundreds of euro over the year. This programme gives students expert guidance and structured support at a fraction of the cost — far more affordable while still covering everything needed for Higher Level French."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this the same as a French tutor or grinds?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "It gives you the same expert guidance as a French tutor or grinds, but structured as a weekly online programme rather than a one-to-one session. You get the same exam-focused teaching and oral, aural and written preparation as private French tutoring — just at a fraction of the cost of paying for weekly grinds all year."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I pay in instalments?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — you can spread the cost over 8 monthly payments of €24 instead of paying €188 upfront. This is a fixed instalment plan rather than a cancel-anytime subscription, so it stops automatically after the 8th payment. Both the one-off and instalment options give exactly the same full access to the complete programme."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long will I have access to the lessons?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Access runs through to the end of the Leaving Cert exams, giving students plenty of time to revisit lessons right up to exam day."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens after I enrol?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Once you complete checkout, you'll receive a confirmation email straight away. Your login details for the members area will follow by email ahead of the September launch, giving you full access to the programme from day one."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I still need to buy the French Notes separately?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No — if you pay in full for the course (the Full Year option, or the Intensive Revision Programme), the Comprehensive Leaving Cert Higher Level French Notes (worth €19.99) are included at no extra cost. You'll receive a redemption code in your welcome email. This perk applies to full upfront payment only and is not included with the 8-instalment payment plan."
-      }
-    }
-  ]
-}
-</script>
+<!-- Full FAQ structured data lives on frequently-asked-questions.html. -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1039,6 +933,23 @@
   </div>
 </aside>
 
+<!-- FREEBIES POPUP -->
+<div class="popup-overlay" id="freebiesPopup" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="freebiesPopupTitle">
+  <div class="popup-box">
+    <div class="popup-tricolore"><div class="t1"></div><div class="t2"></div><div class="t3"></div></div>
+    <button type="button" onclick="closeFreebiesPopup()" aria-label="Close"
+      style="position:absolute;top:14px;right:16px;background:none;border:none;font-size:24px;line-height:1;color:var(--muted);cursor:pointer;">&times;</button>
+    <div class="popup-badge">🇫🇷 Join &amp; Get Free Freebies Every 10 Days</div>
+    <h2 id="freebiesPopupTitle">Free French Study Freebies</h2>
+    <p>Sign up and get a brand-new free resource every 10 days — French Crimes mistakes to avoid, grammar cheat sheets, oral exam phrases, and more. All free, no strings attached.</p>
+
+    <!-- MailerLite embedded form: renders its own email field + submit button here -->
+    <div class="ml-embedded" data-form="G58pRM"></div>
+
+    <p style="margin-top:14px;font-size:0.8rem;color:var(--muted);">No spam — unsubscribe anytime.</p>
+  </div>
+</div>
+
 <script>
   function toggleFaq(btn){var panel=btn.nextElementSibling,icon=btn.querySelector('span'),isOpen=panel.style.maxHeight&&panel.style.maxHeight!=='0px';document.querySelectorAll('#faq .card > div').forEach(function(p){p.style.maxHeight='0px';});document.querySelectorAll('#faq .card button span').forEach(function(i){i.style.transform='';});if(!isOpen){panel.style.maxHeight=panel.scrollHeight+'px';icon.style.transform='rotate(45deg)';}}
 </script>
@@ -1211,6 +1122,56 @@
       }
     });
   })();
+</script>
+
+<!-- Freebies popup: shows once per visitor (after a delay), remembers dismissal.
+     Note: MailerLite's own script (loaded via cookie consent above, or the ml-embedded
+     div's script requirement) needs the "Signup forms and popups" cookie category
+     accepted before the embedded form inside will actually render/submit. -->
+<script>
+(function(){
+  var STORAGE_KEY = 'frenchexam_freebies_popup_v1';
+  var DISMISS_DAYS = 14;    // don't reshow for 14 days after someone closes it
+  var SHOW_DELAY_MS = 7000; // wait 7 seconds before showing
+
+  function getState(){
+    try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)); }catch(e){ return null; }
+  }
+  function setState(state){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch(e){}
+  }
+  function shouldShow(){
+    var state = getState();
+    if(!state) return true;
+    if(state.dismissedAt){
+      var daysSince = (Date.now() - state.dismissedAt) / (1000*60*60*24);
+      if(daysSince < DISMISS_DAYS) return false;
+    }
+    return true;
+  }
+  window.closeFreebiesPopup = function(){
+    var el = document.getElementById('freebiesPopup');
+    if(el) el.style.display = 'none';
+    setState({ dismissedAt: Date.now() });
+  };
+  document.addEventListener('DOMContentLoaded', function(){
+    if(!shouldShow()) return;
+    setTimeout(function(){
+      var el = document.getElementById('freebiesPopup');
+      if(el) el.style.display = 'flex';
+    }, SHOW_DELAY_MS);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      var el = document.getElementById('freebiesPopup');
+      if(el && el.style.display !== 'none') window.closeFreebiesPopup();
+    }
+  });
+  document.addEventListener('click', function(e){
+    var overlay = document.getElementById('freebiesPopup');
+    if(overlay && e.target === overlay) window.closeFreebiesPopup();
+  });
+})();
 </script>
 </body>
 </html>
