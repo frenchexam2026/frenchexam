@@ -241,12 +241,15 @@
   .notes-promo .btn{white-space:nowrap;}
 
   /* ===== TIDIER PROMO GRID (two cards side by side) ===== */
-  .promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:980px;margin:0 auto;}
+  .promo-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;max-width:1180px;margin:0 auto;}
   .promo-grid .notes-promo{grid-template-columns:auto 1fr;padding:28px 26px;text-align:left;}
   .promo-grid .notes-promo img{width:64px;height:64px;}
   .promo-grid .notes-promo h3{font-size:1.1rem;margin-bottom:6px;}
   .promo-grid .notes-promo p{font-size:0.92rem;}
   .promo-grid .notes-promo .btn{margin-top:14px;width:100%;}
+  @media(max-width:1100px){
+    .promo-grid{grid-template-columns:1fr 1fr;}
+  }
   @media(max-width:900px){
     .promo-grid{grid-template-columns:1fr;}
   }
@@ -613,6 +616,14 @@
             <h3>Prefer a physical copy?</h3>
             <p>The <strong>FrenchExam.ie Success Guide</strong> printed and posted to your door — 80 pages. Printed to order, Ireland delivery only.</p>
             <a href="https://payhip.com/b/j0D9t" target="_blank" rel="noopener" class="btn btn-primary">Order Print — €24.99</a>
+          </div>
+        </div>
+        <div class="card notes-promo">
+          <img src="leaving-cert-french-essay-builder-cover.png" alt="Leaving Cert French Essay Builder cover" style="width:90px;height:90px;border-radius:12px;object-fit:cover;background:#f5e6d3;flex-shrink:0;">
+          <div>
+            <h3>Struggling with rédactions?</h3>
+            <p>The <strong>Leaving Cert French Essay Builder</strong> — a 25-topic workbook that builds the skill, not just the essay. Vocabulary, activities, model answers and full corrections.</p>
+            <a href="leaving-cert-french-essay-builder.html" class="btn btn-primary">See the Essay Builder — from €19</a>
           </div>
         </div>
       </div>
