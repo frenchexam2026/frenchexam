@@ -60,10 +60,7 @@
       "hasMerchantReturnPolicy":{
         "@type":"MerchantReturnPolicy",
         "applicableCountry":"IE",
-        "returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow",
-        "merchantReturnDays":14,
-        "returnMethod":"https://schema.org/ReturnByMail",
-        "returnFees":"https://schema.org/ReturnShippingFees"
+        "returnPolicyCategory":"https://schema.org/MerchantReturnNotPermitted"
       },
       "shippingDetails":{
         "@type":"OfferShippingDetails",
@@ -71,7 +68,7 @@
         "shippingDestination":{"@type":"DefinedRegion","addressCountry":"IE"},
         "deliveryTime":{
           "@type":"ShippingDeliveryTime",
-          "handlingTime":{"@type":"QuantitativeValue","minValue":2,"maxValue":5,"unitCode":"DAY"},
+          "handlingTime":{"@type":"QuantitativeValue","minValue":14,"maxValue":18,"unitCode":"DAY"},
           "transitTime":{"@type":"QuantitativeValue","minValue":1,"maxValue":3,"unitCode":"DAY"}
         }
       }
