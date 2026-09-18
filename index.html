@@ -428,6 +428,54 @@
     .guide-dropdown[open] .guide-menu{display:grid;}
     .guide-menu a{font-size:0.9rem!important;padding:11px 13px!important;text-align:left!important;background:var(--soft-2)!important;}
   }
+
+  /* ==========================================================
+     MailerLite embedded form (.ml-embedded) brand override
+     Targets MailerLite's generated classes inside the freebies
+     popup so the email field + button match the site's own
+     rounded navy pill buttons instead of MailerLite's defaults.
+     If MailerLite updates their widget's class names, re-check
+     with browser devtools (right-click the input/button → Inspect)
+     and adjust the selectors below.
+     ========================================================== */
+  .ml-embedded .ml-form-embedWrapper,
+  .ml-embedded .ml-form-embedBody{
+    background:transparent!important;padding:0!important;border:none!important;
+    box-shadow:none!important;font-family:'DM Sans',Arial,sans-serif!important;
+  }
+  .ml-embedded .ml-form-embedHeader,
+  .ml-embedded h4.ml-form-embedTitle{display:none!important;}
+  .ml-embedded input[type="email"],
+  .ml-embedded input[type="text"]{
+    width:100%!important;padding:14px 16px!important;border-radius:14px!important;
+    border:1px solid rgba(31,58,95,0.14)!important;background:#fff!important;color:#1f2937!important;
+    font-family:'DM Sans',Arial,sans-serif!important;font-size:1rem!important;box-shadow:none!important;
+    margin-bottom:14px!important;
+  }
+  .ml-embedded input[type="email"]:focus,
+  .ml-embedded input[type="text"]:focus{
+    border-color:rgba(31,58,95,0.35)!important;box-shadow:0 0 0 4px rgba(31,58,95,0.06)!important;outline:none!important;
+  }
+  .ml-embedded button.primary,
+  .ml-embedded .ml-form-embedSubmit button,
+  .ml-embedded input[type="submit"]{
+    display:inline-block!important;width:100%!important;padding:14px 24px!important;border-radius:999px!important;
+    font-weight:700!important;font-family:'DM Sans',Arial,sans-serif!important;font-size:1rem!important;
+    background:#1f3a5f!important;color:#fff!important;border:none!important;cursor:pointer!important;
+    transition:all 0.25s ease!important;
+  }
+  .ml-embedded button.primary:hover,
+  .ml-embedded .ml-form-embedSubmit button:hover,
+  .ml-embedded input[type="submit"]:hover{
+    background:#162b47!important;transform:translateY(-2px)!important;box-shadow:0 8px 24px rgba(31,58,95,0.3)!important;
+  }
+  .ml-embedded .ml-form-successBody{background:transparent!important;padding:0!important;}
+  .ml-embedded .ml-form-successBody .ml-form-successContent h4{
+    color:#1f3a5f!important;font-family:'Playfair Display',Georgia,serif!important;
+  }
+  .ml-embedded .ml-form-successBody .ml-form-successContent p{
+    color:#5d6675!important;font-family:'DM Sans',Arial,sans-serif!important;
+  }
 </style>
 
 <!-- Analytics and MailerLite are loaded only after the visitor chooses the relevant optional cookies. -->
