@@ -6,7 +6,7 @@
 
   <title>Shop | Leaving Cert French Resources | FrenchExam.ie</title>
 
-  <meta name="description" content="Shop Leaving Cert Higher Level French books, printable resources and online courses created by French teacher and SEC examiner Nicola Rowan.">
+  <meta name="description" content="Shop Leaving Cert Higher Level French books, printable resources, money-saving bundles and online courses created by French teacher and SEC examiner Nicola Rowan.">
 
   <link rel="canonical" href="https://frenchexam.ie/shop.html">
   <meta name="theme-color" content="#1f3a5f">
@@ -180,6 +180,142 @@
       max-width:680px;
       margin:auto;
     }
+
+    /* ---------- BUNDLE (featured) ---------- */
+
+    .bundle-wrap{
+      padding:0 0 42px;
+    }
+
+    .bundle{
+      background:#fff;
+      border:2px solid var(--gold);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns:minmax(0,5fr) minmax(0,6fr);
+      position:relative;
+    }
+
+    .ribbon{
+      position:absolute;
+      top:22px;
+      right:-44px;
+      transform:rotate(35deg);
+      background:var(--red);
+      color:#fff;
+      font-weight:800;
+      font-size:.74rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:7px 54px;
+      z-index:2;
+      box-shadow:0 6px 14px rgba(0,0,0,.15);
+    }
+
+    .bundle-image{
+      background:linear-gradient(145deg,#102847,#1f3a5f);
+      padding:30px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+    }
+
+    .bundle-image:after{
+      content:'';
+      position:absolute;
+      inset:14px;
+      border:1px solid rgba(197,164,109,.35);
+      border-radius:17px;
+      pointer-events:none;
+    }
+
+    .bundle-image img{
+      width:100%;
+      max-width:430px;
+      height:auto;
+      display:block;
+      border-radius:10px;
+      position:relative;
+      z-index:1;
+      filter:drop-shadow(0 16px 22px rgba(0,0,0,.3));
+    }
+
+    .bundle-details{
+      padding:38px 40px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .bundle-details h2{
+      font-family:'Playfair Display',Georgia,serif;
+      color:var(--navy);
+      font-size:clamp(1.8rem,3.2vw,2.35rem);
+      line-height:1.1;
+      margin-bottom:8px;
+    }
+
+    .bundle-options{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:auto;
+    }
+
+    .option{
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+      background:var(--cream);
+      display:flex;
+      flex-direction:column;
+    }
+
+    .option-label{
+      font-weight:800;
+      font-size:.78rem;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+
+    .option .price{
+      font-size:1.9rem;
+      margin:0 0 4px;
+    }
+
+    .save{
+      display:inline-block;
+      align-self:flex-start;
+      background:rgba(237,41,57,.1);
+      color:#b3121f;
+      font-weight:800;
+      font-size:.78rem;
+      border-radius:999px;
+      padding:3px 10px;
+      margin-bottom:14px;
+    }
+
+    .option .action{
+      margin-top:auto;
+    }
+
+    .option .small{
+      margin-top:9px;
+    }
+
+    .section-label{
+      text-align:center;
+      font-family:'Playfair Display',Georgia,serif;
+      color:var(--navy);
+      font-size:clamp(1.5rem,3vw,2rem);
+      margin:10px 0 26px;
+    }
+
+    /* ---------- SINGLE PRODUCTS ---------- */
 
     .product-wrap{
       padding:0 0 90px;
@@ -384,6 +520,14 @@
       .product-image{
         height:420px;
       }
+
+      .bundle{
+        grid-template-columns:1fr;
+      }
+
+      .bundle-image img{
+        max-width:380px;
+      }
     }
 
     @media(max-width:680px){
@@ -405,6 +549,14 @@
 
       .details{
         padding:28px 24px;
+      }
+
+      .bundle-details{
+        padding:30px 24px;
+      }
+
+      .bundle-options{
+        grid-template-columns:1fr;
       }
     }
 
@@ -479,9 +631,100 @@
 
     </section>
 
+
+    <!-- ================= BUNDLE ================= -->
+
+    <section class="bundle-wrap" id="bundle">
+
+      <div class="container">
+
+        <article class="bundle">
+
+          <div class="ribbon">Best value</div>
+
+          <div class="bundle-image">
+            <img src="leaving-cert-french-bundle.jpg" alt="Leaving Cert French Bundle: Higher Level French Notes and the Essay Builder">
+          </div>
+
+          <div class="bundle-details">
+
+            <span class="tag">
+              Bundle · Save with both books
+            </span>
+
+            <h2>
+              Leaving Cert French Bundle
+            </h2>
+
+            <p class="byline">
+              Higher Level French Notes + Essay Builder
+            </p>
+
+            <p class="intro">
+              The two essential resources for Higher Level French, together at a lower price. The Notes cover the whole exam; the Essay Builder turns that knowledge into confident written answers.
+            </p>
+
+            <ul class="features">
+              <li>Higher Level French Notes (152 pages): every oral topic, the full grammar toolkit, written, reading and aural technique, and exam-day strategy</li>
+              <li>Essay Builder: 25 topical rédactions, each with seven structured activities</li>
+              <li>Revision workouts, answer keys and full corrections</li>
+              <li>Written by an SEC examiner who knows exactly what earns marks</li>
+            </ul>
+
+            <div class="bundle-options">
+
+              <div class="option">
+                <span class="option-label">Both PDFs</span>
+                <div class="price">€34.99</div>
+                <span class="save">Save €4</span>
+                <a
+                  class="action gold"
+                  href="https://payhip.com/b/vRa96"
+                  target="_blank"
+                  rel="noopener">
+                  Download Bundle
+                </a>
+                <p class="small">
+                  Instant download through Payhip.
+                </p>
+              </div>
+
+              <div class="option">
+                <span class="option-label">Both printed books</span>
+                <div class="price">€54.99</div>
+                <span class="save">Save €4.99</span>
+                <a
+                  class="action"
+                  href="https://payhip.com/b/x8IiK"
+                  target="_blank"
+                  rel="noopener">
+                  Order Printed Bundle
+                </a>
+                <p class="small">
+                  🇮🇪 Ireland only. Allow approximately 2 weeks for printing and delivery.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SINGLE PRODUCTS ================= -->
+
     <section class="product-wrap">
 
       <div class="container">
+
+        <h2 class="section-label">
+          Or buy individually
+        </h2>
 
         <div class="products">
 
@@ -582,9 +825,9 @@
               </p>
 
               <ul class="features">
-                <li>Oral and written exam preparation</li>
-                <li>Grammar and key expressions</li>
-                <li>Examiner tips and writing guidance</li>
+                <li>152 pages: oral, written, reading and aural preparation</li>
+                <li>Grammar toolkit and key expressions</li>
+                <li>Examiner tips, revision workouts and answer keys</li>
                 <li>Choose instant PDF or printed hardcopy</li>
               </ul>
 
@@ -610,7 +853,7 @@
                 target="_blank"
                 rel="noopener"
                 style="margin-top:16px;">
-                Order Hardcopy — €24.99
+                Order Hardcopy — €29.99
               </a>
 
               <p class="small">
