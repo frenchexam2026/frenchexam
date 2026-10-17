@@ -13,6 +13,51 @@
 :root{--bg:#f7f4ee;--white:#fff;--text:#1f2937;--muted:#5d6675;--navy:#1f3a5f;--navy2:#162b47;--gold:#c5a46d;--goldsoft:rgba(197,164,109,.14);--soft:#eef3f8;--border:rgba(31,58,95,.11);--shadow:0 12px 32px rgba(17,24,39,.07);--radius:20px;--max:1080px;--blue:#002395;--red:#ed2939}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'DM Sans',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.72}a{color:var(--navy)}h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);line-height:1.18}.container{width:min(92%,var(--max));margin:auto}.stripe{height:5px;display:grid;grid-template-columns:repeat(3,1fr)}.stripe i:first-child{background:var(--blue)}.stripe i:nth-child(2){background:#fff}.stripe i:last-child{background:var(--red)}header{padding:18px 0;border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{display:flex;align-items:center;gap:9px;text-decoration:none;font:800 1.3rem 'Playfair Display',serif}.flag{display:grid;grid-template-columns:repeat(3,1fr);width:27px;height:18px;border-radius:3px;overflow:hidden}.flag i:first-child{background:var(--blue)}.flag i:nth-child(2){background:#fff}.flag i:last-child{background:var(--red)}.links{display:flex;gap:18px;align-items:center}.links a{text-decoration:none;font-size:.9rem;font-weight:700}.btn{display:inline-block;padding:12px 19px;border-radius:999px;background:var(--navy);color:#fff!important;text-decoration:none;font-weight:700}.crumbs{padding:18px 0;font-size:.88rem;color:var(--muted)}.hero{padding:44px 0 56px;background:linear-gradient(135deg,var(--bg),var(--soft))}.hero-grid{display:grid;grid-template-columns:1fr 270px;gap:44px;align-items:center}.eyebrow{display:inline-block;padding:7px 13px;border-radius:999px;background:var(--goldsoft);border:1px solid rgba(197,164,109,.35);font-size:.85rem;font-weight:700;margin-bottom:17px}h1{font-size:clamp(2.2rem,5vw,3.9rem);margin-bottom:18px}.lead{font-size:1.15rem;color:var(--muted)}.updated{font-size:.84rem;color:var(--muted);margin-top:16px}.portrait{width:100%;background:#f5e6d3;border-radius:24px;padding:10px;box-shadow:var(--shadow)}.quick{margin-top:-27px;position:relative}.quickbox{padding:29px 34px;border-radius:var(--radius);background:var(--navy);color:#fff;display:grid;grid-template-columns:auto 1fr;gap:25px;align-items:center;box-shadow:var(--shadow)}.quickbox .mark{font:800 3.2rem 'Playfair Display',serif}.quickbox h2{color:#fff;font-size:1.4rem;margin-bottom:5px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:40px;padding:60px 0}.content section{margin-bottom:52px}.content h2{font-size:clamp(1.65rem,3vw,2.2rem);margin-bottom:17px}.content h3{font-size:1.22rem;margin:23px 0 8px}.content p+p{margin-top:13px}.content ul,.content ol{padding-left:22px;margin-top:14px}.content li+li{margin-top:9px}.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.toc{padding:24px;position:sticky;top:20px}.toc h2{font-size:1.15rem;margin-bottom:12px}.toc ol{padding-left:19px}.toc li+li{margin-top:7px}.toc a{text-decoration:none;font-size:.91rem}.expert{display:grid;grid-template-columns:82px 1fr;gap:20px;padding:25px;margin-bottom:40px}.expert img{width:82px;height:82px;object-fit:cover;border-radius:50%;background:#f5e6d3}.expert h2{font-size:1.28rem;margin-bottom:5px}.expert p{font-size:.94rem;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:20px}.mini{padding:22px}.mini h3{font-size:1.1rem;margin:0 0 7px}.mini p{font-size:.94rem;color:var(--muted)}.note{padding:19px 22px;margin:21px 0;background:var(--goldsoft);border-left:4px solid var(--gold);border-radius:0 14px 14px 0}.breakdown{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;margin-top:18px}.breakdown th,.breakdown td{text-align:left;padding:13px 15px;border-bottom:1px solid var(--border)}.breakdown th{background:var(--navy);color:#fff}.breakdown tr:last-child td{border-bottom:0}.checklist{list-style:none!important;padding-left:0!important}.checklist li{padding:12px 15px 12px 42px;background:#fff;border:1px solid var(--border);border-radius:12px;position:relative}.checklist li:before{content:'✓';position:absolute;left:16px;color:var(--blue);font-weight:800}.faq{padding:21px 23px;margin-bottom:13px}.faq h3{margin:0 0 6px;font-size:1.1rem}.cta{padding:40px;background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;text-align:center}.cta h2{color:#fff}.cta p{max-width:690px;margin:12px auto 22px;opacity:.9}.cta .btn{background:#fff;color:var(--navy)!important}.source{font-size:.86rem;color:var(--muted);padding:18px 20px;background:var(--soft);border-radius:13px;margin-top:24px}footer{text-align:center;padding:34px 0 44px;color:var(--muted);font-size:.9rem}.footerlinks{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-top:10px}.footerlinks a{text-decoration:underline;color:var(--muted)}
 @media(max-width:800px){.hero-grid{grid-template-columns:1fr}.portrait{width:190px}.layout{grid-template-columns:1fr}.toc{position:static}.grid{grid-template-columns:1fr}.quickbox{grid-template-columns:1fr;gap:5px}.links a:not(.btn){display:none}.expert{grid-template-columns:64px 1fr}.expert img{width:64px;height:64px}.breakdown{font-size:.88rem}.breakdown th,.breakdown td{padding:10px}}
 </style>
+
+<!-- FrenchExam.ie course call-to-action -->
+<style>
+.fxc{container-type:inline-size;position:relative;margin:8px 0 54px;background:#fff;border:1px solid rgba(31,58,95,.11);border-radius:20px;box-shadow:0 12px 32px rgba(17,24,39,.07);overflow:hidden;font-family:'DM Sans',Arial,sans-serif;color:#1f2937}
+.fxc::before{content:"";display:block;height:5px;background:linear-gradient(90deg,#002395 0 33.3%,#fff 33.3% 66.6%,#ed2939 66.6%)}
+.fxc-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.fxc-copy{padding:30px 30px 28px}
+.fxc-eyebrow{display:inline-block;background:rgba(197,164,109,.16);color:#1f3a5f;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:999px;margin:0 0 14px}
+.fxc h2.fxc-title{font-family:'Playfair Display',Georgia,serif;color:#1f3a5f;font-size:1.65rem;line-height:1.22;margin:0 0 12px;padding:0;border:0}
+.fxc p.fxc-intro{color:#5d6675;font-size:1rem;line-height:1.7;margin:0 0 18px}
+.fxc ul.fxc-points{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px}
+.fxc ul.fxc-points li{position:relative;padding-left:30px;margin:0;color:#1f2937;font-size:.97rem;line-height:1.55}
+.fxc ul.fxc-points li::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:#1f3a5f;color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.fxc-teacher{display:flex;gap:10px;align-items:center;border-top:1px solid rgba(31,58,95,.11);padding-top:16px;margin:0;color:#5d6675;font-size:.88rem;line-height:1.5}
+.fxc-teacher strong{color:#1f3a5f}
+.fxc-badge{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#f7f4ee;border:1px solid rgba(197,164,109,.45);display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+.fxc-price{background:linear-gradient(160deg,#1f3a5f 0%,#162b47 100%);color:#fff;padding:30px 26px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.fxc-plan{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c5a46d;margin:0 0 6px}
+.fxc-amount{font-family:'Playfair Display',Georgia,serif;font-size:3rem;font-weight:800;line-height:1;margin:0 0 4px;color:#fff}
+.fxc-once{font-size:.9rem;color:rgba(255,255,255,.78);margin:0 0 14px}
+.fxc-gift{background:rgba(197,164,109,.16);border:1px solid rgba(197,164,109,.4);border-radius:12px;padding:9px 12px;font-size:.86rem;line-height:1.45;color:#fff;margin:0 0 18px}
+.fxc a.fxc-btn{display:block;text-align:center;text-decoration:none;font-weight:700;border-radius:999px;padding:13px 18px;font-size:1rem;line-height:1.25;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.fxc a.fxc-btn:hover{transform:translateY(-1px)}
+.fxc a.fxc-btn:focus-visible{outline:3px solid #c5a46d;outline-offset:3px}
+.fxc a.fxc-btn-main{background:#c5a46d;color:#1f3a5f!important;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.fxc a.fxc-btn-main:hover{background:#d4b682}
+.fxc a.fxc-btn-alt{margin-top:10px;background:transparent;color:#fff!important;border:1.5px solid rgba(255,255,255,.55);font-size:.95rem}
+.fxc a.fxc-btn-alt:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.fxc-note{font-size:.82rem;line-height:1.55;color:rgba(255,255,255,.8);margin:14px 0 0}
+.fxc-note strong{color:#fff}
+.fxc a.fxc-more{display:inline-block;margin-top:12px;color:#fff!important;font-size:.88rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.fxc-late{display:none}
+.fxc.fxc--late .fxc-early{display:none}
+.fxc.fxc--late .fxc-late{display:block}
+@container (max-width:640px){
+  .fxc-grid{grid-template-columns:1fr}
+  .fxc-copy{padding:24px 20px 22px}
+  .fxc h2.fxc-title{font-size:1.4rem}
+  .fxc-price{padding:26px 20px}
+}
+@supports not (container-type:inline-size){
+  @media (max-width:900px){.fxc-grid{grid-template-columns:1fr}}
+}
+@media (prefers-reduced-motion:reduce){.fxc a.fxc-btn{transition:none}.fxc a.fxc-btn:hover{transform:none}}
+</style>
 </head>
 <body><div class="stripe"><i></i><i></i><i></i></div><header><div class="container nav"><a class="logo" href="index.html"><span class="flag"><i></i><i></i><i></i></span>FrenchExam.ie</a><nav class="links"><a href="leaving-cert-french-oral.html">Oral Guide</a><a href="free-masterclass.html">Free Masterclass</a><a class="btn" href="index.html#pricing">Enrol Now</a></nav></div></header>
 <main><div class="container crumbs"><a href="index.html">Home</a> &rsaquo; Leaving Cert French Written Exam Guide</div><section class="hero"><div class="container hero-grid"><div><span class="eyebrow">Higher Level Leaving Certificate French</span><h1>Leaving Cert French Written Exam Guide</h1><p class="lead">Understand the marks, question choices and writing formats—and learn how to turn what you know into a clear, relevant and accurate examination answer.</p><p class="updated">Written by Nicola Rowan · Last reviewed 23 August 2026</p></div><img class="portrait" src="madame-nicola.png" alt="Madame Nicola from FrenchExam.ie"></div></section>
@@ -24,6 +69,45 @@
 <section id="marking"><h2>What makes a strong written answer?</h2><p>The official syllabus states that assessment considers the communication of meaning and the accuracy and appropriateness of language, including the range of vocabulary and structures used. In practice, focus on four things:</p><div class="grid"><div class="mini card"><h3>Relevance</h3><p>Answer the exact question and cover every required element.</p></div><div class="mini card"><h3>Communication</h3><p>Make your ideas clear, connected and sufficiently developed.</p></div><div class="mini card"><h3>Language</h3><p>Use accurate verbs, agreements, vocabulary and sentence structures.</p></div><div class="mini card"><h3>Register</h3><p>Match the tone to an opinion, diary, formal letter, email or narrative.</p></div></div><div class="note"><strong>Quality beats decoration.</strong> A clear relevant answer with controlled French is safer than a collection of complicated phrases that do not quite fit the question.</div></section>
 <section id="planning"><h2>A reliable method for every writing task</h2><ol><li><strong>Identify the task:</strong> circle the format, audience, tense and every instruction.</li><li><strong>Choose your position or storyline:</strong> decide what you actually want to communicate.</li><li><strong>Plan in French:</strong> note keywords, verbs, connectors and examples—not full English sentences to translate.</li><li><strong>Use paragraphs:</strong> give each central point or stage a clear place.</li><li><strong>Develop:</strong> add a reason, consequence, contrast or example instead of jumping to a new point.</li><li><strong>Leave checking time:</strong> correct errors you know how to correct before handing up the paper.</li></ol></section>
 <section id="timing"><h2>Time management</h2><p>You have 150 minutes for the complete written paper, including both reading comprehensions. Your exact timing will depend on your strengths, but it should be decided during practice—not invented on exam day.</p><p>A workable target is roughly 75–80 minutes for the two comprehensions and 60–65 minutes for written production, leaving a small checking margin. Within written production, allow more time for the 60-mark answer than the 40-mark answer.</p><p class="note"><strong>Practise with a clock.</strong> Knowing the format is not the same as being able to complete it calmly within the examination time.</p></section>
+<section class="fxc" id="course" aria-labelledby="course-title">
+  <div class="fxc-grid">
+    <div class="fxc-copy">
+      <p class="fxc-eyebrow">For the 100-mark written section</p>
+      <h2 class="fxc-title" id="course-title">Build writing that earns marks, one week at a time</h2>
+      <p class="fxc-intro">Strong written French isn’t learned the week before the exam. The 36-week programme works through each writing format with you, building the structure, accuracy and range of vocabulary that examiners reward.</p>
+      <ul class="fxc-points">
+        <li>A dedicated <em>Production Écrite &amp; Grammaire</em> phase on opinion pieces, journal entries and more</li>
+        <li>A final <em>Préparation Intensive à l’Écrit</em> phase in the run-up to June</li>
+        <li>Phrases and structures you can adapt to any question, rather than essays learned off</li>
+        <li>Weekly lessons with workbooks to practise alongside them</li>
+      </ul>
+      <p class="fxc-teacher"><span class="fxc-badge" aria-hidden="true">🇫🇷</span><span>Taught by <strong>Nicola Rowan</strong> — qualified French teacher with nearly 20 years’ Higher Level experience, and SEC oral examiner and corrector.</span></p>
+    </div>
+    <div class="fxc-price">
+      <p class="fxc-plan">36-Week Higher Level Programme</p>
+      <p class="fxc-amount">€188</p>
+      <p class="fxc-once">One payment · full access to June</p>
+      <p class="fxc-gift">🎁 Pay in full and get the French Notes free (worth €19.99)</p>
+      <a class="fxc-btn fxc-btn-main" data-fxc-main href="https://lcfrenchworkshop.systeme.io/3d76960a" target="_blank" rel="noopener">Enrol for €188</a>
+      <a class="fxc-btn fxc-btn-alt fxc-early" href="https://lcfrenchworkshop.systeme.io/c4a6b9a5" target="_blank" rel="noopener">Or pay 8 × €24</a>
+      <p class="fxc-note fxc-early"><strong>8 × €24 instalments (€192 total) available until 31 October 2026.</strong> After that, you can still enrol any time by paying €188 in full.</p>
+      <p class="fxc-note fxc-late">Instant access to all 36 lessons and workbooks — study at your own pace right up to the exam.</p>
+      <a class="fxc-more" href="index.html#pricing">See full course details →</a>
+    </div>
+  </div>
+</section>
+<script>
+/* From 1 November 2026 the instalment plan closes: point the course section at the
+   full-payment Intensive Revision Programme and hide the instalment option. */
+(function(){
+  if (new Date() < new Date('2026-11-01T00:00:00')) return;
+  document.querySelectorAll('.fxc').forEach(function(box){
+    box.classList.add('fxc--late');
+    var main = box.querySelector('[data-fxc-main]');
+    if (main) { main.href = 'https://lcfrenchworkshop.systeme.io/696e7ce6'; main.textContent = 'Enrol now — €188'; }
+  });
+})();
+</script>
 <section id="mistakes"><h2>Common mistakes to avoid</h2><ul><li>Answering a familiar topic instead of the precise question asked.</li><li>Ignoring one of the bullet points in an email or practical task.</li><li>Switching inconsistently between <em>tu</em> and <em>vous</em>.</li><li>Writing an opinion piece without explaining or exemplifying opinions.</li><li>Using only the passé composé in a narrative that requires description and background.</li><li>Memorising introductions so long that they consume the answer.</li><li>Translating complex English thoughts word for word.</li><li>Finishing at the final second without checking verbs, agreements or accents.</li></ul></section>
 <section id="check"><h2>Your final checking list</h2><ul class="checklist"><li>Have I answered the exact question and every instruction?</li><li>Is the format and register appropriate?</li><li>Are my verbs in the intended tense and correctly formed?</li><li>Have I checked adjective and past-participle agreements?</li><li>Are negatives, articles and prepositions complete?</li><li>Have I used connectors without repeating the same one constantly?</li><li>Do accents change or clarify any words I have written?</li><li>Is the ending complete and appropriate to the task?</li></ul></section>
 <section id="prepare"><h2>How to improve before June</h2><p>Build a bank of flexible language for giving opinions, explaining reasons, contrasting ideas, describing feelings and sequencing events. Then practise applying those structures to unfamiliar questions.</p><p>Keep an error log. If the same problem appears repeatedly—such as adjective agreement, infinitives after prepositions or confusion between the imperfect and passé composé—that is where your next revision session should begin.</p><p>Finally, rewrite corrected work. Reading a teacher’s correction is helpful, but producing the corrected sentence yourself is what begins to change your writing habits.</p></section>
