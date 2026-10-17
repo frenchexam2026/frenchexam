@@ -102,7 +102,7 @@
   "url": "https://frenchexam.ie/",
   "logo": "https://frenchexam.ie/madame-nicola.png",
   "email": "bonjour@frenchexam.ie",
-  "dateModified": "2026-08-23",
+  "dateModified": "2026-10-17",
   "founder": {
     "@type": "Person",
     "name": "Nicola Rowan",
@@ -112,7 +112,17 @@
     "https://www.tiktok.com/@frenchexam.ie",
     "https://www.instagram.com/frenchexam.ie",
     "https://www.facebook.com/frenchexam.ie"
-  ]
+  ],
+  "subjectOf": {
+    "@type": "NewsArticle",
+    "headline": "French teacher from Carlow launches affordable grinds platform",
+    "url": "https://www.carlow-nationalist.ie/news/french-teacher-from-carlow-launches-affordable-grinds-platform_arid-20331474.html",
+    "datePublished": "2026-10-17",
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Carlow Nationalist"
+    }
+  }
 }
 </script>
 
@@ -194,6 +204,17 @@
   .nicola-tip{display:flex;align-items:flex-start;gap:14px;background:var(--gold-soft);border:1px solid rgba(197,164,109,0.25);border-radius:16px;padding:16px 20px;margin-top:24px;}
   .nicola-tip-text{font-size:0.95rem;color:var(--navy);}
   .nicola-tip-text strong{display:block;font-size:0.8rem;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:4px;}
+
+  /* ===== AS FEATURED IN (press) ===== */
+  .press-badge{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:9px 16px;border-radius:999px;background:#fff;border:1px solid var(--border);color:var(--navy);font-size:0.92rem;font-weight:600;box-shadow:0 4px 14px rgba(17,24,39,0.05);transition:transform 0.2s ease,box-shadow 0.2s ease;}
+  .press-badge:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(17,24,39,0.09);}
+  .press-badge strong{font-family:'Playfair Display',Georgia,serif;font-style:italic;}
+  .press-card{max-width:780px;margin:0 auto;padding:32px 34px;text-align:center;border-top:4px solid var(--gold)!important;}
+  .press-source{font-size:0.8rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px;}
+  .press-card h3{color:var(--navy);font-size:1.35rem;line-height:1.3;margin-bottom:12px;}
+  .press-card p{color:var(--muted);}
+  .press-quote{margin:18px auto 0;max-width:600px;padding:14px 18px;background:var(--gold-soft);border-left:3px solid var(--gold);border-radius:8px;color:var(--navy)!important;font-style:italic;text-align:left;}
+  .press-quote cite{display:block;margin-top:6px;font-style:normal;font-size:0.85rem;color:var(--muted);}
 
   .quote-banner{background:var(--navy);color:#fff;text-align:center;padding:32px 20px;position:relative;overflow:hidden;}
   .quote-banner::before,.quote-banner::after{content:'';position:absolute;top:0;bottom:0;width:6px;}
@@ -376,7 +397,7 @@
   @media(max-width:640px){
     .section{padding:48px 0;}
     .hero{padding:28px 0 44px;}
-    .hero-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card,.pricing-plan,.form-card,.why-card{padding:24px 20px;}
+    .hero-card,.list-card,.about-card,.info-box,.popup-box,.testimonial-card,.pricing-plan,.form-card,.why-card,.press-card{padding:24px 20px;}
     .success-message .card{padding:24px 20px;}
     .btn{width:100%;}
     .btn-wrap,.popup-actions{flex-direction:column;}
@@ -387,6 +408,7 @@
     .success-nicola-speech{border-radius:16px;}
     .promo-grid .notes-promo{grid-template-columns:1fr;text-align:center;}
     .promo-grid .notes-promo img{margin:0 auto;}
+    .press-badge{font-size:0.85rem;}
     /* Let the Nicola biography wrap around the portrait, then use the full card width. */
     #about .about-card:nth-child(2) > div{display:block!important;}
     #about .about-card:nth-child(2) > div::after{content:'';display:block;clear:both;}
@@ -589,6 +611,7 @@
             <a href="#pricing" class="btn btn-primary">See Pricing &amp; Enrol</a>
             <a href="free-masterclass.html" class="btn btn-secondary">Not sure yet? Try a free lesson</a>
           </div>
+          <a href="#press" class="press-badge">📰 As featured in <strong>The Carlow Nationalist</strong> →</a>
           <div class="hero-card">
             <p><strong>New structured lesson released each week</strong> — watch anytime, revisit as needed, and build skills steadily across the year in oral, aural and written French. A more affordable alternative to weekly grinds and private tutoring, with expert guidance from a teacher with nearly 20 years' experience, including work as an SEC oral examiner and corrector.</p>
           </div>
@@ -786,6 +809,24 @@
         </div>
       </div>
       <p class="testimonial-note">*Based on a recent workshop with 15 students</p>
+    </div>
+  </section>
+
+  <!-- IN THE PRESS -->
+  <section id="press" class="section-sm">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Dans la presse<span class="title-underline"></span></h2>
+      </div>
+      <div class="card press-card">
+        <div class="press-source">📰 The Carlow Nationalist · 17 October 2026</div>
+        <h3>"French teacher from Carlow launches affordable grinds platform"</h3>
+        <p>The Carlow Nationalist featured the launch of FrenchExam.ie — why I built it, how the 36-week programme works out at a little over €5 a lesson, and the summer spent recording every lesson.</p>
+        <p class="press-quote">"Kids just get grinds willy-nilly now but a lot of families also can't afford them."<cite>— Nicola Rowan, speaking to the Carlow Nationalist</cite></p>
+        <div class="btn-wrap" style="margin-top:22px;">
+          <a href="https://www.carlow-nationalist.ie/news/french-teacher-from-carlow-launches-affordable-grinds-platform_arid-20331474.html" target="_blank" rel="noopener" class="btn btn-secondary">Read the full article →</a>
+        </div>
+      </div>
     </div>
   </section>
 
