@@ -138,15 +138,84 @@
     th,td{padding:9px 8px;}
   }
 </style>
+
+<!-- FrenchExam.ie course call-to-action -->
+<style>
+.fxc{container-type:inline-size;position:relative;margin:8px 0 54px;background:#fff;border:1px solid rgba(31,58,95,.11);border-radius:20px;box-shadow:0 12px 32px rgba(17,24,39,.07);overflow:hidden;font-family:'DM Sans',Arial,sans-serif;color:#1f2937}
+.fxc::before{content:"";display:block;height:5px;background:linear-gradient(90deg,#002395 0 33.3%,#fff 33.3% 66.6%,#ed2939 66.6%)}
+.fxc-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}
+.fxc-copy{padding:30px 30px 28px}
+.fxc-eyebrow{display:inline-block;background:rgba(197,164,109,.16);color:#1f3a5f;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:999px;margin:0 0 14px}
+.fxc h2.fxc-title{font-family:'Playfair Display',Georgia,serif;color:#1f3a5f;font-size:1.65rem;line-height:1.22;margin:0 0 12px;padding:0;border:0}
+.fxc p.fxc-intro{color:#5d6675;font-size:1rem;line-height:1.7;margin:0 0 18px}
+.fxc ul.fxc-points{list-style:none;margin:0 0 20px;padding:0;display:grid;gap:10px}
+.fxc ul.fxc-points li{position:relative;padding-left:30px;margin:0;color:#1f2937;font-size:.97rem;line-height:1.55}
+.fxc ul.fxc-points li::before{content:"✓";position:absolute;left:0;top:1px;width:20px;height:20px;border-radius:50%;background:#1f3a5f;color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.fxc-teacher{display:flex;gap:10px;align-items:center;border-top:1px solid rgba(31,58,95,.11);padding-top:16px;margin:0;color:#5d6675;font-size:.88rem;line-height:1.5}
+.fxc-teacher strong{color:#1f3a5f}
+.fxc-badge{flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:#f7f4ee;border:1px solid rgba(197,164,109,.45);display:flex;align-items:center;justify-content:center;font-size:1.05rem}
+.fxc-price{background:linear-gradient(160deg,#1f3a5f 0%,#162b47 100%);color:#fff;padding:30px 26px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.fxc-plan{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#c5a46d;margin:0 0 6px}
+.fxc-amount{font-family:'Playfair Display',Georgia,serif;font-size:3rem;font-weight:800;line-height:1;margin:0 0 4px;color:#fff}
+.fxc-once{font-size:.9rem;color:rgba(255,255,255,.78);margin:0 0 14px}
+.fxc-gift{background:rgba(197,164,109,.16);border:1px solid rgba(197,164,109,.4);border-radius:12px;padding:9px 12px;font-size:.86rem;line-height:1.45;color:#fff;margin:0 0 18px}
+.fxc a.fxc-btn{display:block;text-align:center;text-decoration:none;font-weight:700;border-radius:999px;padding:13px 18px;font-size:1rem;line-height:1.25;transition:transform .15s ease,background .15s ease,border-color .15s ease}
+.fxc a.fxc-btn:hover{transform:translateY(-1px)}
+.fxc a.fxc-btn:focus-visible{outline:3px solid #c5a46d;outline-offset:3px}
+.fxc a.fxc-btn-main{background:#c5a46d;color:#1f3a5f!important;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.fxc a.fxc-btn-main:hover{background:#d4b682}
+.fxc a.fxc-btn-alt{margin-top:10px;background:transparent;color:#fff!important;border:1.5px solid rgba(255,255,255,.55);font-size:.95rem}
+.fxc a.fxc-btn-alt:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.fxc-note{font-size:.82rem;line-height:1.55;color:rgba(255,255,255,.8);margin:14px 0 0}
+.fxc-note strong{color:#fff}
+.fxc a.fxc-more{display:inline-block;margin-top:12px;color:#fff!important;font-size:.88rem;font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.fxc-wrap{width:min(92%,980px);margin:0 auto;padding:10px 0 30px}
+.fxc-wrap .fxc{margin:0}
+.fxc-late{display:none}
+.fxc.fxc--late .fxc-early{display:none}
+.fxc.fxc--late .fxc-late{display:block}
+@container (max-width:640px){
+  .fxc-grid{grid-template-columns:1fr}
+  .fxc-copy{padding:24px 20px 22px}
+  .fxc h2.fxc-title{font-size:1.4rem}
+  .fxc-price{padding:26px 20px}
+}
+@supports not (container-type:inline-size){
+  @media (max-width:900px){.fxc-grid{grid-template-columns:1fr}}
+}
+@media (prefers-reduced-motion:reduce){.fxc a.fxc-btn{transition:none}.fxc a.fxc-btn:hover{transform:none}}
+</style>
+
+<!-- FrenchExam.ie top menu -->
+<style>
+header.fx-head{padding:14px 0;text-align:left;border-bottom:1px solid rgba(31,58,95,.10);background:#fff}
+.fx-head-inner{width:min(92%,1080px);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+header.fx-head .logo{text-decoration:none}
+.fx-head-links{display:flex;align-items:center;gap:22px}
+.fx-head-links a{font-family:'DM Sans',Arial,sans-serif;font-size:.92rem;font-weight:700;color:#1f3a5f;text-decoration:none}
+.fx-head-links a:hover{color:#162b47;text-decoration:underline;text-underline-offset:4px}
+.fx-head-links a.fx-head-btn{background:#1f3a5f;color:#fff;border-radius:999px;padding:10px 18px;text-decoration:none}
+.fx-head-links a.fx-head-btn:hover{background:#162b47;color:#fff;text-decoration:none}
+.fx-head-links a:focus-visible{outline:3px solid #c5a46d;outline-offset:3px}
+@media (max-width:700px){.fx-head-links a:not(.fx-head-btn){display:none}}
+</style>
 </head>
 <body>
 <div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
 
-<header>
-  <a href="index.html" class="logo">
-    <span class="logo-flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></span>
-    FrenchExam.ie
-  </a>
+<header class="fx-head">
+  <div class="fx-head-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></span>
+      FrenchExam.ie
+    </a>
+    <nav class="fx-head-links" aria-label="Main">
+      <a href="index.html">Course</a>
+      <a href="free-masterclass.html">Free Masterclass</a>
+      <a href="frequently-asked-questions.html">FAQs</a>
+      <a class="fx-head-btn" href="index.html#pricing">Enrol Now</a>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -201,11 +270,45 @@
     </table>
     <p style="text-align:center;"><a href="leaving-cert-french-marks-breakdown.html">See the full marks breakdown for both levels →</a></p>
 
-    <div class="cta-box">
-      <h3>Want the syllabus taught week by week?</h3>
-      <p>The Complete 36-Week Higher Level Programme works through every skill and topic area in a structured order, from September to the exam.</p>
-      <a href="index.html#pricing" class="btn">Explore the Complete Programme</a>
+<section class="fxc" id="course" aria-labelledby="course-title">
+  <div class="fxc-grid">
+    <div class="fxc-copy">
+      <p class="fxc-eyebrow">The syllabus, taught week by week</p>
+      <h2 class="fxc-title" id="course-title">Cover the whole syllabus without guessing what’s next</h2>
+      <p class="fxc-intro">Knowing what’s on the course is the first step. The 36-week programme works through every skill and topic area in a clear order, so nothing is left until the last minute.</p>
+      <ul class="fxc-points">
+        <li>All four skills: oral, aural, reading and written production</li>
+        <li>The common topic areas covered in a structured sequence</li>
+        <li>Grammar and vocabulary built up week by week</li>
+        <li>Oral preparation timed for March, written preparation timed for June</li>
+      </ul>
+      <p class="fxc-teacher"><span class="fxc-badge" aria-hidden="true">🇫🇷</span><span>Taught by <strong>Nicola Rowan</strong> — qualified French teacher with nearly 20 years’ Higher Level experience, and SEC oral examiner and corrector.</span></p>
     </div>
+    <div class="fxc-price">
+      <p class="fxc-plan">36-Week Higher Level Programme</p>
+      <p class="fxc-amount">€188</p>
+      <p class="fxc-once">One payment · full access to June</p>
+      <p class="fxc-gift">🎁 Pay in full and get the French Notes free (worth €19.99)</p>
+      <a class="fxc-btn fxc-btn-main" data-fxc-main href="https://lcfrenchworkshop.systeme.io/3d76960a" target="_blank" rel="noopener">Enrol for €188</a>
+      <a class="fxc-btn fxc-btn-alt fxc-early" href="https://lcfrenchworkshop.systeme.io/c4a6b9a5" target="_blank" rel="noopener">Or pay 8 × €24</a>
+      <p class="fxc-note fxc-early"><strong>8 × €24 instalments (€192 total) available until 31 October 2026.</strong> After that, you can still enrol any time by paying €188 in full.</p>
+      <p class="fxc-note fxc-late">Instant access to all 36 lessons and workbooks — study at your own pace right up to the exam.</p>
+      <a class="fxc-more" href="index.html#pricing">See full course details →</a>
+    </div>
+  </div>
+</section>
+<script>
+/* From 1 November 2026 the instalment plan closes: point the course section at the
+   full-payment Intensive Revision Programme and hide the instalment option. */
+(function(){
+  if (new Date() < new Date('2026-11-01T00:00:00')) return;
+  document.querySelectorAll('.fxc').forEach(function(box){
+    box.classList.add('fxc--late');
+    var main = box.querySelector('[data-fxc-main]');
+    if (main) { main.href = 'https://lcfrenchworkshop.systeme.io/696e7ce6'; main.textContent = 'Enrol now — €188'; }
+  });
+})();
+</script>
 
     <h2>Frequently Asked Questions</h2>
 
