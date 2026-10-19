@@ -950,6 +950,12 @@
         </div>
       </template>
 
+      <template id="finalWeekOfferTpl">
+        <div style="margin-top:12px;background:var(--gold-soft,#f7efe0);border:1px dashed var(--gold,#C5A46D);border-radius:12px;padding:10px 14px;color:var(--navy);font-size:0.9rem;line-height:1.45;">
+          🏷️ <strong>Final week offer:</strong> use code <strong>CARLOWNATIONALIST</strong> at checkout for 10% off, so it's <strong>€169.20</strong>. Until 31 October.
+        </div>
+      </template>
+
       <template id="intensiveEnrolmentTpl">
         <div id="intensiveEnrolment">
           <div class="section-title-wrap">
@@ -1122,6 +1128,13 @@
     var mins = Math.floor((diff % (1000*60*60)) / (1000*60));
     el.textContent = days + 'd ' + hours + 'h ' + mins + 'm left';
   }
+  // Final week (25–31 October 2026): the top bar promotes the Carlow Nationalist code
+  (function(){
+    var now = new Date();
+    if (now < new Date('2026-10-25T00:00:00') || now >= new Date('2026-11-01T00:00:00')) return;
+    var bar = document.getElementById('urgencyBar');
+    if (bar) bar.innerHTML = '⏳ Final week of the guided programme: <span>10% off</span> with code <span>CARLOWNATIONALIST</span> · <span id="countdown">Loading...</span>';
+  })();
   updateCountdown();
   setInterval(updateCountdown, 60000);
 </script>
@@ -1169,6 +1182,13 @@
       heroPrice.innerHTML = '<p class="hp-main"><strong>€188 for the complete course</strong> — one payment.</p>'
         + '<p class="hp-sub">That\'s about the cost of four or five grinds — for a whole year of Higher Level French.</p>'
         + '<p class="hp-join">🚀 <strong>Joining now?</strong> You get immediate access to all 36 lessons, so you can study at your own pace before the Leaving Cert.</p>';
+    }
+
+    // Final week (25–31 October): show the discount code on the Full Year card
+    var finalWeekTpl = document.getElementById('finalWeekOfferTpl');
+    if(now >= new Date('2026-10-25T00:00:00') && now < lateJoinCutoff && finalWeekTpl && finalWeekTpl.content){
+      var saving = document.querySelector('#regularEnrolment .plan-best .plan-saving');
+      if(saving) saving.insertAdjacentElement('afterend', finalWeekTpl.content.firstElementChild.cloneNode(true));
     }
 
     if(now >= lateJoinCutoff){
