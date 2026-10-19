@@ -549,8 +549,8 @@
 <body>
 <div class="tricolore-stripe"><div class="bleu"></div><div class="blanc"></div><div class="rouge"></div></div>
 
-<div class="urgency-bar">
-  ⏳ Enrolment closes <span>31 October</span> · <span id="countdown">Loading...</span>
+<div class="urgency-bar" id="urgencyBar">
+  ⏳ Guided weekly programme closes <span>31 October</span> · <span id="countdown">Loading...</span>
 </div>
 <div class="credentials-strip" style="background:var(--soft-2,#f8fafc);border-bottom:1px solid rgba(31,58,95,0.08);padding:10px 20px;text-align:center;font-size:0.88rem;color:var(--muted);font-weight:600;">
   🇫🇷 Created by Nicola Rowan — Qualified French Teacher <span style="opacity:0.5;margin:0 6px;">•</span> Nearly 20 Years' Classroom Experience <span style="opacity:0.5;margin:0 6px;">•</span> SEC Oral Examiner &amp; Corrector
@@ -598,7 +598,7 @@
     <div class="container">
       <div class="hero-inner">
         <div class="hero-text">
-          <div class="hero-badge">✨ Enrolment Open Now — Closes 31 October</div>
+          <div class="hero-badge" id="heroBadge">✨ Guided Weekly Programme — Enrol by 31 October</div>
           <h1>The Complete 36-Week Higher Level Leaving Cert French Course</h1>
           <p class="hero-subhead">Weekly 30–45 minute lessons from September to the Leaving Cert — created by Madame Nicola, a qualified French teacher with nearly 20 years' Higher Level experience and work as an SEC oral examiner and corrector.</p>
           <p>Not another library of short revision clips. A full, sequenced programme that tells students exactly what to study each week — from September all the way to the exam.</p>
@@ -872,7 +872,7 @@
       <div class="section-title-wrap">
         <h2 class="section-title">Rejoignez-nous<span class="title-underline"></span></h2>
         <p class="section-subtitle">Choose how you'd like to pay. Both options include exactly the same Higher Level programme from September to May.</p>
-        <p class="section-subtitle" style="margin-top:10px;color:var(--rouge);font-weight:700;">⏳ Enrolment closes 31st October 2026 — next intake opens September 2027</p>
+        <p class="section-subtitle" style="margin-top:10px;color:var(--rouge);font-weight:700;">⏳ The guided weekly programme closes to new students on 31st October 2026. After that, you can still join, with every lesson unlocked straight away.</p>
       </div>
       <p style="text-align:center;font-weight:700;color:var(--navy);letter-spacing:0.5px;margin-bottom:18px;">Higher Level Weekly Programme</p>
 
@@ -881,7 +881,7 @@
   <ul style="list-style:none;display:grid;gap:8px;">
     <li style="color:var(--muted);font-size:0.93rem;">• This is a self-paced online programme — Madame Nicola does not correct homework, essays or oral practice tasks.</li>
     <li style="color:var(--muted);font-size:0.93rem;">• A statutory 14-day cancellation period applies. After it expires, change-of-mind refunds are not provided; statutory rights remain unaffected.</li>
-    <li style="color:var(--muted);font-size:0.93rem;">• Enrolment closes 31st October 2026 to keep every student progressing together through the full programme.</li>
+    <li style="color:var(--muted);font-size:0.93rem;">• The guided weekly programme closes to new students on 31st October 2026, so every lesson stays timed to the oral and written exams. After that, you can still join with full access to every lesson.</li>
   </ul>
 </div>
 
@@ -954,7 +954,7 @@
         <div id="intensiveEnrolment">
           <div class="section-title-wrap">
             <h2 class="section-title">Rejoignez-nous<span class="title-underline"></span></h2>
-            <p class="section-subtitle">The 2026/27 Full Year Programme has now closed to new enrolments. Our next full-year intake opens September 2027 — register your interest and we'll be in touch.</p>
+            <p class="section-subtitle">The guided weekly programme has closed for 2026/27, but you can still join today, with instant access to all 36 lessons.</p>
           </div>
           <div style="max-width:480px;margin:0 auto 32px;">
             <div class="pricing-plan card plan-best">
@@ -1112,7 +1112,9 @@
     var now = new Date();
     var diff = deadline - now;
     if(diff <= 0){
-      el.textContent = 'Enrolment now closed';
+      // From 1 November the guided programme is closed but anyone can still join the Intensive Revision Programme
+      var bar = document.getElementById('urgencyBar');
+      if(bar) bar.innerHTML = '🚀 Enrolment open — instant access to all 36 lessons';
       return;
     }
     var days = Math.floor(diff / (1000*60*60*24));
@@ -1159,6 +1161,10 @@
 
     // Hero price box: from 1 Nov the instalment plan and catch-up release end
     var heroPrice = document.getElementById('heroPrice');
+    var heroBadge = document.getElementById('heroBadge');
+    if(heroBadge && now >= lateJoinCutoff){
+      heroBadge.textContent = '✨ Enrolment Open — Instant Access to All 36 Lessons';
+    }
     if(heroPrice && now >= lateJoinCutoff){
       heroPrice.innerHTML = '<p class="hp-main"><strong>€188 for the complete course</strong> — one payment.</p>'
         + '<p class="hp-sub">That\'s about the cost of four or five grinds — for a whole year of Higher Level French.</p>'

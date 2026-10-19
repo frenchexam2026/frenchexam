@@ -397,7 +397,15 @@
   <h2>Ready for All 36 Weeks?</h2>
   <p>This taster is one lesson from the complete 36-week programme. The full course covers Higher Level oral, listening, reading, written production, grammar, vocabulary and exam technique in a structured sequence from September to May.</p>
   <a class="cta-button" href="/#pricing">Join FrenchExam.ie</a>
-  <div class="cta-note">Full Year Access: €188 upfront or 8 monthly payments of €24 · Enrolment closes 31 October 2026</div>
+  <div class="cta-note" id="ctaNote">Full Year Access: €188 upfront or 8 monthly payments of €24 · Guided weekly programme closes 31 October 2026</div>
+  <script>
+  /* From 1 November 2026 the guided programme and instalment plan close; anyone can still join with instant access. */
+  (function(){
+    if (new Date() < new Date('2026-11-01T00:00:00')) return;
+    var n = document.getElementById('ctaNote');
+    if (n) n.textContent = '€188, one payment · Instant access to all 36 lessons';
+  })();
+  </script>
 </section>
 
 <footer>
