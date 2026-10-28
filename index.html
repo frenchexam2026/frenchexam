@@ -536,6 +536,12 @@
   .ml-embedded .ml-form-successBody .ml-form-successContent p{
     color:#5d6675!important;font-family:'DM Sans',Arial,sans-serif!important;
   }
+  .fx-visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+  .fx-signup{margin-top:18px;text-align:left;}
+  .fx-signup-error{margin:-4px 0 10px;color:#c8102e;font-size:.88rem;}
+  .fx-signup-success{margin-top:18px;padding:16px;border-radius:14px;background:#f7f4ee;}
+  .fx-signup-success h3{margin:0 0 6px;color:#1f3a5f;font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;}
+  .fx-signup-success p{margin:0;color:#5d6675;}
   .hero-price{background:#fff;border:1px solid rgba(201,162,39,.45);border-left:4px solid #c9a227;border-radius:14px;padding:14px 16px;margin:18px 0 6px;max-width:560px}
   .hero-price p{margin:0}
   .hero-price .hp-main{font-size:1.08rem;color:var(--navy)}
@@ -1098,8 +1104,25 @@
     <h2 id="freebiesPopupTitle">Free French Study Freebies</h2>
     <p>Sign up and get a brand-new free resource every 10 days — French Crimes mistakes to avoid, grammar cheat sheets, oral exam phrases, and more. All free, no strings attached.</p>
 
-    <!-- MailerLite embedded form: renders its own email field + submit button here -->
-    <div class="ml-embedded" data-form="G58pRM"></div>
+    <!-- Sign-up form: posts straight to the MailerLite form "Join & Get Free Freebies Every 10 Days"
+         (adds people to FrenchExam.ie Leads + Free Notes). Plain HTML, so it always shows,
+         whatever the visitor chose in the cookie banner. -->
+    <form class="fx-signup ml-embedded" id="freebiesForm"
+          action="https://assets.mailerlite.com/jsonp/2489675/forms/198943139069690915/subscribe"
+          method="post" target="fxSignupFrame" novalidate>
+      <label for="freebiesEmail" class="fx-visually-hidden">Your email address</label>
+      <input type="email" id="freebiesEmail" name="fields[email]" placeholder="Your email address"
+             autocomplete="email" inputmode="email" required>
+      <input type="hidden" name="ml-submit" value="1">
+      <input type="hidden" name="anticsrf" value="true">
+      <button type="submit" class="primary">Send me the freebies</button>
+      <p class="fx-signup-error" id="freebiesError" role="alert" hidden>Please enter a valid email address.</p>
+    </form>
+    <div class="fx-signup-success" id="freebiesSuccess" hidden role="status">
+      <h3>Merci ! You're in 🎉</h3>
+      <p>Check your inbox — your first freebie is on its way.</p>
+    </div>
+    <iframe name="fxSignupFrame" title="Sign-up" style="display:none" tabindex="-1" aria-hidden="true"></iframe>
 
     <p style="margin-top:14px;font-size:0.8rem;color:var(--muted);">No spam — unsubscribe anytime.</p>
   </div>
@@ -1327,12 +1350,49 @@
   function shouldShow(){
     var state = getState();
     if(!state) return true;
+    if(state.signedUpAt) return false; // already signed up: never show again
     if(state.dismissedAt){
       var daysSince = (Date.now() - state.dismissedAt) / (1000*60*60*24);
       if(daysSince < DISMISS_DAYS) return false;
     }
     return true;
   }
+  // Freebies sign-up: validate, send to MailerLite, then show the real result.
+  document.addEventListener('DOMContentLoaded', function(){
+    var form = document.getElementById('freebiesForm');
+    if(!form) return;
+    var input = document.getElementById('freebiesEmail');
+    var err = document.getElementById('freebiesError');
+    var btn = form.querySelector('button[type="submit"]');
+    function showError(msg){ err.textContent = msg; err.hidden = false; if(btn){ btn.disabled = false; btn.textContent = 'Send me the freebies'; } }
+    function showSuccess(){
+      form.hidden = true;
+      document.getElementById('freebiesSuccess').hidden = false;
+      setState({ signedUpAt: Date.now(), dismissedAt: Date.now() });
+    }
+    form.addEventListener('submit', function(e){
+      var v = (input.value || '').trim();
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)){
+        e.preventDefault(); showError('Please enter a valid email address.'); input.focus(); return;
+      }
+      input.value = v;
+      err.hidden = true;
+      if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+      if(!window.fetch || !window.FormData) return; // very old browser: plain form post via hidden iframe
+      e.preventDefault();
+      fetch(form.action, { method: 'POST', body: new FormData(form) })
+        .then(function(r){ return r.json(); })
+        .then(function(data){
+          if(data && data.success){ showSuccess(); }
+          else { showError('Sorry, that email address didn\'t work. Please check it and try again.'); }
+        })
+        .catch(function(){
+          // Network/CORS hiccup: fall back to a normal form post into the hidden iframe.
+          form.submit();
+          setTimeout(showSuccess, 900);
+        });
+    });
+  });
   window.closeFreebiesPopup = function(){
     var el = document.getElementById('freebiesPopup');
     if(el) el.style.display = 'none';
