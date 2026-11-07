@@ -1213,12 +1213,26 @@
     if(el) el.style.display = 'none';
     setState({ dismissedAt: Date.now() });
   };
+  // Show once the visitor has scrolled halfway down (not in the first 4 seconds),
+  // or after 30 seconds of reading, whichever comes first.
   document.addEventListener('DOMContentLoaded', function(){
     if(!shouldShow()) return;
-    setTimeout(function(){
+    var shown = false, start = Date.now(), timer;
+    function show(){
+      if(shown || !shouldShow()) return;
+      shown = true;
+      window.removeEventListener('scroll', onScroll);
+      clearTimeout(timer);
       var el = document.getElementById('freebiesPopup');
       if(el) el.style.display = 'flex';
-    }, SHOW_DELAY_MS);
+    }
+    function onScroll(){
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight - window.innerHeight) || 1;
+      if(window.scrollY / max >= 0.5 && Date.now() - start >= 4000) show();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    timer = setTimeout(show, 30000);
   });
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape'){
