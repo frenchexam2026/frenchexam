@@ -2,6 +2,8 @@
    Until 27 November: printed books (allow ~3 weeks for printing and delivery).
    28 November to 24 December: instant PDFs as last-minute gifts.
    From 25 December: nothing shows, so this file can be left in place or removed.
+   Black Friday, 27 November until SALE_END: the bar becomes a "20% off every PDF" bar,
+   and the PDF gift cards show the sale price (Payhip applies the discount itself).
    Include on a page with: <script src="/christmas-gift.js" defer></script> */
 (function () {
   var now = new Date();
@@ -9,8 +11,15 @@
   var end = new Date('2026-12-25T00:00:00');
   if (now >= end) return;
   var printed = now < printedDeadline;
+  var saleStart = new Date('2026-11-27T00:00:00');
+  var SALE_END = new Date('2026-12-01T00:00:00'); // sale runs to the end of Monday 30 Nov
+  var onSale = now >= saleStart && now < SALE_END;
 
-  var barHTML = printed
+  var barHTML = onSale
+    ? '🖤 <strong>Black Friday: 20% off every PDF</strong> until Monday 30 Nov. No code needed. ' +
+      (printed ? '<span class="xg-pill">Last day to order printed books for Christmas</span> ' : '') +
+      '<a href="/shop.html#christmas">Shop the sale &rarr;</a>'
+    : printed
     ? '🎄 <strong>The perfect Christmas gift for a Leaving Cert student:</strong> printed French notes &amp; workbooks. <span class="xg-pill">Order by Fri 27 Nov</span> <a href="/shop.html#christmas">Shop gifts &rarr;</a>'
     : '🎁 <strong>Last-minute Christmas gift?</strong> Our Leaving Cert French notes &amp; workbooks are instant PDF downloads. <a href="/shop.html#christmas">Shop gifts &rarr;</a>';
 
@@ -32,17 +41,20 @@
     '.xg-price{font-family:"Playfair Display",Georgia,serif;font-size:1.5rem;font-weight:800;color:#f3dfb5;margin:8px 0 10px}' +
     '.xg-item a{display:block;text-align:center;background:#c5a46d;color:#1f3a5f!important;font-weight:700;text-decoration:none;border-radius:999px;padding:11px 14px}' +
     '.xg-item a:hover{background:#d4b682}' +
+    '.xg-bar.xg-sale{background:linear-gradient(90deg,#111827,#1f3a5f)}' +
+    '.xg-was{font-size:1rem;font-weight:600;color:rgba(255,255,255,.6);text-decoration:line-through;margin-right:8px}' +
+    '.xg-off{display:inline-block;font-family:"DM Sans",Arial,sans-serif;font-size:.72rem;font-weight:700;background:#c8102e;color:#fff;border-radius:999px;padding:3px 9px;margin-left:8px;vertical-align:middle}' +
     '.xg-note{font-size:.84rem!important;color:rgba(255,255,255,.75)!important;margin:14px 0 0!important}' +
     '@media (max-width:820px){.xg-grid{grid-template-columns:1fr}.xg-card{padding:24px 20px}.xg-card h2{font-size:1.5rem}}';
 
   var items = printed ? [
-    ['The Complete Collection, printed', 'Success Guide + Essay Builder + Journal Intime Builder. Everything for Higher Level French.', '€84.99', 'https://payhip.com/b/FV3Ho', 'Order printed collection'],
-    ['Success Guide + Essay Builder, printed', 'The full-exam notes plus the essay workbook, together at a lower price.', '€54.99', 'https://payhip.com/b/x8IiK', 'Order printed bundle'],
-    ['The Written French Pack, printed', 'Essay Builder + Journal Intime Builder for the written paper.', '€59.99', 'https://payhip.com/b/xoZyW', 'Order printed pack']
+    ['The Complete Collection, printed', 'Success Guide + Essay Builder + Journal Intime Builder. Everything for Higher Level French.', '€84.99', null, 'https://payhip.com/b/FV3Ho', 'Order printed collection'],
+    ['Success Guide + Essay Builder, printed', 'The full-exam notes plus the essay workbook, together at a lower price.', '€54.99', null, 'https://payhip.com/b/x8IiK', 'Order printed bundle'],
+    ['The Written French Pack, printed', 'Essay Builder + Journal Intime Builder for the written paper.', '€59.99', null, 'https://payhip.com/b/xoZyW', 'Order printed pack']
   ] : [
-    ['The Complete Collection, PDFs', 'Success Guide + Essay Builder + Journal Intime Builder, ready to download instantly.', '€44.99', 'https://payhip.com/b/3OskK', 'Download the collection'],
-    ['Success Guide + Essay Builder, PDFs', 'The full-exam notes plus the essay workbook, together at a lower price.', '€34.99', 'https://payhip.com/b/vRa96', 'Download the bundle'],
-    ['The Written French Pack, PDFs', 'Essay Builder + Journal Intime Builder for the written paper.', '€34.99', 'https://payhip.com/b/5rXHt', 'Download the pack']
+    ['The Complete Collection, PDFs', 'Success Guide + Essay Builder + Journal Intime Builder, ready to download instantly.', '€44.99', '€35.99', 'https://payhip.com/b/3OskK', 'Download the collection'],
+    ['Success Guide + Essay Builder, PDFs', 'The full-exam notes plus the essay workbook, together at a lower price.', '€34.99', '€27.99', 'https://payhip.com/b/vRa96', 'Download the bundle'],
+    ['The Written French Pack, PDFs', 'Essay Builder + Journal Intime Builder for the written paper.', '€34.99', '€27.99', 'https://payhip.com/b/5rXHt', 'Download the pack']
   ];
 
   function track(label) {
@@ -51,7 +63,7 @@
 
   function addBar() {
     var bar = document.createElement('div');
-    bar.className = 'xg-bar';
+    bar.className = onSale ? 'xg-bar xg-sale' : 'xg-bar';
     bar.innerHTML = barHTML;
     var stripe = document.querySelector('.tricolore-stripe');
     if (stripe && stripe.parentNode === document.body) stripe.insertAdjacentElement('afterend', bar);
@@ -63,14 +75,16 @@
     if (!anchor) return;
     var cards = items.map(function (it) {
       return '<div class="xg-item"><b>' + it[0] + '</b><span>' + it[1] + '</span>' +
-        '<div class="xg-price">' + it[2] + '</div>' +
-        '<a href="' + it[3] + '" target="_blank" rel="noopener" onclick="' + track(it[0]) + '">' + it[4] + ' &rarr;</a></div>';
+        '<div class="xg-price">' + (onSale && it[3]
+          ? '<span class="xg-was">' + it[2] + '</span>' + it[3] + '<span class="xg-off">20% OFF</span>'
+          : it[2]) + '</div>' +
+        '<a href="' + it[4] + '" target="_blank" rel="noopener" onclick="' + track(it[0]) + '">' + it[5] + ' &rarr;</a></div>';
     }).join('');
     var sec = document.createElement('section');
     sec.className = 'xg-shop';
     sec.id = 'christmas';
     sec.innerHTML = '<div class="xg-card">' +
-      '<div class="xg-eyebrow">' + (printed ? '🎄 Christmas gifts' : '🎁 Last-minute gifts') + '</div>' +
+      '<div class="xg-eyebrow">' + (onSale && !printed ? '🖤 Black Friday · 20% off PDFs' : printed ? '🎄 Christmas gifts' : '🎁 Last-minute gifts') + '</div>' +
       '<h2>' + (printed ? 'A Christmas gift that helps with the Leaving Cert' : 'Instant gifts for a Leaving Cert student') + '</h2>' +
       '<p>' + (printed
         ? 'Our printed Higher Level French notes and workbooks make a brilliant present for a 5th or 6th year student. Written by Nicola Rowan, a French teacher and SEC examiner.'
