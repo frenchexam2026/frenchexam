@@ -44,6 +44,7 @@
     '.xg-bar.xg-sale{background:linear-gradient(90deg,#111827,#1f3a5f)}' +
     '.xg-was{font-size:1rem;font-weight:600;color:rgba(255,255,255,.6);text-decoration:line-through;margin-right:8px}' +
     '.xg-off{display:inline-block;font-family:"DM Sans",Arial,sans-serif;font-size:.72rem;font-weight:700;background:#c8102e;color:#fff;border-radius:999px;padding:3px 9px;margin-left:8px;vertical-align:middle}' +
+    '.xg-strike{opacity:.6;font-weight:inherit;margin-right:2px}' +
     '.xg-note{font-size:.84rem!important;color:rgba(255,255,255,.75)!important;margin:14px 0 0!important}' +
     '@media (max-width:820px){.xg-grid{grid-template-columns:1fr}.xg-card{padding:24px 20px}.xg-card h2{font-size:1.5rem}}';
 
@@ -98,12 +99,57 @@
     if (location.hash === '#christmas') sec.scrollIntoView();
   }
 
+  // During the sale, show the 20% PDF price wherever a PDF price appears on the page.
+  var PDF_SALE = {
+    '0po6d': ['€19.99', '€15.99'], // Leaving Cert French Notes (Success Guide)
+    'T5gzB': ['€19', '€15.20'],    // Essay Builder
+    'PyOi3': ['€19.99', '€15.99'], // Journal Intime Builder
+    '3OskK': ['€44.99', '€35.99'], // Complete Collection
+    '5rXHt': ['€34.99', '€27.99'], // Written French Pack
+    'vRa96': ['€34.99', '€27.99']  // Success Guide + Essay Builder
+  };
+  function salePrice(el, was, now) {
+    if (el.getAttribute('data-xg-sale')) return;
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    var nodes = [], n;
+    while ((n = walker.nextNode())) nodes.push(n);
+    var re = new RegExp(was.replace(/[.]/g, '\\.') + '(?!\\.?[0-9])');
+    for (var i = 0; i < nodes.length; i++) {
+      var t = nodes[i].nodeValue, m = t.match(re);
+      if (!m) continue;
+      var span = document.createElement('span');
+      span.innerHTML = t.slice(0, m.index).replace(/</g, '&lt;') +
+        '<s class="xg-strike">' + was + '</s> ' + now +
+        t.slice(m.index + was.length).replace(/</g, '&lt;');
+      nodes[i].parentNode.replaceChild(span, nodes[i]);
+      el.setAttribute('data-xg-sale', '1');
+      return;
+    }
+  }
+  function applySalePrices() {
+    Object.keys(PDF_SALE).forEach(function (key) {
+      var was = PDF_SALE[key][0], now = PDF_SALE[key][1];
+      var links = document.querySelectorAll('a[href*="payhip.com/b/' + key + '"]');
+      Array.prototype.forEach.call(links, function (a) {
+        if (a.closest('.xg-shop')) return;
+        salePrice(a, was, now);
+        // A price box next to the button, in the same card or option
+        var box = a.parentNode;
+        for (var up = 0; box && up < 3; up++, box = box.parentNode) {
+          var price = box.querySelector && box.querySelector('.price');
+          if (price) { salePrice(price, was, now); break; }
+        }
+      });
+    });
+  }
+
   function init() {
     var style = document.createElement('style');
     style.textContent = css;
     document.head.appendChild(style);
     addBar();
     addShopSection();
+    if (onSale) applySalePrices();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
