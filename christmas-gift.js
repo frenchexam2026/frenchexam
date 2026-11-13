@@ -4,6 +4,7 @@
    From 25 December: nothing shows, so this file can be left in place or removed.
    Black Friday, 27 November until SALE_END: the bar becomes a "20% off every PDF" bar,
    and the PDF gift cards show the sale price (Payhip applies the discount itself).
+   The course is €20 off (€168) over the same weekend with a Systeme.io coupon code, COURSE_CODE.
    Include on a page with: <script src="/christmas-gift.js" defer></script> */
 (function () {
   var now = new Date();
@@ -14,11 +15,14 @@
   var saleStart = new Date('2026-11-27T00:00:00');
   var SALE_END = new Date('2026-12-01T00:00:00'); // sale runs to the end of Monday 30 Nov
   var onSale = now >= saleStart && now < SALE_END;
+  var COURSE_CODE = 'BLACKFRIDAY';
 
   var barHTML = onSale
-    ? '🖤 <strong>Black Friday: 20% off every PDF</strong> until Monday 30 Nov. No code needed. ' +
-      (printed ? '<span class="xg-pill">Last day to order printed books for Christmas</span> ' : '') +
-      '<a href="/shop.html#christmas">Shop the sale &rarr;</a>'
+    ? '🖤 <strong>Black Friday, until Monday 30 Nov:</strong> 20% off every PDF ' +
+      '<a href="/shop.html#christmas">Shop &rarr;</a> <span class="xg-sep">·</span> ' +
+      '<strong>€20 off the full course</strong> with code <span class="xg-code">' + COURSE_CODE + '</span> ' +
+      '<a href="/index.html#pricing">Enrol &rarr;</a>' +
+      (printed ? '<br class="xg-br"><span class="xg-pill">Last day to order printed books for Christmas</span>' : '')
     : printed
     ? '🎄 <strong>The perfect Christmas gift for a Leaving Cert student:</strong> printed French notes &amp; workbooks. <span class="xg-pill">Order by Fri 27 Nov</span> <a href="/shop.html#christmas">Shop gifts &rarr;</a>'
     : '🎁 <strong>Last-minute Christmas gift?</strong> Our Leaving Cert French notes &amp; workbooks are instant PDF downloads. <a href="/shop.html#christmas">Shop gifts &rarr;</a>';
@@ -28,6 +32,7 @@
     '.xg-bar strong{color:#fff}' +
     '.xg-bar a{color:#f3dfb5;font-weight:700;text-decoration:underline;text-underline-offset:3px;margin-left:4px;white-space:nowrap}' +
     '.xg-pill{display:inline-block;background:rgba(255,255,255,.18);border-radius:999px;padding:2px 10px;margin:0 4px;white-space:nowrap}' +
+    '@media (min-width:641px){.xg-br{display:none}.xg-bar .xg-pill{margin-left:10px}}' +
     '@media (max-width:640px){.xg-bar{font-size:.8rem;padding:9px 12px}}' +
     '.xg-shop{max-width:1100px;margin:28px auto 8px;padding:0 20px;scroll-margin-top:96px}' +
     '.xg-card{background:linear-gradient(135deg,#14532d 0%,#1f3a5f 100%);color:#fff;border-radius:22px;padding:30px 30px 26px;box-shadow:0 14px 34px rgba(17,24,39,.14);font-family:"DM Sans",Arial,sans-serif}' +
@@ -44,6 +49,11 @@
     '.xg-bar.xg-sale{background:linear-gradient(90deg,#111827,#1f3a5f)}' +
     '.xg-was{font-size:1rem;font-weight:600;color:rgba(255,255,255,.6);text-decoration:line-through;margin-right:8px}' +
     '.xg-off{display:inline-block;font-family:"DM Sans",Arial,sans-serif;font-size:.72rem;font-weight:700;background:#c8102e;color:#fff;border-radius:999px;padding:3px 9px;margin-left:8px;vertical-align:middle}' +
+    '.xg-code{display:inline-block;background:#c5a46d;color:#1f3a5f;font-weight:800;letter-spacing:.04em;border-radius:6px;padding:1px 8px;margin:0 2px}' +
+    '.xg-sep{opacity:.5;margin:0 6px}' +
+    '.xg-bar .xg-pill{margin-top:6px}' +
+    '.xg-codenote{display:inline-block;background:#c8102e;color:#fff!important;font:700 .85rem/1.3 "DM Sans",Arial,sans-serif;border-radius:999px;padding:6px 14px;margin:8px 0 10px}' +
+    '.xg-codenote b{color:#fff;letter-spacing:.04em}' +
     '.xg-strike{opacity:.6;font-weight:inherit;margin-right:2px}' +
     '.xg-note{font-size:.84rem!important;color:rgba(255,255,255,.75)!important;margin:14px 0 0!important}' +
     '@media (max-width:820px){.xg-grid{grid-template-columns:1fr}.xg-card{padding:24px 20px}.xg-card h2{font-size:1.5rem}}';
@@ -143,13 +153,32 @@
     });
   }
 
+  // During the sale, show the €168 course price and the coupon code wherever €188 appears.
+  function applyCourseOffer() {
+    if (/legal/.test(location.pathname)) return; // keep the terms page at the list price
+    var note = '<span class="xg-codenote">🖤 €20 off until Mon 30 Nov: use code <b>' + COURSE_CODE + '</b> at checkout</span>';
+    var priceBoxes = document.querySelectorAll('.plan-price, .fxc-amount, #heroPrice .hp-main, .price, .cta-note');
+    var done = [];
+    Array.prototype.forEach.call(priceBoxes, function (el) {
+      if (done.indexOf(el) > -1 || el.closest('.xg-shop')) return;
+      if (!/€188(?!\d)/.test(el.textContent)) return;
+      done.push(el);
+      salePrice(el, '€188', '€168');
+      el.insertAdjacentHTML('afterend', '<div>' + note + '</div>');
+    });
+    var plain = document.querySelectorAll('.grind-box .amount');
+    Array.prototype.forEach.call(plain, function (el) { salePrice(el, '€188', '€168'); });
+    var enrol = document.querySelectorAll('a[href*="systeme.io/696e7ce6"]');
+    Array.prototype.forEach.call(enrol, function (a) { salePrice(a, '€188', '€168'); });
+  }
+
   function init() {
     var style = document.createElement('style');
     style.textContent = css;
     document.head.appendChild(style);
     addBar();
     addShopSection();
-    if (onSale) applySalePrices();
+    if (onSale) { applySalePrices(); applyCourseOffer(); }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
