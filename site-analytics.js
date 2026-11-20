@@ -30,7 +30,7 @@
   };
 
   /* ---------- 1. Consent + loading GA (only on pages without their own banner) ---------- */
-  var pageHasOwnBanner = typeof window.loadFrenchExamAnalytics === 'function';
+  var pageHasOwnBanner = typeof window.loadFrenchExamAnalytics === 'function' || !!document.getElementById('cookieBanner');
 
   if (!pageHasOwnBanner) {
     var loaded = { analytics: false, forms: false };
@@ -113,7 +113,7 @@
       b.setAttribute('aria-labelledby', 'cookieTitle');
       b.innerHTML = '' +
         '<h2 id="cookieTitle">Your cookie choices</h2>' +
-        '<p>We use necessary technology to operate this website. With your permission, we also use Google Analytics to understand website use and MailerLite technology for signup forms and popups. You can accept, reject or choose separately. Read our <a href="/legal.html#cookies">Cookie Policy</a>.</p>' +
+        '<p id="cookieDescription">We use necessary technology to operate this website. With your permission, we also use Google Analytics to understand website use and MailerLite technology for signup forms and popups. You can accept, reject or choose separately. Read our <a href="/legal.html#cookies">Cookie Policy</a>.</p>' +
         '<div class="cookie-options" id="cookieOptions">' +
           '<label class="cookie-option"><input type="checkbox" checked disabled> <span><strong>Necessary</strong><br>Required to remember your choice and operate the website.</span></label>' +
           '<label class="cookie-option"><input type="checkbox" id="analyticsConsent"> <span><strong>Analytics</strong><br>Allows Google Analytics to measure visits and website use.</span></label>' +
