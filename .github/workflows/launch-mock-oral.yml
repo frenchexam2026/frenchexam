@@ -1,0 +1,53 @@
+# Publishes the mock oral page on Monday 1 March 2027 (7am Irish time).
+# It merges the "mock-oral-launch" branch into main, then deletes that branch
+# so this never runs again. You can also launch early by hand:
+# Actions tab -> "Launch mock oral page" -> Run workflow.
+name: Launch mock oral page
+
+on:
+  schedule:
+    - cron: "0 7 1 3 *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Only run in 2027 or later (or when started by hand)
+        id: gate
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(date -u +%Y)" -ge 2027 ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'true'
+        with:
+          fetch-depth: 0
+
+      - name: Merge launch branch into main
+        if: steps.gate.outputs.go == 'true'
+        run: |
+          if ! git ls-remote --exit-code --heads origin mock-oral-launch >/dev/null; then
+            echo "Launch branch already merged — nothing to do."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin mock-oral-launch
+          git merge --no-edit origin/mock-oral-launch -m "Launch mock oral page"
+          git push origin main
+          git push origin --delete mock-oral-launch
+
+      - name: Make sure the website rebuilds
+        if: steps.gate.outputs.go == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"
